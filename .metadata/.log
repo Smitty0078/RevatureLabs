@@ -33,3 +33,300 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.ui 2 2 2021-07-02 00:17:08.206
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:17:22.185
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:17:22.186
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@baea29c[org.springframework.tooling.boot.ls:1.26.0.202106150606(id=559)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:17:22.188
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:17:22.213
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:17:23.977
+!MESSAGE Boot LS startup time from start to initialized: 1781ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:17:24.037
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.HhaXHrtNisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:17:24.039
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:17:24.040
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:17:24.041
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:17:24.041
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:17:24.042
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.HhaXHrtN => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:17:24.043
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:17:24.044
+!MESSAGE buffering callback sts4.classpath.HhaXHrtN CastingDataTypes false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:17:24.044
+!MESSAGE executing callback sts4.classpath.HhaXHrtN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:17:24.272
+!MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:18:57.984
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:18:57.985
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:18:57.985
+!MESSAGE buffering callback sts4.classpath.HhaXHrtN HelloWorld false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:18:57.986
+!MESSAGE executing callback sts4.classpath.HhaXHrtN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:18:57.991
+!MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:19:15.055
+!MESSAGE exists = false open = true => deleted = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:19:15.055
+!MESSAGE buffering callback sts4.classpath.HhaXHrtN HelloWorld true 0
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:19:15.055
+!MESSAGE executing callback sts4.classpath.HhaXHrtN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:19:15.060
+!MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:19:23.500
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:19:23.501
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:19:23.501
+!MESSAGE buffering callback sts4.classpath.HhaXHrtN Hello false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:19:23.502
+!MESSAGE executing callback sts4.classpath.HhaXHrtN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:19:23.506
+!MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:19:30.808
+!MESSAGE exists = false open = true => deleted = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:19:30.809
+!MESSAGE buffering callback sts4.classpath.HhaXHrtN Hello true 0
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:19:30.809
+!MESSAGE executing callback sts4.classpath.HhaXHrtN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:19:30.812
+!MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:19:48.710
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:19:48.711
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:19:48.712
+!MESSAGE buffering callback sts4.classpath.HhaXHrtN HelloWorld false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:19:48.712
+!MESSAGE executing callback sts4.classpath.HhaXHrtN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:19:48.717
+!MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:21:51.710
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:21:51.711
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:21:51.711
+!MESSAGE buffering callback sts4.classpath.HhaXHrtN Lab-Arrays false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:21:51.711
+!MESSAGE executing callback sts4.classpath.HhaXHrtN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:21:51.717
+!MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:24:43.957
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:24:43.958
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:24:43.958
+!MESSAGE buffering callback sts4.classpath.HhaXHrtN Lab-ConditionalBlocks false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:24:43.959
+!MESSAGE executing callback sts4.classpath.HhaXHrtN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:24:43.965
+!MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:29:13.943
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:29:13.944
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:29:13.944
+!MESSAGE buffering callback sts4.classpath.HhaXHrtN Lab-ConditionalStatements false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:29:13.945
+!MESSAGE executing callback sts4.classpath.HhaXHrtN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:29:13.950
+!MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:30:39.346
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:30:39.347
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:30:39.348
+!MESSAGE buffering callback sts4.classpath.HhaXHrtN Lab-Datatypes false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:30:39.348
+!MESSAGE executing callback sts4.classpath.HhaXHrtN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:30:39.353
+!MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:32:04.727
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:32:04.727
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:32:04.728
+!MESSAGE buffering callback sts4.classpath.HhaXHrtN Lab-DoWhile false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:32:04.728
+!MESSAGE executing callback sts4.classpath.HhaXHrtN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:32:04.733
+!MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:34:37.138
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:34:37.139
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:34:37.139
+!MESSAGE buffering callback sts4.classpath.HhaXHrtN Lab-ForLoops false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:34:37.140
+!MESSAGE executing callback sts4.classpath.HhaXHrtN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:34:37.145
+!MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:35:45.770
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:35:45.771
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:35:45.771
+!MESSAGE buffering callback sts4.classpath.HhaXHrtN Lab-MathematicalOperators false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:35:45.771
+!MESSAGE executing callback sts4.classpath.HhaXHrtN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:35:45.776
+!MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:37:02.969
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:37:02.970
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:37:02.971
+!MESSAGE buffering callback sts4.classpath.HhaXHrtN Lab-MultiArrays false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:37:02.971
+!MESSAGE executing callback sts4.classpath.HhaXHrtN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:37:02.977
+!MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:38:47.797
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:38:47.798
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:38:47.799
+!MESSAGE buffering callback sts4.classpath.HhaXHrtN Lab-StringConcatenation false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:38:47.799
+!MESSAGE executing callback sts4.classpath.HhaXHrtN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:38:47.805
+!MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:39:47.764
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:39:47.764
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:39:47.765
+!MESSAGE buffering callback sts4.classpath.HhaXHrtN Lab-Switch false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:39:47.765
+!MESSAGE executing callback sts4.classpath.HhaXHrtN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:39:47.773
+!MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:40:50.216
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:40:50.217
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:40:50.217
+!MESSAGE buffering callback sts4.classpath.HhaXHrtN Lab-While false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:40:50.218
+!MESSAGE executing callback sts4.classpath.HhaXHrtN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:40:50.225
+!MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:41:50.652
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:41:50.652
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:41:50.653
+!MESSAGE buffering callback sts4.classpath.HhaXHrtN NameConsole false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:41:50.653
+!MESSAGE executing callback sts4.classpath.HhaXHrtN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:41:50.663
+!MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
