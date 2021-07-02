@@ -330,3 +330,18 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:41:50.663
 !MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:54:19.612
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:54:19.613
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:54:19.613
+!MESSAGE buffering callback sts4.classpath.HhaXHrtN Lab-NestedLoops false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:54:19.614
+!MESSAGE executing callback sts4.classpath.HhaXHrtN 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 00:54:19.618
+!MESSAGE executing callback sts4.classpath.HhaXHrtN SUCCESS [done]
