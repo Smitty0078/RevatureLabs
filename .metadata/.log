@@ -692,3 +692,18 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 15:57:50.525
 !MESSAGE executing callback sts4.classpath.hfGkUBpc SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 16:04:12.224
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 16:04:12.225
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 16:04:12.225
+!MESSAGE buffering callback sts4.classpath.hfGkUBpc Lab-Classes false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 16:04:12.225
+!MESSAGE executing callback sts4.classpath.hfGkUBpc 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 16:04:12.230
+!MESSAGE executing callback sts4.classpath.hfGkUBpc SUCCESS [done]
