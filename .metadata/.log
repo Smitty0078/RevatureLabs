@@ -707,3 +707,1231 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-02 16:04:12.230
 !MESSAGE executing callback sts4.classpath.hfGkUBpc SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:39:55.211
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.hfGkUBpc
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:39:55.212
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.hfGkUBpc
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:39:55.213
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:39:55.213
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.hfGkUBpc => OK
+!SESSION 2021-07-03 23:40:00.599 -----------------------------------------------
+eclipse.buildId=4.11.0.202106180608
+java.version=16.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2021-07-03 23:40:45.411
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-07-03 23:40:45.412
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6e1ad658,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@486dd616,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:48.273
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:48.274
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@2aad7229[org.springframework.tooling.boot.ls:1.26.0.202106150606(id=559)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:48.276
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:48.304
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-07-03 23:40:49.726
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\smitt'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.316
+!MESSAGE Boot LS startup time from start to initialized: 3035ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.409
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.bFawTDnMisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.412
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.414
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.415
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.416
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.416
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.bFawTDnM => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.421
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.424
+!MESSAGE buffering callback sts4.classpath.bFawTDnM Lab-Classes false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.425
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.427
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.427
+!MESSAGE buffering callback sts4.classpath.bFawTDnM CastingDataTypes false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.429
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.430
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.431
+!MESSAGE buffering callback sts4.classpath.bFawTDnM HelloWorld false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.432
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.434
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.435
+!MESSAGE buffering callback sts4.classpath.bFawTDnM Lab-Arrays false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.438
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.439
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.440
+!MESSAGE buffering callback sts4.classpath.bFawTDnM Lab-ConditionalBlocks false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.441
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.442
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.444
+!MESSAGE buffering callback sts4.classpath.bFawTDnM Lab-ConditionalStatements false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.445
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.446
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.447
+!MESSAGE buffering callback sts4.classpath.bFawTDnM Lab-Datatypes false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.449
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.450
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.451
+!MESSAGE buffering callback sts4.classpath.bFawTDnM Lab-DoWhile false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.452
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.453
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.454
+!MESSAGE buffering callback sts4.classpath.bFawTDnM Lab-ForLoops false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.455
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.457
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.458
+!MESSAGE buffering callback sts4.classpath.bFawTDnM Lab-MathematicalOperators false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.459
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.461
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.462
+!MESSAGE buffering callback sts4.classpath.bFawTDnM Lab-Method false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.464
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.465
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.466
+!MESSAGE buffering callback sts4.classpath.bFawTDnM Lab-MethodParameters false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.468
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.471
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.472
+!MESSAGE buffering callback sts4.classpath.bFawTDnM Lab-MethodReturnType false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.473
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.474
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.475
+!MESSAGE buffering callback sts4.classpath.bFawTDnM Lab-MultiArrays false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.476
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.477
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.479
+!MESSAGE buffering callback sts4.classpath.bFawTDnM Lab-NestedLoops false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.480
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.481
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.482
+!MESSAGE buffering callback sts4.classpath.bFawTDnM Lab-Overloading false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.484
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.486
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.487
+!MESSAGE buffering callback sts4.classpath.bFawTDnM Lab-Scanner false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.488
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.490
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.491
+!MESSAGE buffering callback sts4.classpath.bFawTDnM Lab-StringConcatenation false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.492
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.493
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.494
+!MESSAGE buffering callback sts4.classpath.bFawTDnM Lab-StringMethods false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.495
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.496
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.497
+!MESSAGE buffering callback sts4.classpath.bFawTDnM Lab-Switch false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.498
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.499
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.500
+!MESSAGE buffering callback sts4.classpath.bFawTDnM Lab-While false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.501
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.503
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.504
+!MESSAGE buffering callback sts4.classpath.bFawTDnM NameConsole false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:51.505
+!MESSAGE executing callback sts4.classpath.bFawTDnM 22 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:40:52.108
+!MESSAGE executing callback sts4.classpath.bFawTDnM SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:42:20.262
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.bFawTDnM
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:42:20.262
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.bFawTDnM
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:42:20.263
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:42:20.263
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.bFawTDnM => OK
+
+!ENTRY org.eclipse.ui 2 2 2021-07-03 23:42:20.808
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+!SESSION 2021-07-03 23:42:57.332 -----------------------------------------------
+eclipse.buildId=4.11.0.202106180608
+java.version=16.0.1
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.springframework.boot.ide.branding.sts4
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springframework.boot.ide.branding.sts4
+
+!ENTRY org.eclipse.jface 2 0 2021-07-03 23:43:05.438
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2021-07-03 23:43:05.438
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@568c9ee1,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3b839f68,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:08.078
+!MESSAGE Entering DelegatingStreamConnectionProvider()
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:08.079
+!MESSAGE DelegatingStreamConnectionProvider classloader = org.eclipse.osgi.internal.loader.EquinoxClassLoader@d0edd34[org.springframework.tooling.boot.ls:1.26.0.202106150606(id=559)]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:08.082
+!MESSAGE SpringBootLanguageServer exists!
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:08.115
+!MESSAGE Instantiating ReusableClasspathListenerHandler
+
+!ENTRY org.eclipse.egit.ui 2 0 2021-07-03 23:43:09.494
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\smitt'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.659
+!MESSAGE Boot LS startup time from start to initialized: 2569ms
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.755
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.mrrrTwHZisBatched = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.758
+!MESSAGE Setting up ClasspathListenerManager
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.760
+!MESSAGE Scheduling initial event for all projects ...
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.761
+!MESSAGE Scheduling initial event for all projects DONE
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.762
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.762
+!MESSAGE ClasspathListenerHandler addClasspathListener sts4.classpath.mrrrTwHZ => OK
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.765
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.766
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ Lab-Classes false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.768
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.769
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.769
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ CastingDataTypes false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.770
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.771
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.772
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ HelloWorld false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.772
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.773
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.774
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ Lab-Arrays false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.775
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.776
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.777
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ Lab-ConditionalBlocks false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.777
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.778
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.779
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ Lab-ConditionalStatements false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.779
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.780
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.781
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ Lab-Datatypes false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.782
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.782
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.783
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ Lab-DoWhile false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.784
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.785
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.786
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ Lab-ForLoops false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.787
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.788
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.789
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ Lab-MathematicalOperators false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.790
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.792
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.793
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ Lab-Method false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.794
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.795
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.796
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ Lab-MethodParameters false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.797
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.798
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.799
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ Lab-MethodReturnType false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.800
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.802
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.803
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ Lab-MultiArrays false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.804
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.806
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.806
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ Lab-NestedLoops false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.807
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.808
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.809
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ Lab-Overloading false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.810
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.812
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.813
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ Lab-Scanner false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.814
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.815
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.815
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ Lab-StringConcatenation false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.816
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.818
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.819
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ Lab-StringMethods false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.820
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.821
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.822
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ Lab-Switch false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.824
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.826
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.827
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ Lab-While false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.828
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.829
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.830
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ NameConsole false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:10.831
+!MESSAGE executing callback sts4.classpath.mrrrTwHZ 22 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:43:11.212
+!MESSAGE executing callback sts4.classpath.mrrrTwHZ SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:44:22.620
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:44:22.621
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:44:22.621
+!MESSAGE buffering callback sts4.classpath.mrrrTwHZ UnitConverter false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:44:22.622
+!MESSAGE executing callback sts4.classpath.mrrrTwHZ 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-03 23:44:22.627
+!MESSAGE executing callback sts4.classpath.mrrrTwHZ SUCCESS [done]
+
+!ENTRY org.eclipse.ui 2 2 2021-07-03 23:44:25.405
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.eclipse.lsp4e 2 0 2021-07-03 23:56:53.096
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2092)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jdt.core 4 4 2021-07-04 00:27:42.618
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package main;
+
+import java.util.Scanner;
+
+public class Converter {
+	
+	//initialize scanner
+	public static Scanner scan = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		//initialize variables
+		int conversionType = 0;
+		boolean askForInput = true;
+		Scanner scan = new Scanner(System.in);
+		Converter convert = new Converter();
+		
+		//Ask user to input conversion type
+		System.out.println("Please select an option:"+'\n'
+	                      +"1 : Cups to Teaspoons"+'\n'
+						  +"2 : Miles to Kilometers"+'\n'
+	                      +"3 : US Gallons to Imperial Gallons"+'\n'
+						  +"4 : Quit"
+						  );
+		
+		//drives data converter
+		while(askForInput)
+		{
+			//allows user to input an integer value to select which converter to use
+			conversionType = scan.nextInt();
+			
+			//uses input to call the correct converter
+			switch(conversionType) 
+			{
+            	case 1: {
+            		convert.cupsToTeaspoonsConverter();
+            		break;
+            	}
+            	case 2:{
+            		convert.milesToKilometers();
+            		break;
+            	}
+            	case 3:
+            	{
+            		convert.gallonsToImperialGallons();
+            		break;
+            	}
+            	case 4:
+            	{
+            		System.out.println("Thank you for using our Unit Converter"+'\n'+"Good bye :)");
+            		askForInput = false;
+            		break;
+            	}
+            	default:
+            	{
+            		System.out.println("Invalid Input");
+            		break;
+            	}
+			}
+		}
+		
+		
+		
+		scan.close();
+
+	}
+	//Drives conversion for cups and teaspoons
+	public void cupsToTeaspoonsConverter()
+	{
+		//System.out.println("Cups to Teaspoons");
+		
+		//Conversion ration: 1 Cup = 48 Teaspoons
+		//initialize variables
+		int cupsVal = 0;
+		int teaVal = 0;
+		int input = 0;
+		boolean askForInput = true;
+		
+		int 
+		
+		//System.out.println("Please select an option:"+'\n'
+                +"1 : Cups to Teaspoons"+'\n'
+				+"2 : Teaspoons to Cups"+'\n'
+                +"3 : Quit");
+		
+		input = scan.nextInt();
+		while(askForInput)
+		{
+			switch(input)
+			{
+			
+			}
+		}
+			
+		
+	}
+	
+	public void milesToKilometers()
+	{
+		System.out.println("Miles to Kilometers");
+	}
+	
+	public void gallonsToImperialGallons()
+	{
+		System.out.println("Gallons to Imperial Gallons");
+	}
+
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2031)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3795)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1943)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3052)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3347)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1524)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:494)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:201)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.ui 4 2 2021-07-04 00:27:42.619
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.ui".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2031)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3795)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1943)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3052)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3347)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1524)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:494)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:201)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.ui 4 0 2021-07-04 00:27:42.620
+!MESSAGE Error in JDT Core during reconcile
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2031)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3795)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1943)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3052)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3347)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1524)
+	at org.eclipse.jdt.core.dom.AST.convertCompilationUnit(AST.java:494)
+	at org.eclipse.jdt.internal.core.CompilationUnit.buildStructure(CompilationUnit.java:201)
+	at org.eclipse.jdt.internal.core.Openable.generateInfos(Openable.java:266)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:597)
+	at org.eclipse.jdt.internal.core.CompilationUnit.makeConsistent(CompilationUnit.java:1142)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.makeConsistent(ReconcileWorkingCopyOperation.java:173)
+	at org.eclipse.jdt.internal.core.ReconcileWorkingCopyOperation.executeOperation(ReconcileWorkingCopyOperation.java:94)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.run(JavaModelOperation.java:740)
+	at org.eclipse.jdt.internal.core.JavaModelOperation.runOperation(JavaModelOperation.java:806)
+	at org.eclipse.jdt.internal.core.CompilationUnit.reconcile(CompilationUnit.java:1319)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:131)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.access$0(JavaReconcilingStrategy.java:113)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy$1.run(JavaReconcilingStrategy.java:93)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:90)
+	at org.eclipse.jdt.internal.ui.text.java.JavaReconcilingStrategy.reconcile(JavaReconcilingStrategy.java:157)
+	at org.eclipse.jdt.internal.ui.text.CompositeReconcilingStrategy.reconcile(CompositeReconcilingStrategy.java:94)
+	at org.eclipse.jdt.internal.ui.text.JavaCompositeReconcilingStrategy.reconcile(JavaCompositeReconcilingStrategy.java:107)
+	at org.eclipse.jface.text.reconciler.MonoReconciler.process(MonoReconciler.java:76)
+	at org.eclipse.jface.text.reconciler.AbstractReconciler$BackgroundThread.run(AbstractReconciler.java:210)
+
+!ENTRY org.eclipse.jdt.core 4 4 2021-07-04 00:27:42.625
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package main;
+
+import java.util.Scanner;
+
+public class Converter {
+	
+	//initialize scanner
+	public static Scanner scan = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		//initialize variables
+		int conversionType = 0;
+		boolean askForInput = true;
+		Scanner scan = new Scanner(System.in);
+		Converter convert = new Converter();
+		
+		//Ask user to input conversion type
+		System.out.println("Please select an option:"+'\n'
+	                      +"1 : Cups to Teaspoons"+'\n'
+						  +"2 : Miles to Kilometers"+'\n'
+	                      +"3 : US Gallons to Imperial Gallons"+'\n'
+						  +"4 : Quit"
+						  );
+		
+		//drives data converter
+		while(askForInput)
+		{
+			//allows user to input an integer value to select which converter to use
+			conversionType = scan.nextInt();
+			
+			//uses input to call the correct converter
+			switch(conversionType) 
+			{
+            	case 1: {
+            		convert.cupsToTeaspoonsConverter();
+            		break;
+            	}
+            	case 2:{
+            		convert.milesToKilometers();
+            		break;
+            	}
+            	case 3:
+            	{
+            		convert.gallonsToImperialGallons();
+            		break;
+            	}
+            	case 4:
+            	{
+            		System.out.println("Thank you for using our Unit Converter"+'\n'+"Good bye :)");
+            		askForInput = false;
+            		break;
+            	}
+            	default:
+            	{
+            		System.out.println("Invalid Input");
+            		break;
+            	}
+			}
+		}
+		
+		
+		
+		scan.close();
+
+	}
+	//Drives conversion for cups and teaspoons
+	public void cupsToTeaspoonsConverter()
+	{
+		//System.out.println("Cups to Teaspoons");
+		
+		//Conversion ration: 1 Cup = 48 Teaspoons
+		//initialize variables
+		int cupsVal = 0;
+		int teaVal = 0;
+		int input = 0;
+		boolean askForInput = true;
+		
+		int 
+		
+		//System.out.println("Please select an option:"+'\n'
+                +"1 : Cups to Teaspoons"+'\n'
+				+"2 : Teaspoons to Cups"+'\n'
+                +"3 : Quit");
+		
+		input = scan.nextInt();
+		while(askForInput)
+		{
+			switch(input)
+			{
+			
+			}
+		}
+			
+		
+	}
+	
+	public void milesToKilometers()
+	{
+		System.out.println("Miles to Kilometers");
+	}
+	
+	public void gallonsToImperialGallons()
+	{
+		System.out.println("Gallons to Imperial Gallons");
+	}
+
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2031)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3795)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1943)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3052)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3347)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1524)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:272)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:264)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:197)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:187)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:166)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$1.run(SelectionListenerWithASTManager.java:151)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 2 2021-07-04 00:27:42.626
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.core.manipulation".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2031)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3795)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1943)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3052)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3347)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1524)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:272)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:264)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:197)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:187)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:166)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$1.run(SelectionListenerWithASTManager.java:151)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 0 2021-07-04 00:27:42.627
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2031)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3795)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1943)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3052)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3347)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1524)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:272)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:264)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:197)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:187)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup.calculateASTandInform(SelectionListenerWithASTManager.java:166)
+	at org.eclipse.jdt.internal.ui.viewsupport.SelectionListenerWithASTManager$PartListenerGroup$1.run(SelectionListenerWithASTManager.java:151)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.jdt.core 4 4 2021-07-04 00:27:44.931
+!MESSAGE Exception occurred during compilation unit conversion:
+----------------------------------- SOURCE BEGIN -------------------------------------
+package main;
+
+import java.util.Scanner;
+
+public class Converter {
+	
+	//initialize scanner
+	public static Scanner scan = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		//initialize variables
+		int conversionType = 0;
+		boolean askForInput = true;
+		Scanner scan = new Scanner(System.in);
+		Converter convert = new Converter();
+		
+		//Ask user to input conversion type
+		System.out.println("Please select an option:"+'\n'
+	                      +"1 : Cups to Teaspoons"+'\n'
+						  +"2 : Miles to Kilometers"+'\n'
+	                      +"3 : US Gallons to Imperial Gallons"+'\n'
+						  +"4 : Quit"
+						  );
+		
+		//drives data converter
+		while(askForInput)
+		{
+			//allows user to input an integer value to select which converter to use
+			conversionType = scan.nextInt();
+			
+			//uses input to call the correct converter
+			switch(conversionType) 
+			{
+            	case 1: {
+            		convert.cupsToTeaspoonsConverter();
+            		break;
+            	}
+            	case 2:{
+            		convert.milesToKilometers();
+            		break;
+            	}
+            	case 3:
+            	{
+            		convert.gallonsToImperialGallons();
+            		break;
+            	}
+            	case 4:
+            	{
+            		System.out.println("Thank you for using our Unit Converter"+'\n'+"Good bye :)");
+            		askForInput = false;
+            		break;
+            	}
+            	default:
+            	{
+            		System.out.println("Invalid Input");
+            		break;
+            	}
+			}
+		}
+		
+		
+		
+		scan.close();
+
+	}
+	//Drives conversion for cups and teaspoons
+	public void cupsToTeaspoonsConverter()
+	{
+		//System.out.println("Cups to Teaspoons");
+		
+		//Conversion ration: 1 Cup = 48 Teaspoons
+		//initialize variables
+		int cupsVal = 0;
+		int teaVal = 0;
+		int input = 0;
+		boolean askForInput = true;
+		
+		int 
+		
+		//System.out.println("Please select an option:"+'\n'
+                +"1 : Cups to Teaspoons"+'\n'
+				+"2 : Teaspoons to Cups"+'\n'
+                +"3 : Quit");
+		
+		input = scan.nextInt();
+		while(askForInput)
+		{
+			switch(input)
+			{
+			
+			}
+		}
+			
+		
+	}
+	
+	public void milesToKilometers()
+	{
+		System.out.println("Miles to Kilometers");
+	}
+	
+	public void gallonsToImperialGallons()
+	{
+		System.out.println("Gallons to Imperial Gallons");
+	}
+
+}
+
+----------------------------------- SOURCE END -------------------------------------
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2031)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3795)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1943)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3052)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3347)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1524)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:272)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:264)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:197)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.text.java.hover.NLSStringHover.internalGetHoverInfo(NLSStringHover.java:139)
+	at org.eclipse.jdt.internal.ui.text.java.hover.NLSStringHover.getHoverInfo2(NLSStringHover.java:118)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 2 2021-07-04 00:27:44.933
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.jdt.core.manipulation".
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2031)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3795)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1943)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3052)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3347)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1524)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:272)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:264)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:197)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.text.java.hover.NLSStringHover.internalGetHoverInfo(NLSStringHover.java:139)
+	at org.eclipse.jdt.internal.ui.text.java.hover.NLSStringHover.getHoverInfo2(NLSStringHover.java:118)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.jdt.core.manipulation 4 0 2021-07-04 00:27:44.935
+!MESSAGE Error in JDT Core during AST creation
+!STACK 0
+java.lang.IllegalArgumentException
+	at org.eclipse.jdt.core.dom.InfixExpression.setOperator(InfixExpression.java:383)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1287)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:2031)
+	at org.eclipse.jdt.core.dom.ASTConverter.convertToParenthesizedExpression(ASTConverter.java:3795)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1943)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1204)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1974)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3052)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:751)
+	at org.eclipse.jdt.core.dom.ASTConverter.buildBodyDeclarations(ASTConverter.java:208)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:3347)
+	at org.eclipse.jdt.core.dom.ASTConverter.convert(ASTConverter.java:1524)
+	at org.eclipse.jdt.core.dom.CompilationUnitResolver.convert(CompilationUnitResolver.java:323)
+	at org.eclipse.jdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:1231)
+	at org.eclipse.jdt.core.dom.ASTParser.createAST(ASTParser.java:820)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider$1.run(CoreASTProvider.java:272)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.createAST(CoreASTProvider.java:264)
+	at org.eclipse.jdt.core.manipulation.CoreASTProvider.getAST(CoreASTProvider.java:197)
+	at org.eclipse.jdt.core.manipulation.SharedASTProviderCore.getAST(SharedASTProviderCore.java:138)
+	at org.eclipse.jdt.internal.ui.text.java.hover.NLSStringHover.internalGetHoverInfo(NLSStringHover.java:139)
+	at org.eclipse.jdt.internal.ui.text.java.hover.NLSStringHover.getHoverInfo2(NLSStringHover.java:118)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.lsp4e 2 0 2021-07-04 00:45:21.592
+!MESSAGE Javadoc unavailable. Failed to obtain it.
+!STACK 0
+java.lang.InterruptedException
+	at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:385)
+	at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2092)
+	at org.eclipse.lsp4e.jdt.LSJavaHoverProvider.getHoverInfo2(LSJavaHoverProvider.java:70)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
