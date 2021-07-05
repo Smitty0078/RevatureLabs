@@ -8,6 +8,11 @@ public class Converter {
 	public double convertedNum;
 	
 	public static void main(String[] args) {
+		//initialize constant conversion variables
+		final double cupsToTeaspoons = 48.0;
+		final double milesToKilometers = 1.60934;
+		final double gallonsToImperialGallons = 0.832674;
+		
 		//initialize variables
 		int conversionType = 0;
 		boolean askForInput = true;
@@ -35,20 +40,23 @@ public class Converter {
             		
             		System.out.println("Please Enter Number of Cups: ");
             		convert.num = scan.nextDouble();
-            		convert.cupsToTeaspoonsConverter();
+            		convert.converter(cupsToTeaspoons, "cup", "teaspoon");
+            	
             		break;
             	}
             	case 2:{
             		System.out.println("Please Enter Number of Miles: ");
             		convert.num = scan.nextDouble();
-            		convert.milesToKilometers();
+            		convert.converter(milesToKilometers, "mile", "kilometer");
+            		
             		break;
             	}
             	case 3:
             	{
             		System.out.println("Please Enter Number of Gallons: ");
             		convert.num = scan.nextDouble();
-            		convert.gallonsToImperialGallons();
+            		convert.converter(gallonsToImperialGallons, "gallon", "imperial gallon");
+            		
             		break;
             	}
             	case 4:
@@ -70,28 +78,12 @@ public class Converter {
 		scan.close();
 
 	}
-	//Drives conversion for cups and teaspoons
-	public void cupsToTeaspoonsConverter()
-	{	
-		//Conversion ratio: 1 Cup = 48 Teaspoons
-		convertedNum = num * 48;
-		System.out.println(num+" cup(s) is equal to "+convertedNum+" teaspoons."+'\n');
+	
+	public void converter(double conversionRatio, String type1, String type2)
+	{
+		convertedNum = num * conversionRatio;
+		System.out.println(num+" "+type1+"(s) is equal to "+convertedNum+" "+type2+"(s)."+'\n');
 	}
 	
-	//Drives conversion for miles and kilometers
-	public void milesToKilometers()
-	{
-		//Conversion ratio: 1 Mile = 1.60934 Kilometers
-		convertedNum = num * 1.60934;
-		System.out.println(num + " mile(s) is equal to "+convertedNum+" kilometer(s)."+'\n');
-	}
-	
-	//Drives conversion for gallons to imperial gallons
-	public void gallonsToImperialGallons()
-	{
-		//conversion ratio: 1 Gallon = 0.832674 Imperial Gallons
-		convertedNum = num * 0.832674;
-		System.out.println(num+" gallon(s) is equal to "+convertedNum+" imperial gallon(s)"+'\n');
-	}
 
 }
