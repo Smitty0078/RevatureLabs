@@ -2258,3 +2258,18 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-05 16:05:23.307
 !MESSAGE executing callback sts4.classpath.MQGwkiCm SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-05 16:11:27.876
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-05 16:11:27.877
+!MESSAGE classpath=2 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-05 16:11:27.878
+!MESSAGE buffering callback sts4.classpath.MQGwkiCm Lab-Static-vs-Instance false 2
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-05 16:11:27.878
+!MESSAGE executing callback sts4.classpath.MQGwkiCm 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-07-05 16:11:27.884
+!MESSAGE executing callback sts4.classpath.MQGwkiCm SUCCESS [done]
