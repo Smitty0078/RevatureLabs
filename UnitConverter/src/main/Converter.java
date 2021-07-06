@@ -18,7 +18,7 @@ public class Converter {
 		while(askForInput)
 		{
 			System.out.println("Welcome to the main Unit Converter!"+'\n');
-			//Ask user to input conversion type
+			//Ask user to input which unit converter they wish to run
 			System.out.println("Please select an option:"+'\n'
 		                      +"1 : Volume Conversions"+'\n'
 							  +"2 : Distance Conversions"+'\n'
@@ -31,32 +31,34 @@ public class Converter {
 			//uses input to call the correct converter
 			switch(menuSelection) 
 			{
-            	case 1: 
+            	//Opens Volume Unit Converter
+				case 1: 
             	{
             		convert.volumeConversions(scan);
             		break;
             	}
-            	case 2:
+            	//Opens Distance Unit Converter
+				case 2:
             	{
             		convert.distanceConversions(scan);
             		break;
             	}
-            	case 3:
+            	//Quits Main Application
+				case 3:
             	{
             		System.out.println("Thank you for using our Unit Converter"+'\n'+"Good bye :)");
             		askForInput = false;
             		break;
             	}
-            	default:
+            	//Handles Invalid Input
+				default:
             	{
             		System.out.println("Invalid Input");
             		break;
             	}
 			}
 		}
-		
-		
-		
+		//Closes input stream
 		scan.close();
 
 	}
@@ -73,7 +75,7 @@ public class Converter {
 	}
 	
 	//------------------------------------------------------------------------------------------------------
-	
+	//Drives Volume Unit Conversions
 	public void volumeConversions(Scanner scan)
 	{
 		boolean askForInput = true;
@@ -81,6 +83,7 @@ public class Converter {
 		while(askForInput)
 		{
 			System.out.println("Welcome to the Volume Unit Converter!"+'\n');
+			//Ask user which conversion units they wish to use
 			System.out.println("Please select an option:"+'\n'
 							 +"1 : Cups to Teaspoons"+'\n'
 							 +"2 : Teaspoons to Tablespoons"+'\n'
@@ -90,30 +93,35 @@ public class Converter {
 			menuSelection = scan.nextInt();
 			switch(menuSelection) 
 			{
+				//Converts Cups to Teaspoons
             	case 1: 
             	{
             		num = collectQuantity("Cups", scan);
             		cupsToTeaspoonsConverter();
             		break;
             	}
+            	//Converts Teaspoons to Tablespoons
             	case 2:
             	{
             		num = collectQuantity("Teaspoons", scan);
             		teaspoonsToTablespoons();
             		break;
             	}
+            	//Converts Gallons to Imperial Gallons
             	case 3:
             	{
             		num = collectQuantity("Gallons", scan);
             		gallonsToImperialGallons();
             		break;
             	}
+            	//Quits Volume Converter
             	case 4:
             	{
             		System.out.println("Thank you for using our Volume Converter"+'\n');
             		askForInput = false;
             		break;
             	}
+            	//Handles invalid input
             	default:
             	{
             		System.out.println("Invalid Input");
@@ -124,13 +132,17 @@ public class Converter {
 		}
 	}
 	
+	//------------------------------------------------------------------------------------------------------
+	//Distance Unit Conversions
 	public void distanceConversions(Scanner scan)
 	{
 		boolean askForInput = true;
 		int menuSelection = 0;
-		System.out.println("Welcome to the Distance Unit Converter!"+'\n');
+		
 		while(askForInput)
 		{
+			System.out.println("Welcome to the Distance Unit Converter!"+'\n');
+			//Ask user which units they want to convert
 			System.out.println("Please select an option:"+'\n'
 							 +"1 : Feet to Meters"+'\n'
 							 +"2 : Miles to Kilometers"+'\n'
@@ -139,24 +151,28 @@ public class Converter {
 			menuSelection = scan.nextInt();
 			switch(menuSelection) 
 			{
+				//Converts Feet to Meters
             	case 1: 
             	{
             		num = collectQuantity("Feet", scan);
             		feetToMeters();
             		break;
             	}
+            	//Converts Miles to Kilometers
             	case 2:
             	{
             		num = collectQuantity("Miles", scan);
             		milesToKilometers();
             		break;
             	}
+            	//Quits Distance Converter
             	case 3:
             	{
             		System.out.println("Thank you for using our Distance Converter"+'\n');
             		askForInput = false;
             		break;
             	}
+            	//Handles Invalid Input
             	default:
             	{
             		System.out.println("Invalid Input");
@@ -167,6 +183,8 @@ public class Converter {
 		}
 	}
 	
+	//------------------------------------------------------------------------------------------------------
+	//Drives conversion for teaspoons to tablespoons
 	public void teaspoonsToTablespoons()
 	{
 		//Conversion ratio: 1 teaspoon = 0.333333 tablespoons
@@ -202,6 +220,7 @@ public class Converter {
 	}
 	
 	//------------------------------------------------------------------------------------------------------
+	//Drives conversion for feet to meters
 	public void feetToMeters()
 	{
 		//Conversion ratio: 1 foot = 0.3048 Meters
