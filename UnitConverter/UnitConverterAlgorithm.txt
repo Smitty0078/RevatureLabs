@@ -1,0 +1,84 @@
+This is the algorithm used to implement the UnitConverter project:
+
+Main Method:
+Initialize Variables
+While boolean variable remains true
+	Prompt user for input to select which converter to run
+	Use input given to direct to correct converter
+		If volume converter selected
+			Invoke volume converter method
+		If distance converter selected
+			Invoke distance converter method
+		If quit app selected
+			Set loop control variable to false
+		Default
+			Handles incorrect input
+close input
+
+Quantity Collection Method:
+initialize variables
+Prompt user to enter number of "units" they selected
+return the quantity
+
+Volume Converter Method:
+Initialize variables
+While boolean variable remains true
+	Prompt user for input to select which specific units to convert
+		If cups to teaspoons selected
+			Invoke quantity collection method
+			Invoke cups to teaspoons method
+		If teaspoons to tablespoons selected
+			Invoke quantity collection method
+			Invoke teaspoons to tablespoons method
+		If gallons to imperial gallons selected
+			Invoke quantity collection method
+			Invoke gallons to imperial gallons method
+		If quit volume converter is selected
+			Set loop control variable to false
+		Default
+			Handles incorrect input
+
+Distance Converter Method:
+initialize variables
+Prompt user to enter number of "units" they selected
+return the quantity
+
+Volume Converter Method:
+Initialize variables
+While boolean variable remains true
+	Prompt user for input to select which specific units to convert
+		If feet to meters selected
+			Invoke quantity collection method
+			Invoke feet to meters method
+		If miles to kilometers selected
+			Invoke quantity collection method
+			Invoke miles to kilometers method
+		If quit distance converter is selected
+			Set loop control variable to false
+		Default
+			Handles incorrect input
+
+Teaspoons to Tablespoons Method:
+Assign converted num variable to the product of the quantity of units and the conversion ratio, in this case, 0.333333
+Output the conversion to the screen
+
+Cups to Teaspoons Method:
+Assign converted num variable to the product of the quantity of units and the conversion ratio, in this case, 48.0
+Output the conversion to the screen
+
+Gallons to Imperial Gallons Method:
+Assign converted num variable to the product of the quantity of units and the conversion ratio, in this case, 0.832674
+Output the conversion to the screen
+
+Miles to Kilometers Method:
+Assign converted num variable to the product of the quantity of units and the conversion ratio, in this case, 1.60934
+Output the conversion to the screen
+
+Feet to Meters Method:
+Assign converted num variable to the product of the quantity of units and the conversion ratio, in this case, 0.3048
+Output the conversion to the screen
+
+
+
+				
+			
