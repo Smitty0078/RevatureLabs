@@ -5,13 +5,16 @@ import java.util.Scanner;
 
 public class Main {
 
+	//loop control variable
 	private static boolean continueGame = true;
 	
+	//Getter for loop control variable
 	public static boolean getContinueGame()
 	{
 		return continueGame;
 	}
 	
+	//Setter for loop control variable
 	public static void setContinueGame(boolean b)
 	{
 		continueGame = b;
@@ -22,27 +25,35 @@ public class Main {
 	public static void main(String[] args) 
 	{
 		
+		//initialization of variables
 		String[] input;
 		Scanner scan = new Scanner(System.in);
 		RoomManager roomManager = new RoomManager();
 		Player player = new Player();
+		//used to populate house with rooms
 		roomManager.init();
+		//initializes current room
 		player.setCurrentRoom(roomManager.getSpecificRoom(0));
 		
+		//prints greeting to the screen
 		printGreeting();
 		
+		//main game loop
 		while(continueGame)
 		{
+			//prints the current room
 			player.printCurrentRoom();	
+			//Invokes method that collects user input 
 			input = collectInput(scan);
+			//Invokes method that parses input
 			parse(input, roomManager, player);
-			//continueGame = false;
 		}
 		
 		scan.close();
 	}
 	
-	
+	//------------------------------------------------------------------------------------------------------------------------
+	//prints basic instructions on navigation and interaction
 	private static void printGreeting()
 	{
 		System.out.println(
@@ -55,6 +66,8 @@ public class Main {
 				+"<ITEM_NAME>"+'\n'
 				);
 	}
+	//------------------------------------------------------------------------------------------------------------------------
+	//Collects user input
 	private static String[] collectInput(Scanner scan) 
 	{
 		String line = null;
@@ -65,6 +78,8 @@ public class Main {
 		return input;
 	}
 	
+	//------------------------------------------------------------------------------------------------------------------------
+	//parses input to determine what actions to take
 	private static void parse(String[] input, RoomManager roomManager, Player player)
 	{
 		
@@ -76,38 +91,31 @@ public class Main {
 			details = input[1].toUpperCase().intern();
 		}
 		
+		//flow of control handled here to find correct adjacent room
 		if(action == "GO" || action == "MOVE")
 		{
 			if(details == "NORTH")
 			{
-				//System.out.println("north");
 				changeRooms(player, 0);
-				
 			}
 			else if(details == "SOUTH")
 			{
-				//System.out.println("south");
 				changeRooms(player, 1);
-				
 			}
 			else if(details == "EAST")
 			{
-				//System.out.println("east");
-				changeRooms(player, 2);
-				
+				changeRooms(player, 2);	
 			}
 			else if(details == "WEST")
 			{
-				//System.out.println("west");
 				changeRooms(player, 3);
-				
 			}
 			else
 			{
-				System.out.println("Invalid");
+				System.out.println("Invalid direction");
 			}
 		}
-		else if (action == "INTERACT" || action == "USE")
+		else if (action == "INTERACT" || action == "USE") // used for interatable objects
 		{
 			useItem(player, details);
 		}
@@ -126,6 +134,7 @@ public class Main {
 		
 	}
 	
+	//handles movement between rooms
 	private static void changeRooms(Player p, int i)
 	{
 		Room r = p.getCurrentRoom();
@@ -133,12 +142,12 @@ public class Main {
 		if(r != null)
 		{
 			p.setCurrentRoom(r);
-			//System.out.println(p.getCurrentRoom());
 		}
 		else
 		System.out.println("There are no rooms in that direction...");
 	}
 	
+	//handles interaction between objects
 	private static void useItem(Player p, String details)
 	{
 		Room r = p.getCurrentRoom();

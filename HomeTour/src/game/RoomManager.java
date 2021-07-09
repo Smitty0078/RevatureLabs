@@ -6,39 +6,44 @@ import fixtures.*;
 
 public class RoomManager {
 
-	private Room startingRoom;
-	private Room [] rooms = new Room[14];
+	private Room startingRoom; //used to keep track of where to start I have this hard coded for now
+	private Room [] rooms = new Room[14]; // used to hold rooms in the house also hard coded
 	
-	
+	//getter for starting room
 	public Room getStartingRoom() {
 		return startingRoom;
 	}
-	
+	//setter for starting room
 	public void setStartingRoom(Room r)
 	{
 		startingRoom = r;
 	}
-
+	//getter for rooms[]
 	public Room[] getRooms() {
 		return rooms;
 	}
-	
+	//getter for a specific room given its index
 	public Room getSpecificRoom(int index)
 	{
 		return rooms[index];
 	}
-	
+	//setter for rooms given an array of rooms
 	public void setRooms(Room[] rooms) {
 		this.rooms = rooms;
 	}
 	
+	//toString uses for debugging
 	@Override
 	public String toString() {
 		return "RoomManager [rooms=" + Arrays.toString(rooms) + "]";
 	}
 
+	//used to populate rooms as well as exits, and items.
+	//Not very efficient but it is what it is
 	public void init()
 	{
+		
+		//hard code each room initializing them.
 		Room frontPorch = new Room(
 				"Front Porch",
 				"You stand on an enclosed porch.",
@@ -139,6 +144,10 @@ public class RoomManager {
 				"To the north you can see the enterance to the back porch."
 				);
 		
+		
+		//This sets up the adjacent rooms for each room
+		//I used a Room[4] array with 0->NORTH, 1->SOUTH, 2->EAST, AND 3->WEST
+		//This set up exits method helped make it a little less tedious for me
 		setUpExits(frontPorch, null, hallway, null, null);
 		rooms[0] = frontPorch;
 		setStartingRoom(rooms[0]);
@@ -147,6 +156,9 @@ public class RoomManager {
 		rooms[1] = hallway;
 		
 		setUpExits(bathroom, null, foyer, null, null);
+		//this is where I populate the intractable items within the Room class (item[])
+		//I had bigger ambitions to populate the rooms with more items but there just 
+		//wasn't enough time for me to reach my goals.
 		RoomItem toilet = new Toilet("toilet", "short", "long");
 		bathroom.setItems(0, toilet);
 		rooms[2] = bathroom;
@@ -201,6 +213,7 @@ public class RoomManager {
 		
 	}
 	
+	//helper method to filling adjacent rooms array exits
 	public void setUpExits(Room room, Room northRoom, Room southRoom, Room eastRoom, Room westRoom)
 	{
 		room.setSpecificExit(0, northRoom); 

@@ -1,11 +1,12 @@
 package fixtures;
 
+//Subclass of Fixtures
 public class Room extends Fixtures {
 
-	private RoomItem[] items = new RoomItem[2];
-	private Room[] exits = new Room[4];
+	private RoomItem[] items = new RoomItem[2]; //holds all intractable items
+	private Room[] exits = new Room[4]; //holds all adjacent rooms
 	
-	
+	//Parameterized constructor
 	public Room(String name, String shortDesc, String longDesc) {
 		super(name, shortDesc, longDesc);
 		
@@ -30,38 +31,35 @@ public class Room extends Fixtures {
 		
 	}
 
+	//getter for exits array
 	public Room[] getAllExits()
 	{
 		return exits;
 	}
-	
+	//getter to get a specific adjacent room based on its index or direction
 	public Room getSpecificExit(int index) {
 		return exits[index];
 	}
-	
-	public Room getExit(String direction)
-	{
-		//implement this;
-		return exits[0];
-	}
 
-
+	//setter to create array of adjacent rooms
+	//kind of not needed...
 	public void setAllExits(Room[] r)
 	{
 		this.exits = r;
 	}
 	
+	//setter to set a specific room at a specific index
 	public void setSpecificExit(int index, Room r) {
-		//System.out.println("here");
 		this.exits[index] = r;
 	}
 
-
+	//gets an intractable item at given index
 	public RoomItem getItems(int index) 
 	{
 		return items[index];
 	}
 
+	//sets an intractable item at given index
 	public void setItems(int index, RoomItem item) 
 	{
 		this.items[index] = item;
