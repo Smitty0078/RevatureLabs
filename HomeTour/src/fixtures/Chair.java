@@ -8,18 +8,10 @@ public class Chair extends RoomItem implements Interactable {
 	}
 
 	@Override
-	public void interact1()
+	public void interact()
 	{
 		//Sitting
-		System.out.println("You sit in the chair...");
-		
-	}
-
-	@Override
-	public void interact2() 
-	{
-		//Stop sitting
-		System.out.println("You stop sitting in the chair...");
+		System.out.println("Sitting in the chair...");
 		
 	}
 	

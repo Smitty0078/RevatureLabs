@@ -9,11 +9,6 @@ public class RoomItem extends Fixtures implements Interactable {
 	}
 
 	@Override
-	public void interact1() {}
-
-	@Override
-	public void interact2() {}
-	
-	
+	public void interact() {}
 
 }
