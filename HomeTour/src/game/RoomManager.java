@@ -131,7 +131,10 @@ public class RoomManager {
 		rooms[1] = hallway;
 		
 		setUpExits(bathroom, null, foyer, null, null);
+		RoomItem toilet = new Toilet("toilet", "short", "long");
+		bathroom.setItems(0, toilet);
 		rooms[2] = bathroom;
+		
 		
 		setUpExits(diningroom, null, office, hallway, null);
 		rooms[3] = diningroom;

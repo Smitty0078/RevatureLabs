@@ -29,6 +29,9 @@ public class Main {
 		roomManager.init();
 		player.setCurrentRoom(roomManager.getSpecificRoom(0));
 		
+		Room r = roomManager.getSpecificRoom(2);
+		RoomItem ri = r.getItems(0);
+		ri.interact();
 		
 		printGreeting();
 		

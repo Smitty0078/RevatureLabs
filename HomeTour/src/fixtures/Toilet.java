@@ -3,7 +3,7 @@ package fixtures;
 public class Toilet extends RoomItem implements Interactable {
 
 	public Toilet(String name, String shortDesc, String longDesc) {
-		super("Toilet", "White Toilet", "Clean White Toilet");
+		super(name, shortDesc, longDesc);
 		
 	}
 	
