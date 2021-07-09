@@ -40,8 +40,8 @@ public class RoomManager {
 	{
 		Room frontPorch = new Room(
 				"Front Porch",
-				"Short desc",
-				"Long desc"
+				"You stand on an enclosed porch.",
+				"To the south, there is a white <DOOR> that leads to a big open hallway."
 				);
 		
 		Room hallway = new Room(

@@ -2,7 +2,7 @@ package fixtures;
 
 public class Room extends Fixtures {
 
-	private RoomItem[] items;
+	private RoomItem[] items = new RoomItem[2];
 	private Room[] exits = new Room[4];
 	
 	
@@ -11,6 +11,7 @@ public class Room extends Fixtures {
 		
 	}
 	
+	//used for debugging
 	public void printExits()
 	{
 		System.out.println("Room name: "+getName());
@@ -65,6 +66,8 @@ public class Room extends Fixtures {
 	{
 		this.items[index] = item;
 	}
+	
+	
 
 
 }
