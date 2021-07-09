@@ -49,9 +49,9 @@ public class RoomManager {
 				"Hallway",
 				"Large Open Hallway",
 				"To the south of the hallway the kitchen is within view. "
-				+ "To the west of the hallway there is a fine diningroom."
-				+ "To the east of the hallway there is a small foyer to welcome guests."
-				+ "To the north of the hallway you can see the front door leading out to the front porch."
+				+'\n'+ "To the west of the hallway there is a fine diningroom."
+				+'\n'+ "To the east of the hallway there is a small foyer to welcome guests."
+				+'\n'+ "To the north of the hallway you can see the front door leading out to the front porch."
 				);
 		
 		Room bathroom = new Room(
@@ -64,16 +64,16 @@ public class RoomManager {
 				"Dining Room",
 				"Fancy dining room table and <CHAIR>s.",
 				"A large fancy wood table is in the middle of the room"
-				+ " with many chairs surrounding it. To the south you can see the office"
-				+ " where there is a computer desk. To the east you see a large open hallway."
+				+'\n'+ " with many chairs surrounding it. To the south you can see the office"
+				+'\n'+ " where there is a computer desk. To the east you see a large open hallway."
 				);
 		
 		Room foyer = new Room(
 				"Foyer",
 				"Small room used to welcome guests.",
 				"To the north there is a door to the bathroom."
-				+ " To the east there is a bedroom with a large bed inside."
-				+ " To the west there is a large open hallway."
+				+'\n'+ " To the east there is a bedroom with a large bed inside."
+				+'\n'+ " To the west there is a large open hallway."
 				);
 		
 		Room bedroom = new Room(
@@ -99,24 +99,24 @@ public class RoomManager {
 				"Kitchen",
 				"Large kitchen with modern appliances and black granite counter tops.",
 				"To the north, you can see a large open hallway. To the west you"
-				+ " can see a small table and chairs for less fancy dining. To"
-				+ " the east you can see into the office."
+				+'\n'+ " can see a small table and chairs for less fancy dining. To"
+				+'\n'+ " the east you can see into the office."
 				);
 		
 		Room dinette = new Room(
 				"Dinette",
 				"A small kitchen table and chairs for everyday meals.",
 				"To the south there is a small storage closet. To the east you"
-				+ " can see clearly into the kitchen. To the west you can see"
-				+ " clearly into the family room."
+				+'\n'+ " can see clearly into the kitchen. To the west you can see"
+				+'\n'+ " clearly into the family room."
 				);
 		
 		Room familyRoom = new Room(
 				"Family Room",
 				"A large room with several comfortable couches and reclining chairs with a giant <TELEVISION>"
-				+ " in the middle of the north wall.",
+				+'\n'+ " in the middle of the north wall.",
 				"Next to the tv to the north there is a door that leads to a large garage. To the west you can"
-				+ " see into the dinette. To the south there is a door leading to the back porch."
+				+'\n'+ " see into the dinette. To the south there is a door leading to the back porch."
 				);
 		
 		Room closet = new Room(
@@ -135,7 +135,7 @@ public class RoomManager {
 		Room backYard = new Room(
 				"Backyard",
 				"A large back yard with a large <SWIMMING POOL>, a small pond, a tiki bar,"
-				+ " a fire pit, and a small table with chairs to eat.",
+				+'\n'+ " a fire pit, and a small table with chairs to eat.",
 				"To the north you can see the enterance to the back porch."
 				);
 		

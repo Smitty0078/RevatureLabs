@@ -109,7 +109,7 @@ public class Main {
 		}
 		else if (action == "INTERACT" || action == "USE")
 		{
-			useItem(player);
+			useItem(player, details);
 		}
 		else if (action == "QUIT")
 		{
@@ -139,11 +139,14 @@ public class Main {
 		System.out.println("There are no rooms in that direction...");
 	}
 	
-	private static void useItem(Player p)
+	private static void useItem(Player p, String details)
 	{
 		Room r = p.getCurrentRoom();
 		RoomItem ri = r.getItems(0);
-		ri.interact();
+		if(ri != null)
+			ri.interact();
+		else
+			System.out.println("can't interact");
 	}
 	
 		
