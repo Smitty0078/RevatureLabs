@@ -16,9 +16,9 @@ public class Player {
 	//printer used for debugging
 	public void printCurrentRoom()
 	{
-		System.out.println("Current Room: "+currentRoom.getName()+'\n'
-										   +currentRoom.getShortDesc()+'\n'
-										   +currentRoom.getLongDesc());
+		System.out.println('\n'+"Current Room: "+currentRoom.getName()+'\n'
+										        +currentRoom.getShortDesc()+'\n'
+										        +currentRoom.getLongDesc()+'\n');
 		
 	}
 

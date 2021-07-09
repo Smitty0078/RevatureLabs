@@ -13,6 +13,7 @@ public abstract class Fixtures {
 		this.longDesc = longDesc;
 	}
 	
+	//getters and setters
 	public String getName() {
 		return name;
 	}
@@ -28,13 +29,14 @@ public abstract class Fixtures {
 	public String getLongDesc() {
 		return longDesc;
 	}
-	@Override
-	public String toString() {
-		return "Fixtures [name=" + name + ", shortDesc=" + shortDesc + ", longDesc=" + longDesc + "]";
-	}
 
 	public void setLongDesc(String longDesc) {
 		this.longDesc = longDesc;
+	}
+	
+	@Override
+	public String toString() {
+		return "Fixtures [name=" + name + ", shortDesc=" + shortDesc + ", longDesc=" + longDesc + "]";
 	}
 	
 }
