@@ -47,80 +47,96 @@ public class RoomManager {
 		
 		Room hallway = new Room(
 				"Hallway",
-				"Short desc",
-				"Long desc"
+				"Large Open Hallway",
+				"To the south of the hallway the kitchen is within view. "
+				+ "To the west of the hallway there is a fine diningroom."
+				+ "To the east of the hallway there is a small foyer to welcome guests."
+				+ "To the north of the hallway you can see the front door leading out to the front porch."
 				);
 		
 		Room bathroom = new Room(
 				"Bathroom",
-				"Short desc",
-				"Long desc"
+				"Small bathroom with a <TOILET> and a shower.",
+				"Private bathroom with only one door, to the south, leading to the Foyer."
 				);
 		
 		Room diningroom = new Room(
 				"Dining Room",
-				"Short desc",
-				"Long desc"
+				"Fancy dining room table and <CHAIR>s.",
+				"A large fancy wood table is in the middle of the room"
+				+ " with many chairs surrounding it. To the south you can see the office"
+				+ " where there is a computer desk. To the east you see a large open hallway."
 				);
 		
 		Room foyer = new Room(
 				"Foyer",
-				"Short desc",
-				"Long desc"
+				"Small room used to welcome guests.",
+				"To the north there is a door to the bathroom."
+				+ " To the east there is a bedroom with a large bed inside."
+				+ " To the west there is a large open hallway."
 				);
 		
 		Room bedroom = new Room(
 				"Bedroom",
-				"Short desc",
-				"Long desc"
+				"Large bedroom with a large comfortable <BED> inside.",
+				"To the west there is a small foyer."
 				);
 		
 		Room garage = new Room(
 				"Garage",
-				"Short desc",
-				"Long desc"
+				"A large garage big enough for two cars.",
+				"To the south there is a door leading into the family room."
 				);
 		
 		Room office = new Room(
 				"Office",
-				"Short desc",
-				"Long desc"
+				"There is a large computer <DESK> here with other office supplies.",
+				"To the north you can see into the dining room."
+				+ " To the east you can see into the kitchen."
 				);
 		
 		Room kitchen = new Room(
 				"Kitchen",
-				"Short desc",
-				"Long desc"
+				"Large kitchen with modern appliances and black granite counter tops.",
+				"To the north, you can see a large open hallway. To the west you"
+				+ " can see a small table and chairs for less fancy dining. To"
+				+ " the east you can see into the office."
 				);
 		
 		Room dinette = new Room(
 				"Dinette",
-				"Short desc",
-				"Long desc"
+				"A small kitchen table and chairs for everyday meals.",
+				"To the south there is a small storage closet. To the east you"
+				+ " can see clearly into the kitchen. To the west you can see"
+				+ " clearly into the family room."
 				);
 		
 		Room familyRoom = new Room(
 				"Family Room",
-				"Short desc",
-				"Long desc"
+				"A large room with several comfortable couches and reclining chairs with a giant <TELEVISION>"
+				+ " in the middle of the north wall.",
+				"Next to the tv to the north there is a door that leads to a large garage. To the west you can"
+				+ " see into the dinette. To the south there is a door leading to the back porch."
 				);
 		
 		Room closet = new Room(
 				"Closet",
-				"Short desc",
-				"Long desc"
+				"Small storage closet with cleaning supplies",
+				"To the north there is a small dinette for everyday meals."
 				);
 		
 		Room backPorch = new Room(
 				"Back Porch",
-				"Short desc",
-				"Long desc"
+				"An enclosed porch with several lounge chairs and tables.",
+				"To the south there is a door leading out to the back yard. You"
+				+ " can see a large swimming pool."
 				);
 		
 		Room backYard = new Room(
 				"Backyard",
-				"Short desc",
-				"Long desc"
+				"A large back yard with a large <SWIMMING POOL>, a small pond, a tiki bar,"
+				+ " a fire pit, and a small table with chairs to eat.",
+				"To the north you can see the enterance to the back porch."
 				);
 		
 		setUpExits(frontPorch, null, hallway, null, null);
@@ -137,18 +153,25 @@ public class RoomManager {
 		
 		
 		setUpExits(diningroom, null, office, hallway, null);
+		RoomItem chair = new Chair("chair", "short", "long");
+		diningroom.setItems(0, chair);
 		rooms[3] = diningroom;
 		
 		setUpExits(foyer, bathroom, null, bedroom, hallway);
 		rooms[4] = foyer;
 		
 		setUpExits(bedroom, null, null, null, foyer);
+		RoomItem bed = new Bed("bed", "short", "long");
+		bedroom.setItems(0, bed);
 		rooms[5] = bedroom;
 		
 		setUpExits(garage, null, familyRoom, null, null);
 		rooms[6] = garage;
 		
 		setUpExits(office, diningroom, null, kitchen, null);
+		RoomItem desk = new Desk("Computer Desk", "Duel Monitor Gaming Desk", 
+				  "Professional streamer setup complete with triple monitors, and stacked empty cans of mountain dew.");
+		office.setItems(0, desk);
 		rooms[7] = office;
 		
 		setUpExits(kitchen, hallway, null, dinette, office);
@@ -158,6 +181,8 @@ public class RoomManager {
 		rooms[9] = dinette;
 		
 		setUpExits(familyRoom, garage, backPorch, null, dinette);
+		RoomItem tv = new Television("Television", "Big Television", "80 inch 4k hd curved tv");
+		familyRoom.setItems(0, tv);
 		rooms[10] = familyRoom;
 		
 		setUpExits(closet, dinette, null, null, null);
@@ -167,6 +192,8 @@ public class RoomManager {
 		rooms[12] = backPorch;
 		
 		setUpExits(backYard, backPorch, null, null, null);
+		RoomItem pool = new SwimmingPool("Swimming Pool", "large swimming pool", "20 foot in-ground pool with tanning deck and swim up tiki bar. :)");
+		backYard.setItems(0, pool);
 		rooms[13] = backYard;
 		
 		

@@ -2,8 +2,8 @@ package fixtures;
 
 public class Bed extends RoomItem implements Interactable{
 
-	public Bed() {
-		super("Bed", "Big Bed", "Big Comfy Bed");
+	public Bed(String name, String shortDesc, String longDesc) {
+		super(name, shortDesc, longDesc);
 	}
 
 	@Override

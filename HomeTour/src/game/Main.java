@@ -29,10 +29,6 @@ public class Main {
 		roomManager.init();
 		player.setCurrentRoom(roomManager.getSpecificRoom(0));
 		
-		Room r = roomManager.getSpecificRoom(2);
-		RoomItem ri = r.getItems(0);
-		ri.interact();
-		
 		printGreeting();
 		
 		while(continueGame)
@@ -84,25 +80,25 @@ public class Main {
 		{
 			if(details == "NORTH")
 			{
-				System.out.println("north");
+				//System.out.println("north");
 				changeRooms(player, 0);
 				
 			}
 			else if(details == "SOUTH")
 			{
-				System.out.println("south");
+				//System.out.println("south");
 				changeRooms(player, 1);
 				
 			}
 			else if(details == "EAST")
 			{
-				System.out.println("east");
+				//System.out.println("east");
 				changeRooms(player, 2);
 				
 			}
 			else if(details == "WEST")
 			{
-				System.out.println("west");
+				//System.out.println("west");
 				changeRooms(player, 3);
 				
 			}
@@ -113,7 +109,7 @@ public class Main {
 		}
 		else if (action == "INTERACT" || action == "USE")
 		{
-			//IMPLEMENT THIS NOWWWW
+			useItem(player);
 		}
 		else if (action == "QUIT")
 		{
@@ -137,15 +133,17 @@ public class Main {
 		if(r != null)
 		{
 			p.setCurrentRoom(r);
-			System.out.println(p.getCurrentRoom());
+			//System.out.println(p.getCurrentRoom());
 		}
 		else
 		System.out.println("There are no rooms in that direction...");
 	}
 	
-	private static void useItem()
+	private static void useItem(Player p)
 	{
-		//get er tf goin
+		Room r = p.getCurrentRoom();
+		RoomItem ri = r.getItems(0);
+		ri.interact();
 	}
 	
 		

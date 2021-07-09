@@ -2,9 +2,8 @@ package fixtures;
 
 public class Desk extends RoomItem implements Interactable{
 
-	public Desk() {
-		super("Computer Desk", "Duel Monitor Gaming Desk", 
-			  "Professional streamer setup complete with triple monitors, and stacked empty cans of mountain dew.");
+	public Desk(String name, String shortDesc, String longDesc) {
+		super(name, shortDesc, longDesc);
 		// TODO Auto-generated constructor stub
 	}
 

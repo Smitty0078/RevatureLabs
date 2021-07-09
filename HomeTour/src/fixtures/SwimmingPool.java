@@ -2,8 +2,8 @@ package fixtures;
 
 public class SwimmingPool extends RoomItem implements Interactable {
 
-	public SwimmingPool() {
-		super("Swimming Pool", "large swimming pool", "20 foot in-ground pool with tanning deck and swim up tiki bar. :)");
+	public SwimmingPool(String name, String shortDesc, String longDesc) {
+		super(name, shortDesc, longDesc);
 	}
 
 	@Override
