@@ -6,16 +6,17 @@ import fixtures.*;
 
 public class RoomManager {
 
-	private final Room startingRoom;
+	private Room startingRoom;
 	private Room [] rooms = new Room[14];
 	
-	public RoomManager(Room r)
-	{
-		this.startingRoom = r;
-	}
 	
 	public Room getStartingRoom() {
 		return startingRoom;
+	}
+	
+	public void setStartingRoom(Room r)
+	{
+		startingRoom = r;
 	}
 
 	public Room[] getRooms() {
@@ -124,6 +125,7 @@ public class RoomManager {
 		
 		setUpExits(frontPorch, null, hallway, null, null);
 		rooms[0] = frontPorch;
+		setStartingRoom(rooms[0]);
 		
 		setUpExits(hallway, frontPorch, kitchen, foyer, diningroom);
 		rooms[1] = hallway;
@@ -175,6 +177,11 @@ public class RoomManager {
 		room.setSpecificExit(1, southRoom);
 		room.setSpecificExit(2, eastRoom);
 		room.setSpecificExit(3, westRoom);
+	}
+	
+	public void setUpItems(Room r)
+	{
+		
 	}
 	
 	
