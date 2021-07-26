@@ -115,7 +115,7 @@ public class Main {
 				System.out.println("Invalid direction");
 			}
 		}
-		else if (action == "INTERACT" || action == "USE") // used for interatable objects
+		else if (action == "INTERACT" || action == "USE") // used for interactable objects
 		{
 			useItem(player, details);
 		}
@@ -134,6 +134,7 @@ public class Main {
 		
 	}
 	
+	//------------------------------------------------------------------------------------------------------------------------
 	//handles movement between rooms
 	private static void changeRooms(Player p, int i)
 	{
@@ -147,6 +148,7 @@ public class Main {
 		System.out.println("There are no rooms in that direction...");
 	}
 	
+	//------------------------------------------------------------------------------------------------------------------------
 	//handles interaction between objects
 	private static void useItem(Player p, String details)
 	{
