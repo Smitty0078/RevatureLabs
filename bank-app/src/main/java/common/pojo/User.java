@@ -1,18 +1,23 @@
 package common.pojo;
 
-public abstract class Account {
+public class User {
 
 	private String name;
 	private String username;
 	private String password;
 	private int id;
+	//no setter for this we don't want this to be changed unless we're creating
+	//a new user....	
+	private static int idCtr = 1;
 	
-	
-	public Account(String name, String username, String password, int id) {
+	public User(String name, String username, String password) {
 		super();
 		this.name = name;
 		this.username = username;
 		this.password = password;
+		this.id = idCtr;
+		//this ensures that each id will be unique
+		idCtr++;
 	}
 	
 	public String getName() {
@@ -38,11 +43,7 @@ public abstract class Account {
 
 	@Override
 	public String toString() {
-		return "Account [name=" + name + ", username=" + username + ", password=" + password + "]";
+		return "User [name=" + name + ", username=" + username + ", password=" + password + "]";
 	}
-	
-	
-	
-	
 	
 }

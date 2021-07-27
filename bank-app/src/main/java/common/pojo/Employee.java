@@ -1,9 +1,10 @@
 package common.pojo;
 
-public class Employee extends Account {
+//TODO: should employee extend User? Where should they be stored - if at all...
+public class Employee {
 
-	public Employee(String name, String username, String password, int id) {
-		super(name, username, password, id);
+	public Employee(int id, String name, String username, String password) {
+		
 	}
 	
 	public boolean approveOrDeny(String bankingHistory) {

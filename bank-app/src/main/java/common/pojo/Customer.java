@@ -1,11 +1,12 @@
 package common.pojo;
 
-public class Customer extends Account{
+public class Customer extends User{
 
 	private String bankingHistory; // can be GOOD or BAD
+	private double balance;
 	
-	public Customer(String name, String username, String password, int id, String bankingHistory) {
-		super(name, username, password, id);
+	public Customer(String name, String username, String password, String bankingHistory) {
+		super(name, username, password);
 		this.bankingHistory = bankingHistory;
 	}
 
