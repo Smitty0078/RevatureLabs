@@ -1,9 +1,15 @@
 package client;
 
+import java.sql.SQLException;
 import java.util.Scanner;
+
+import common.pojo.Customer;
+import common.util.AppConstants;
+import service.BankService;
 
 public class ConsoleApp {
 	
+	private BankService service = new BankService();
 	private static boolean exit = false; 
 	private Scanner scanner;
 /* Description:
@@ -14,10 +20,17 @@ public class ConsoleApp {
 		String input;
 		scanner = new Scanner(System.in);
 		while(!exit) {
+			
+			/*uncomment for main implementation
 			greeting();
 			input = scanner.next();
 			parse(input);
+			*/
 			
+			createCustomerAccount();
+			
+			//comment out for main implementation
+			exit=true;
 		}
 		
 		
@@ -53,7 +66,7 @@ public class ConsoleApp {
 				employeeSignIn();
 				break;
 			case "3":
-				createNewAccount();
+				createCustomerAccount();
 				break;
 			case "4":
 				exit();
@@ -89,9 +102,31 @@ public class ConsoleApp {
  * Pre-conditions: input = 3
  * Post-conditions:	TODO: update if needed
  */
-	public void createNewAccount() {
-		System.out.println("create new account");
-		//TODO: wire service object here...
+	public void createCustomerAccount() {
+		
+		System.out.println("create customer CLIENT layer");
+		
+		//testing stuff
+		//String daoTest = "daoTest";
+		//double testBalance = 0.0;
+		//Customer test = new Customer(daoTest, daoTest, daoTest, testBalance);
+		//test.setBankingHistory(AppConstants.BANK_HISTORY_GOOD);
+		
+		Customer customer = getNewCustomer();
+		System.out.println(customer.toString());
+		
+		int result;
+		try {
+			//TODO: CALL EMPLOYEE METHOD TO APPOROVE OR DENY BASED ON BANKING HISTORy
+			result = service.createCustomerAccount(customer);
+			System.out.println("num of rows affected: "+result);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 //--------------------------------------------------------------	
@@ -112,8 +147,63 @@ public class ConsoleApp {
 	public void invalidInput() {
 		System.out.println("Invalid input.");
 	}
-
 	
+//--------------------------------------------------------------	
+/* Description:
+ * Pre-conditions:
+ * Post-conditions:	
+ */
+	public Customer getNewCustomer() {
+		String name;
+		String username;
+		String password;
+		double startingBalance = 0;
+		
+		name = getNewCustomerInput("first name");
+		name += " "+getNewCustomerInput("last name");
+		//TOD0: CHECK FOR EXISTING USERNAME
+		username = getNewCustomerInput("username");
+		password = getNewCustomerInput("password");
+		startingBalance = getStartingBalance();
+		
+		Customer c = new Customer(name, username, password, startingBalance);
+		return c;
+	}
+
+//--------------------------------------------------------------	
+/* Description:
+ * Pre-conditions:
+ * Post-conditions:	
+ */
+	public String getNewCustomerInput(String custAttribute) {
+		String input;
+		System.out.println("Please enter your "+custAttribute+" :");
+		input = scanner.next();
+		return input;
+	}
+	
+//--------------------------------------------------------------	
+/* Description:
+ * Pre-conditions:
+ * Post-conditions:	
+ */
+	public double getStartingBalance() {
+		boolean validated = false;
+		String amount;
+		double startingBalance = 0;
+		do {
+			try {
+				amount = getNewCustomerInput("starting account balance");
+				startingBalance = Double.valueOf(amount);
+				validated = true;
+			} catch(NumberFormatException e) {
+				System.out.println("Please enter a decimal value.\n");
+			}
+		}while(!validated);
+		return startingBalance;
+	}
+	
+
 	
 	
 	

@@ -8,7 +8,7 @@ public class User {
 	private int id;
 	//no setter for this we don't want this to be changed unless we're creating
 	//a new user....	
-	private static int idCtr = 1;
+	private static int idCtr = 3;
 	
 	public User(String name, String username, String password) {
 		super();
@@ -20,16 +20,26 @@ public class User {
 		idCtr++;
 	}
 	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getUsername() {
+	public String getUserName() {
+		//need security here
 		return username;
 	}
-	public void setUsername(String username) {
+	public void setUserName(String username) {
+		//need security here
 		this.username = username;
 	}
 	public String getPassword() {
@@ -43,7 +53,9 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [name=" + name + ", username=" + username + ", password=" + password + "]";
+		return "User [id=" + id + ", name=" + name + ", username=" + username + ", password=" + password + "]";
 	}
+
+	
 	
 }
