@@ -72,4 +72,9 @@ public class CustomerDAO {
 		return rs;
 	}
 
+	public void deposit(Customer customer, double amt) {
+		System.out.println("DEPOSIT DAO LAYER");
+		
+	}
+
 }

@@ -191,8 +191,14 @@ public class ConsoleApp {
  */
 	private void deposit(Customer customer, Scanner scanner) {
 		// TODO Auto-generated method stub
-		System.out.println("deposit");
-		System.out.println(customer.toString());
+		double amt = 0;
+		//this handles negative values
+		do {
+			amt = getDoubleInput("amount to deposit");
+			if(amt <= 0)
+				System.out.println("Invalid input: cannot deposit a negative amount.");
+		}while(amt <= 0.0);
+		service.deposit(customer, amt);
 	}
 
 	//--------------------------------------------------------------	
@@ -202,6 +208,7 @@ public class ConsoleApp {
  */
 	private void viewBalance(Customer customer) {
 			System.out.println("The current account balance is: $"+customer.getBalance());
+			//TODO: ADD QUERY LINK WITH SERVICE / DAO
 	}
 
 //--------------------------------------------------------------	
@@ -276,7 +283,7 @@ public class ConsoleApp {
 		//TOD0: CHECK FOR EXISTING USERNAME
 		username = getInput("username");
 		password = getInput("password");
-		startingBalance = getStartingBalance();
+		startingBalance = getDoubleInput("starting account balance");
 		
 		Customer c = new Customer(name, username, password, startingBalance);
 		return c;
@@ -299,17 +306,17 @@ public class ConsoleApp {
  * Pre-conditions:
  * Post-conditions:	
  */
-	public double getStartingBalance() {
+	public double getDoubleInput(String message) {
 		boolean validated = false;
 		String amount;
 		double startingBalance = 0;
 		do {
 			try {
-				amount = getInput("starting account balance");
+				amount = getInput(message);
 				startingBalance = Double.valueOf(amount);
 				validated = true;
 			} catch(NumberFormatException e) {
-				System.out.println("Please enter a decimal value.\n");
+				System.out.println("Please enter a decimal number value.\n");
 			}
 		}while(!validated);
 		return startingBalance;

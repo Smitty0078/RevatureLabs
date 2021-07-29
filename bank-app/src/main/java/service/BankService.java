@@ -19,6 +19,12 @@ public class BankService {
 	public Customer customerSignIn(String username, String password, List<String> messages) throws SQLException, Exception {
 		return custDAO.customerSignIn(username, password, messages);
 	}
+
+	public void deposit(Customer customer, double amt) {
+		System.out.println("DEPOSIT SERVICE LAYER");
+		custDAO.deposit(customer, amt);
+		
+	}
 	
 	
 }
