@@ -61,20 +61,19 @@ public class CustomerDAO {
 			{
 				if(notNull(pwd))
 				{
-					System.out.println("rs is null");
 					Customer c = new Customer(name, uname, pwd, amt);
 					return c;
 				}
 				else{
 					//throw invalid password exception
 					System.out.println("Invalid password...");
-					throw new NullPointerException();
+					//throw new NullPointerException();
 				}
 			}
 			else {
 				//throw invalid username exception
 				System.out.println("Invalid username...");
-				throw new NullPointerException();
+				//throw new NullPointerException();
 			}
 			
 		}

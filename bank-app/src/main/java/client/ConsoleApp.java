@@ -98,6 +98,7 @@ public class ConsoleApp {
 			Customer customer = service.customerSignIn(username, password);
 			//TODO: HANDLE NULL USERNAME AND PASSWORD
 			System.out.println(customer.toString());
+			//ADD MORE FUNCTIONALITY HERE
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -105,8 +106,19 @@ public class ConsoleApp {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		customerMenu();
 	}
-	
+//--------------------------------------------------------------	
+/* Description: Called when user has selected to create a new account
+ * Pre-conditions: input = 3
+ * Post-conditions:	TODO: update if needed
+ */	
+	private void customerMenu() {
+		// TODO Auto-generated method stub
+		System.out.println("I am in customer menu!!!");
+	}
+
 //--------------------------------------------------------------	
 /* Description: Called when user has selected to sign in as an employee
  * Pre-conditions: input = 2
