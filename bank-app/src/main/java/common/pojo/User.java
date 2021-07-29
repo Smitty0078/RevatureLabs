@@ -8,7 +8,7 @@ public class User {
 	private int id;
 	//no setter for this we don't want this to be changed unless we're creating
 	//a new user....	
-	private static int idCtr = 3;
+	private static int idCtr = 1;
 	
 	public User(String name, String username, String password) {
 		super();

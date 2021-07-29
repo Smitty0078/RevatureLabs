@@ -27,7 +27,9 @@ public class ConsoleApp {
 			parse(input);
 			*/
 			
-			createCustomerAccount();
+			//createCustomerAccount();
+			
+			customerSignIn();
 			
 			//comment out for main implementation
 			exit=true;
@@ -82,8 +84,27 @@ public class ConsoleApp {
  * Post-conditions:	TODO: update if needed
  */
 	public void customerSignIn() {
-		System.out.println("customer sign in");
-		//TODO: wire service object here...
+		
+		System.out.println("customer sign in CLIENT layer");
+		String username;
+		String password;
+		
+		username = getInput("username");
+		password = getInput("password");
+		
+		System.out.println("username="+username+" password="+password);
+		
+		try {
+			Customer customer = service.customerSignIn(username, password);
+			//TODO: HANDLE NULL USERNAME AND PASSWORD
+			System.out.println(customer.toString());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 //--------------------------------------------------------------	
@@ -95,8 +116,7 @@ public class ConsoleApp {
 		System.out.println("employee sign in");
 		//TODO: wire service object here...
 	}
-		
-		
+	
 //--------------------------------------------------------------	
 /* Description: Called when user has selected to create a new account
  * Pre-conditions: input = 3
@@ -104,17 +124,10 @@ public class ConsoleApp {
  */
 	public void createCustomerAccount() {
 		
-		System.out.println("create customer CLIENT layer");
-		
-		//testing stuff
-		//String daoTest = "daoTest";
-		//double testBalance = 0.0;
-		//Customer test = new Customer(daoTest, daoTest, daoTest, testBalance);
-		//test.setBankingHistory(AppConstants.BANK_HISTORY_GOOD);
-		
 		Customer customer = getNewCustomer();
 		System.out.println(customer.toString());
 		
+		//TODO: ADD APPROVE OR DENY EMPLOYEE METHOD HERE
 		int result;
 		try {
 			//TODO: CALL EMPLOYEE METHOD TO APPOROVE OR DENY BASED ON BANKING HISTORy
@@ -159,11 +172,12 @@ public class ConsoleApp {
 		String password;
 		double startingBalance = 0;
 		
-		name = getNewCustomerInput("first name");
-		name += " "+getNewCustomerInput("last name");
+		name = getInput("first name");
+		//TODO: USE STRINGBUILDER HERE
+		name += " "+getInput("last name");
 		//TOD0: CHECK FOR EXISTING USERNAME
-		username = getNewCustomerInput("username");
-		password = getNewCustomerInput("password");
+		username = getInput("username");
+		password = getInput("password");
 		startingBalance = getStartingBalance();
 		
 		Customer c = new Customer(name, username, password, startingBalance);
@@ -175,7 +189,7 @@ public class ConsoleApp {
  * Pre-conditions:
  * Post-conditions:	
  */
-	public String getNewCustomerInput(String custAttribute) {
+	public String getInput(String custAttribute) {
 		String input;
 		System.out.println("Please enter your "+custAttribute+" :");
 		input = scanner.next();
@@ -193,7 +207,7 @@ public class ConsoleApp {
 		double startingBalance = 0;
 		do {
 			try {
-				amount = getNewCustomerInput("starting account balance");
+				amount = getInput("starting account balance");
 				startingBalance = Double.valueOf(amount);
 				validated = true;
 			} catch(NumberFormatException e) {

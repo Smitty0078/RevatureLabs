@@ -15,5 +15,10 @@ public class BankService {
 		return custDAO.createCustomerAccount(c);
 	}
 	
+	public Customer customerSignIn(String username, String password) throws SQLException, Exception {
+		System.out.println("customer sign in SERVICE layer");
+		return custDAO.customerSignIn(username, password);
+	}
+	
 	
 }
