@@ -1,6 +1,8 @@
 package client;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import common.pojo.Customer;
@@ -20,19 +22,9 @@ public class ConsoleApp {
 		String input;
 		scanner = new Scanner(System.in);
 		while(!exit) {
-			
-			/*uncomment for main implementation
-			greeting();
+			appGreeting();
 			input = scanner.next();
-			parse(input);
-			*/
-			
-			//createCustomerAccount();
-			
-			customerSignIn();
-			
-			//comment out for main implementation
-			exit=true;
+			parse(input, scanner);
 		}
 		
 		
@@ -44,8 +36,8 @@ public class ConsoleApp {
  * Pre-conditions:
  * Post-conditions:	
  */
-	public void greeting(){
-		System.out.println("Welcome To Our Banking App!\n"
+	public void appGreeting(){
+		System.out.println("\nWelcome To Our Banking App!\n"
 							+ "\nWhat would you like to do?\n"
 							+ "Customer Sign In:   ENTER 1\n"
 							+ "Employee Sign In:   ENTER 2\n"
@@ -59,10 +51,10 @@ public class ConsoleApp {
  * Pre-conditions: Input must be passed as a string value
  * Post-conditions:	none
  */
-	public void parse(String input) {
+	public void parse(String input, Scanner scanner) {
 		switch(input) {
 			case "1":
-				customerSignIn();
+				customerSignIn(scanner);
 				break;
 			case "2":
 				employeeSignIn();
@@ -83,22 +75,24 @@ public class ConsoleApp {
  * Pre-conditions: Input = 1
  * Post-conditions:	TODO: update if needed
  */
-	public void customerSignIn() {
-		
-		System.out.println("customer sign in CLIENT layer");
+	public void customerSignIn(Scanner scanner) {
 		String username;
 		String password;
+		List<String> messages = new <String>ArrayList();
 		
 		username = getInput("username");
 		password = getInput("password");
 		
-		System.out.println("username="+username+" password="+password);
-		
 		try {
-			Customer customer = service.customerSignIn(username, password);
-			//TODO: HANDLE NULL USERNAME AND PASSWORD
-			System.out.println(customer.toString());
-			//ADD MORE FUNCTIONALITY HERE
+			Customer customer = service.customerSignIn(username, password, messages);
+			if(messages.isEmpty()){
+				customerMenu(customer, scanner);
+			}else {
+				printSignInMessages(messages);
+				//recursion provides a solution to account not found
+				customerSignIn(scanner);
+			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -106,19 +100,114 @@ public class ConsoleApp {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		customerMenu();
 	}
+	
 //--------------------------------------------------------------	
-/* Description: Called when user has selected to create a new account
- * Pre-conditions: input = 3
- * Post-conditions:	TODO: update if needed
+/* Description:
+ * Pre-conditions:
+ * Post-conditions:
  */	
-	private void customerMenu() {
-		// TODO Auto-generated method stub
-		System.out.println("I am in customer menu!!!");
+	public void printSignInMessages(List<String> messages) {
+		System.out.println("Account not found: ");
+		for(String s : messages){
+			System.out.println(s);
+		}
+	}
+	
+//--------------------------------------------------------------	
+/* Description: 
+ * Pre-conditions: 
+ * Post-conditions:	
+ */	
+	private void customerMenu(Customer customer, Scanner scanner) {
+		boolean signout = false;
+		do {
+			System.out.println("\nWhat would you like to do?\n"
+							 + "View Balance: ENTER 1\n"
+							 + "Deposit:      ENTER 2\n"
+							 + "Withdraw:     ENTER 3\n"
+							 + "Transfer:     ENTER 4\n"
+							 + "Sign out:     ENTER 5\n");
+			
+			String input = scanner.next();
+			signout = parseCustomerOption(input, customer);
+		}while(!signout);
 	}
 
+//--------------------------------------------------------------	
+/* Description: 
+ * Pre-conditions: 
+ * Post-conditions:	
+ */
+	private boolean parseCustomerOption(String input, Customer customer) {
+			switch(input) {
+			case "1":
+				viewBalance(customer);
+				break;
+			case "2":
+				deposit(customer, scanner);
+				break;
+			case "3":
+				withdraw(customer, scanner);
+				break;
+			case "4":
+				transfer(customer, scanner);
+				break;
+			case "5":
+				System.out.println("Signing off...");
+				return true;
+			default:
+				invalidInput();
+		}
+			return false;
+	}
+
+	//--------------------------------------------------------------	
+/* Description: 
+ * Pre-conditions: 
+ * Post-conditions:	
+ */
+	private void transfer(Customer customer, Scanner scanner2) {
+		// TODO Auto-generated method stub
+		System.out.println("transfer");
+		System.out.println(customer.toString());
+	}
+
+//--------------------------------------------------------------	
+/* Description: 
+ * Pre-conditions: 
+ * Post-conditions:	
+ */
+	private void withdraw(Customer customer, Scanner scanner2) {
+		System.out.println("withdraw");
+		System.out.println(customer.toString());
+		
+	}
+
+	//--------------------------------------------------------------	
+/* Description:
+ * Pre-conditions: 
+ * Post-conditions:	
+ */
+	private void deposit(Customer customer, Scanner scanner) {
+		// TODO Auto-generated method stub
+		System.out.println("deposit");
+		System.out.println(customer.toString());
+	}
+
+	//--------------------------------------------------------------	
+/* Description: 
+ * Pre-conditions: 
+ * Post-conditions:	
+ */
+	private void viewBalance(Customer customer) {
+			System.out.println("view balance");
+			System.out.println(customer.toString());
+			
+	}
+
+	
+	
 //--------------------------------------------------------------	
 /* Description: Called when user has selected to sign in as an employee
  * Pre-conditions: input = 2
@@ -137,6 +226,7 @@ public class ConsoleApp {
 	public void createCustomerAccount() {
 		
 		Customer customer = getNewCustomer();
+		//check for username already exists
 		System.out.println(customer.toString());
 		
 		//TODO: ADD APPROVE OR DENY EMPLOYEE METHOD HERE
