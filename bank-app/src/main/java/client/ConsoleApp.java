@@ -196,18 +196,14 @@ public class ConsoleApp {
 	}
 
 	//--------------------------------------------------------------	
-/* Description: 
- * Pre-conditions: 
- * Post-conditions:	
+/* Description: Displays the balance data retrieved.
+ * Pre-conditions: Customer is not null
+ * Post-conditions:	Customer balance is printed to the console
  */
 	private void viewBalance(Customer customer) {
-			System.out.println("view balance");
-			System.out.println(customer.toString());
-			
+			System.out.println("The current account balance is: $"+customer.getBalance());
 	}
 
-	
-	
 //--------------------------------------------------------------	
 /* Description: Called when user has selected to sign in as an employee
  * Pre-conditions: input = 2
