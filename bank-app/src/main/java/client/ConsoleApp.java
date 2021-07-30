@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import common.pojo.Customer;
+import common.pojo.Transaction;
 import common.util.AppConstants;
 import service.BankService;
 
@@ -78,7 +79,7 @@ public class ConsoleApp {
 	public void customerSignIn(Scanner scanner) {
 		String username;
 		String password;
-		List<String> messages = new <String>ArrayList();
+		List<String> messages = new ArrayList<String>();
 		
 		username = getInput("username");
 		password = getInput("password");
@@ -123,11 +124,12 @@ public class ConsoleApp {
 		boolean signout = false;
 		do {
 			System.out.println("\nWhat would you like to do?\n"
-							 + "View Balance: ENTER 1\n"
-							 + "Deposit:      ENTER 2\n"
-							 + "Withdraw:     ENTER 3\n"
-							 + "Transfer:     ENTER 4\n"
-							 + "Sign out:     ENTER 5\n");
+							 + "View Balance:          ENTER 1\n"
+							 + "Deposit:               ENTER 2\n"
+							 + "Withdraw:              ENTER 3\n"
+							 + "View Transactions:     ENTER 4\n"
+							 + "Transfer Funds:        ENTER 5\n"
+							 + "Sign out:              ENTER 6\n");
 			
 			String input = scanner.next();
 			signout = parseCustomerOption(input, customer);
@@ -151,9 +153,12 @@ public class ConsoleApp {
 				withdraw(customer, scanner);
 				break;
 			case "4":
-				transfer(customer, scanner);
+				viewTransactions(customer, scanner);
 				break;
 			case "5":
+				transfer(customer, scanner);
+				break;
+			case "6":
 				System.out.println("Signing off...");
 				return true;
 			default:
@@ -161,21 +166,85 @@ public class ConsoleApp {
 		}
 			return false;
 	}
+	
+	//--------------------------------------------------------------	
+/* Description: 
+ * Pre-conditions: 
+ * Post-conditions:	
+ */
+	public void viewTransactions(Customer customer, Scanner scanner) {
+		System.out.println("VIEW TRANSACTIONS CLIENT LAYER");
+		List<Transaction> transactions = null;
+		try {
+			transactions = service.getTransactions(customer);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		if(!transactions.isEmpty()) {
+			for(Transaction t : transactions) {
+				System.out.println(t.toString());
+				if(t.getStatus() == AppConstants.TRANSACTION_PENDING) {
+					System.out.println("In comparison statement PENDING");
+					//handleTransaction(customer, t);
+				}
+			}
+			
+			//TODO: SEARCH FOR PENDING TRANSACTIONS HANDLE THEM HERE!!!
+		}else {
+			System.out.println("No transactions available.");
+		}
+		
+	}
+
+	private void handleTransaction(Customer customer, Transaction t) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	//--------------------------------------------------------------	
 /* Description: 
  * Pre-conditions: 
  * Post-conditions:	
  */
-	private void transfer(Customer customer, Scanner scanner2) {
-		// TODO Auto-generated method stub
+	private void transfer(Customer customer, Scanner scanner) {
 		System.out.println("transfer");
-		System.out.println(customer.toString());
+		String reciever = getInput("transfer reciever username");
+		String sender = customer.getUserName();
+		double amount = getDoubleInput("transfer amount");
+		String status = AppConstants.TRANSACTION_PENDING;
+		String type = getTransactionTypt(reciever, scanner);
+		
+		
+		
 		//deposit to receiving account
 		//withdrawl from sending account
 	}
 
-//--------------------------------------------------------------	
+private String getTransactionTypt(String user, Scanner scanner) {
+	boolean valid = false;
+	String type = null;
+	do {
+			System.out.println("\nWhich transaction would you like:\n" 
+					          + "Request Funds From " + user + ": Enter 1\n"
+					          + "Transfer Funds To " + user + ": Enter 2\n");
+			String input = scanner.next();
+			if(input == "1") {
+				type = AppConstants.ACCOUNT_WITHDRAW;
+				valid = true;
+			}else if(input == "2") {
+				type = AppConstants.ACCOUNT_DEPOSIT;
+				valid = true;
+			}
+		} while (!valid);
+		return type;
+	}
+
+	//--------------------------------------------------------------	
 /* Description: 
  * Pre-conditions: 
  * Post-conditions:	

@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import common.pojo.Customer;
+import common.pojo.Transaction;
 import dao.CustomerDAO;
 
 public class BankService {
@@ -24,6 +25,11 @@ public class BankService {
 		System.out.println("DEPOSIT SERVICE LAYER");
 		return custDAO.updateAccountBalance(customer, amt, transaction);
 		
+	}
+
+	public List<Transaction> getTransactions(Customer c) throws SQLException, Exception {
+		System.out.println("VIEW TRANSACTIONS SERVICE LAYER");
+		return custDAO.getTransactions(c);
 	}
 	
 	

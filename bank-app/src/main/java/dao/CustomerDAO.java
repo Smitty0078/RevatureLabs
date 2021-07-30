@@ -4,9 +4,11 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import common.util.AppConstants;
 import common.pojo.Customer;
+import common.pojo.Transaction;
 import common.util.DBUtil;
 
 public class CustomerDAO {
@@ -94,6 +96,26 @@ public class CustomerDAO {
 	}
 	private void withdrawl(Customer c, double amt) {
 		c.setBalance(c.getBalance() - amt);
+	}
+
+	public List<Transaction> getTransactions(Customer c) throws SQLException, Exception {
+		System.out.println("VIEW TRANSACTIONS CLIENT LAYER");
+		Connection conn = DBUtil.getInstance().getConnection();
+		List<Transaction> transactions = new ArrayList<Transaction>();
+		
+		PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM bank.transactions WHERE reciever=?");
+		
+		pstmt.setString(1, c.getUserName());
+		
+		ResultSet rs = pstmt.executeQuery();
+		
+		while(rs.next()){				//     id            reciever          sender           amount           status           type
+			Transaction t = new Transaction(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getDouble(4), rs.getString(5), rs.getString(6));
+			transactions.add(t);
+		}
+		
+		return transactions;
+		
 	}
 
 }

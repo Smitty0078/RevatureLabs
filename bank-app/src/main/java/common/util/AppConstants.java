@@ -13,4 +13,9 @@ public interface AppConstants {
 	public static final String ACCOUNT_DEPOSIT = "DEPOSIT";
 	public static final String ACCOUNT_WITHDRAW = "WITHDRAW";
 	
+	public static final String TRANSACTION_APPROVED = "APPROVED";
+	public static final String TRANSACTION_DENIED = "DENIED";
+	public static final String TRANSACTION_PENDING = "PENDING";
+	public static final String TRANSACTION_SUCCESSFUL = "SUCCESSFUL";
+	
 }

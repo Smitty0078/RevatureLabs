@@ -17,7 +17,6 @@ public class User {
 		this.password = password;
 		this.id = idCtr;
 		//this ensures that each id will be unique
-		idCtr++;
 	}
 	
 	public int getId() {
@@ -49,6 +48,10 @@ public class User {
 	public void setPassword(String password) {
 		//TODO: Need some security here
 		this.password = password;
+	}
+	
+	public void incrementIdCtr() {
+		this.idCtr++;
 	}
 
 	@Override
