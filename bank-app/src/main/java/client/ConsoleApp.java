@@ -219,6 +219,7 @@ public class ConsoleApp {
 		String status = AppConstants.TRANSACTION_PENDING;
 		String type = getTransactionTypt(reciever, scanner);
 		
+		Transaction t = new Transaction(reciever, sender, amount, status, type);
 		
 		
 		//deposit to receiving account

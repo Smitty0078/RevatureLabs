@@ -14,7 +14,7 @@ public class Transaction {
 	
 	public Transaction(int id, String reciever, String sender, double amount, String status, String type) {
 		super();
-		this.id = idCtr;
+		this.id = id;
 		this.reciever = reciever;
 		this.sender = sender;
 		this.amount = amount;
@@ -22,12 +22,21 @@ public class Transaction {
 		this.type = type;
 	}
 
-	public Transaction(String sender, float amount) {
+	
+	//used for creating new transaction
+	public Transaction(String reciever, String sender, double amount, String status, String type) {
 		super();
+		this.id = idCtr;
+		this.reciever = reciever;
 		this.sender = sender;
 		this.amount = amount;
+		this.status = status;
+		this.type = type;
+		incrementIdCtr();
 	}
-	
+
+
+
 	public Transaction() {
 		super();
 	}
@@ -80,7 +89,7 @@ public class Transaction {
 		this.type = type;
 	}
 	
-	public void incrementIdCtr() {
+	private void incrementIdCtr() {
 		this.idCtr++;
 	}
 
