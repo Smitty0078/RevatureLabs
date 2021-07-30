@@ -10,4 +10,7 @@ public interface AppConstants {
 	public static final String BANK_HISTORY_GOOD = "GOOD";
 	public static final String BANK_HISTORY_BAD = "BAD";
 	
+	public static final String ACCOUNT_DEPOSIT = "DEPOSIT";
+	public static final String ACCOUNT_WITHDRAW = "WITHDRAW";
+	
 }

@@ -171,6 +171,8 @@ public class ConsoleApp {
 		// TODO Auto-generated method stub
 		System.out.println("transfer");
 		System.out.println(customer.toString());
+		//deposit to receiving account
+		//withdrawl from sending account
 	}
 
 //--------------------------------------------------------------	
@@ -179,8 +181,24 @@ public class ConsoleApp {
  * Post-conditions:	
  */
 	private void withdraw(Customer customer, Scanner scanner2) {
-		System.out.println("withdraw");
-		System.out.println(customer.toString());
+		double amt = 0;
+		int rowsAffected;
+		//this handles negative values
+		do {
+			amt = getDoubleInput("amount to withdrawl");
+			if(amt <= 0)
+				System.out.println("Invalid input: cannot withdrawl a negative amount.");
+		}while(amt <= 0.0);
+		try {
+			rowsAffected = service.updateAccountBalance(customer, amt, AppConstants.ACCOUNT_WITHDRAW);
+			System.out.println("rows affected: "+rowsAffected);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 
@@ -192,13 +210,23 @@ public class ConsoleApp {
 	private void deposit(Customer customer, Scanner scanner) {
 		// TODO Auto-generated method stub
 		double amt = 0;
+		int rowsAffected;
 		//this handles negative values
 		do {
 			amt = getDoubleInput("amount to deposit");
 			if(amt <= 0)
 				System.out.println("Invalid input: cannot deposit a negative amount.");
 		}while(amt <= 0.0);
-		service.deposit(customer, amt);
+		try {
+			rowsAffected = service.updateAccountBalance(customer, amt, AppConstants.ACCOUNT_DEPOSIT);
+			System.out.println("rows affected: "+rowsAffected);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	//--------------------------------------------------------------	

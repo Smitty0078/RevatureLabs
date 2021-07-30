@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-
+import common.util.AppConstants;
 import common.pojo.Customer;
 import common.util.DBUtil;
 
@@ -38,7 +38,6 @@ public class CustomerDAO {
 		String uname = null;
 		String pwd = null;
 		double amt = 0;
-		StringBuilder build = new StringBuilder();
 		if(notNull(username) && notNull(password)) {
 			
 			ResultSet rs = getAccount(username, password, conn);
@@ -72,9 +71,29 @@ public class CustomerDAO {
 		return rs;
 	}
 
-	public void deposit(Customer customer, double amt) {
-		System.out.println("DEPOSIT DAO LAYER");
+	public int updateAccountBalance(Customer c, double amt, String transaction) throws SQLException, Exception {
+		Connection conn = DBUtil.getInstance().getConnection();
 		
+		if(transaction == AppConstants.ACCOUNT_DEPOSIT) {
+			deposit(c, amt);
+		}
+		else if(transaction == AppConstants.ACCOUNT_WITHDRAW) {
+			withdrawl(c, amt);
+		}
+
+		PreparedStatement pstmt = conn.prepareStatement("UPDATE bank.accounts SET amount=? WHERE username=?");
+		pstmt.setDouble(1, c.getBalance());
+		pstmt.setString(2, c.getUserName());
+		int rows = pstmt.executeUpdate();
+		
+		return rows;
+	}
+	
+	private void deposit(Customer c, double amt) {
+		c.setBalance(c.getBalance() + amt);
+	}
+	private void withdrawl(Customer c, double amt) {
+		c.setBalance(c.getBalance() - amt);
 	}
 
 }

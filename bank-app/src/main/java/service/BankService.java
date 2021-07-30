@@ -20,9 +20,9 @@ public class BankService {
 		return custDAO.customerSignIn(username, password, messages);
 	}
 
-	public void deposit(Customer customer, double amt) {
+	public int updateAccountBalance(Customer customer, double amt, String transaction) throws SQLException, Exception {
 		System.out.println("DEPOSIT SERVICE LAYER");
-		custDAO.deposit(customer, amt);
+		return custDAO.updateAccountBalance(customer, amt, transaction);
 		
 	}
 	
