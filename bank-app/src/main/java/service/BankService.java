@@ -31,6 +31,11 @@ public class BankService {
 		System.out.println("VIEW TRANSACTIONS SERVICE LAYER");
 		return custDAO.getTransactions(c);
 	}
+
+	public int createTransaction(Transaction transaction) throws SQLException, Exception {
+		System.out.println("CREATE TRANSACTION SERVICE LAYER");
+		return custDAO.createTransaction(transaction);
+	}
 	
 	
 }

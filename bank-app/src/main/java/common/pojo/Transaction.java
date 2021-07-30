@@ -96,7 +96,7 @@ public class Transaction {
 	@Override
 	public String toString() {
 		return "Transaction [id=" + id + ", reciever=" + reciever + ", sender=" + sender + ", amount=" + amount
-				+ ", status=" + status + "]";
+				+ ", status=" + status + ", type="+ type + "]";
 	}
 	
 	

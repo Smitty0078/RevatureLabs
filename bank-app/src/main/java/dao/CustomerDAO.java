@@ -94,12 +94,12 @@ public class CustomerDAO {
 	private void deposit(Customer c, double amt) {
 		c.setBalance(c.getBalance() + amt);
 	}
+	
 	private void withdrawl(Customer c, double amt) {
 		c.setBalance(c.getBalance() - amt);
 	}
 
 	public List<Transaction> getTransactions(Customer c) throws SQLException, Exception {
-		System.out.println("VIEW TRANSACTIONS CLIENT LAYER");
 		Connection conn = DBUtil.getInstance().getConnection();
 		List<Transaction> transactions = new ArrayList<Transaction>();
 		
@@ -116,6 +116,21 @@ public class CustomerDAO {
 		
 		return transactions;
 		
+	}
+
+	public int createTransaction(Transaction t) throws SQLException, Exception {
+		Connection conn = DBUtil.getInstance().getConnection();
+
+		PreparedStatement pstmt = conn.prepareStatement("INSERT INTO bank.transactions (id, reciever, sender, amount, status, type) values (?, ?, ?, ?, ?, ?)");
+		pstmt.setInt(1, t.getId());
+		pstmt.setString(2, t.getReciever());
+		pstmt.setString(3, t.getSender());
+		pstmt.setDouble(4, t.getAmount());
+		pstmt.setString(5, t.getStatus());
+		pstmt.setString(6, t.getType());
+		int rows = pstmt.executeUpdate();
+		
+		return rows;
 	}
 
 }

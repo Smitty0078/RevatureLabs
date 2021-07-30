@@ -188,7 +188,7 @@ public class ConsoleApp {
 		if(!transactions.isEmpty()) {
 			for(Transaction t : transactions) {
 				System.out.println(t.toString());
-				if(t.getStatus() == AppConstants.TRANSACTION_PENDING) {
+				if(t.getStatus().equals(AppConstants.TRANSACTION_PENDING)) {
 					System.out.println("In comparison statement PENDING");
 					//handleTransaction(customer, t);
 				}
@@ -213,36 +213,53 @@ public class ConsoleApp {
  */
 	private void transfer(Customer customer, Scanner scanner) {
 		System.out.println("transfer");
-		String reciever = getInput("transfer reciever username");
+		boolean validated = false;
 		String sender = customer.getUserName();
-		double amount = getDoubleInput("transfer amount");
 		String status = AppConstants.TRANSACTION_PENDING;
-		String type = getTransactionTypt(reciever, scanner);
+		Transaction transaction = null;
+		do {
+			String reciever = getInput("transfer reciever username");
+			double amount = getDoubleInput("transfer amount");
+			String type = getTransactionType(reciever, scanner);
+			transaction = new Transaction(reciever, sender, amount, status, type);
+			System.out.println("Please review the following transaction:\n" + transaction.toString() + "\nIs this correct?\n"
+					+ "ENTER 1 for Yes\n" + "ENTER 2 for No\n" + "Enter 3 for Cancel\n");
+			String choice = scanner.next();
+			if (choice.equals("1")) {
+				validated = true;
+			} else if (choice.equals("2")) {
+				System.out.println("Restarting transaction...");
+				validated = false;
+			} else if (choice.equals("3")) {
+				return;
+			}else {
+				System.out.println("Invalid input. Restarting Transaction...");
+			}
+		} while (!validated);
 		
-		Transaction t = new Transaction(reciever, sender, amount, status, type);
+		try {
+			int rows = service.createTransaction(transaction);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		
 		//deposit to receiving account
 		//withdrawl from sending account
 	}
 
-private String getTransactionTypt(String user, Scanner scanner) {
-	boolean valid = false;
-	String type = null;
-	do {
+private String getTransactionType(String user, Scanner scanner) {
 			System.out.println("\nWhich transaction would you like:\n" 
 					          + "Request Funds From " + user + ": Enter 1\n"
 					          + "Transfer Funds To " + user + ": Enter 2\n");
 			String input = scanner.next();
-			if(input == "1") {
-				type = AppConstants.ACCOUNT_WITHDRAW;
-				valid = true;
-			}else if(input == "2") {
-				type = AppConstants.ACCOUNT_DEPOSIT;
-				valid = true;
+			if(input.equals("1")) {
+				return String.valueOf(AppConstants.ACCOUNT_WITHDRAW);
+			}else if(input.equals("2")) {;
+				return String.valueOf(AppConstants.ACCOUNT_DEPOSIT);
 			}
-		} while (!valid);
-		return type;
+			return null;
 	}
 
 	//--------------------------------------------------------------	
