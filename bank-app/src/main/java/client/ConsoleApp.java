@@ -189,14 +189,11 @@ public class ConsoleApp {
 		
 		if(!transactions.isEmpty()) {
 			for(Transaction t : transactions) {
-				System.out.println(t.toString());
 				if(t.getStatus().equals(AppConstants.TRANSACTION_PENDING)) {
-					System.out.println("In comparison statement PENDING");
-					//handleTransaction(customer, t);
+					handleTransaction(customer, t, scanner);
 				}
 			}
 			
-			//TODO: SEARCH FOR PENDING TRANSACTIONS HANDLE THEM HERE!!!
 		}else {
 			System.out.println("No transactions available.");
 		}
@@ -208,9 +205,29 @@ public class ConsoleApp {
  * Pre-conditions: 
  * Post-conditions:	
  */
-	private void handleTransaction(Customer customer, Transaction t) {
-		// TODO Auto-generated method stub
+	private void handleTransaction(Customer customer, Transaction t, Scanner scanner) {
+		boolean validated = false;
 		
+		do {
+			System.out.println(t.printPendingTransaction() + "\nWhat would you like to do?\n" + "Accept: ENTER 1\n"
+					+ "Deny:   ENTER 2\n");
+			String input = scanner.next();
+			if (input.equals("1")) {
+				System.out.println("ACCEPTING REQUEST");
+				try {
+					service.acceptTransaction(customer, t);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				validated = true;
+			} else if (input.equals("2")) {
+				System.out.println("DENYING REQUEST");
+				validated = true;
+			} 
+		} while (!validated);
+		
+				
 	}
 
 	//--------------------------------------------------------------	
@@ -264,13 +281,13 @@ public class ConsoleApp {
 
 	private String getTransactionType(String user, Scanner scanner) {
 			System.out.println("\nWhich transaction would you like:\n" 
-					          + "Request Funds From " + user + ": Enter 1\n"
-					          + "Transfer Funds To " + user + ": Enter 2\n");
+					          + "Request Funds From " + user + ": Enter 1\n" //take $ from reciver
+					          + "Transfer Funds To " + user + ": Enter 2\n"); //give $ to reciever
 			String input = scanner.next();
 			if(input.equals("1")) {
-				return String.valueOf(AppConstants.ACCOUNT_WITHDRAW);
+				return String.valueOf(AppConstants.ACCOUNT_DEPOSIT); //take $ from reciever
 			}else if(input.equals("2")) {;
-				return String.valueOf(AppConstants.ACCOUNT_DEPOSIT);
+				return String.valueOf(AppConstants.ACCOUNT_WITHDRAW); //give $ to reciever
 			}
 			return null;
 	}

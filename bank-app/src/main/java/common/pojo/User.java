@@ -51,7 +51,7 @@ public class User {
 	}
 	
 	public void incrementIdCtr() {
-		this.idCtr++;
+		idCtr++;
 	}
 
 	@Override

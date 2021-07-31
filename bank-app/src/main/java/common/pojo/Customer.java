@@ -7,7 +7,6 @@ public class Customer extends User{
 	
 	public Customer(String name, String username, String password, double startingBalance) {
 		super(name, username, password);
-		this.bankingHistory = bankingHistory;
 		this.balance = startingBalance;
 	}
 

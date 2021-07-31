@@ -45,7 +45,7 @@ public class CustomerDAO {
 	 */
 	public Customer getCustomerAccount(String username, String password, List<String> messages) throws SQLException, Exception {
 		Connection conn = DBUtil.getInstance().getConnection();
-		int id;
+		int id = 0;
 		String name = null;
 		String uname = null;
 		String pwd = null;
@@ -64,6 +64,7 @@ public class CustomerDAO {
 			if(notNull(uname) && notNull(pwd))
 			{
 				Customer c = new Customer(name, uname, pwd, amt);
+				c.setId(id);
 				return c;
 			}
 			else {
@@ -153,11 +154,11 @@ public class CustomerDAO {
 		
 	}
 
-	//--------------------------------------------------------------	
-	/* Description: 
-	 * Pre-conditions: 
-	 * Post-conditions:	
-	 */
+//--------------------------------------------------------------	
+/* Description: 
+ * Pre-conditions: 
+ * Post-conditions:	
+ */
 	public int createTransaction(Transaction t) throws SQLException, Exception {
 		Connection conn = DBUtil.getInstance().getConnection();
 
@@ -171,6 +172,27 @@ public class CustomerDAO {
 		int rows = pstmt.executeUpdate();
 		
 		return rows;
+	}
+
+	
+//--------------------------------------------------------------	
+/* Description: 
+ * Pre-conditions: 
+ * Post-conditions:	
+ */
+	public void acceptTransaction(Customer reciever, Transaction t) throws SQLException, Exception {
+		Connection conn = DBUtil.getInstance().getConnection();
+		//get the sending customer
+		Customer sender = getSenderAccount();
+		//deposit / withdraw for the receiving customer
+		//withdraw / deposit for the sending customer
+		//update status to successful.
+		
+	}
+	
+	public Customer getSenderAccount() {
+		
+		return null;
 	}
 
 }

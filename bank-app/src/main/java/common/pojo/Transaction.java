@@ -1,5 +1,7 @@
 package common.pojo;
 
+import common.util.AppConstants;
+
 public class Transaction {
 
 	private static int idCtr = 1;
@@ -90,7 +92,17 @@ public class Transaction {
 	}
 	
 	private void incrementIdCtr() {
-		this.idCtr++;
+		idCtr++;
+	}
+	
+	public String printPendingTransaction() {
+		String message = null;
+		if(type.equals(AppConstants.ACCOUNT_WITHDRAW)) {
+			message="You have a request to transfer $"+amount+" to "+sender;
+		}else if(type.equals(AppConstants.ACCOUNT_DEPOSIT)) {
+			message= sender+" has requested to send you $"+amount;
+		}
+		return message;
 	}
 
 	@Override

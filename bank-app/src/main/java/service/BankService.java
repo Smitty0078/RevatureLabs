@@ -60,6 +60,17 @@ public class BankService {
 		System.out.println("CREATE TRANSACTION SERVICE LAYER");
 		return custDAO.createTransaction(transaction);
 	}
+
+	
+	//--------------------------------------------------------------	
+		/* Description: 
+		 * Pre-conditions: 
+		 * Post-conditions:	
+		 */
+	public void acceptTransaction(Customer customer, Transaction t) throws SQLException, Exception {
+		System.out.println("ACCEPTING TRANSACTION SERVICE LAYER");
+		custDAO.acceptTransaction(customer, t);
+	}
 	
 	
 }
