@@ -17,6 +17,11 @@ public class CustomerDAO {
 		return value != null && !value.isEmpty();
 	}
 
+	//--------------------------------------------------------------	
+	/* Description: 
+	 * Pre-conditions: 
+	 * Post-conditions:	
+	 */
 	public int createCustomerAccount(Customer c) throws SQLException, Exception {
 		
 		System.out.println("create customer DAO layer");
@@ -33,7 +38,12 @@ public class CustomerDAO {
 		return inserted;
 	}
 	
-	public Customer customerSignIn(String username, String password, List<String> messages) throws SQLException, Exception {
+	//--------------------------------------------------------------	
+	/* Description: 
+	 * Pre-conditions: 
+	 * Post-conditions:	
+	 */
+	public Customer getCustomerAccount(String username, String password, List<String> messages) throws SQLException, Exception {
 		Connection conn = DBUtil.getInstance().getConnection();
 		int id;
 		String name = null;
@@ -64,6 +74,11 @@ public class CustomerDAO {
 		return null;
 	}
 	
+	//--------------------------------------------------------------	
+	/* Description: 
+	 * Pre-conditions: 
+	 * Post-conditions:	
+	 */
 	private ResultSet getAccount(String username, String password, Connection conn) throws SQLException {
 		PreparedStatement pstmt = conn.prepareStatement("SELECT * from bank.accounts WHERE username=? and password=?");
 		pstmt.setString(1, username);
@@ -72,7 +87,12 @@ public class CustomerDAO {
 		ResultSet rs = pstmt.executeQuery();
 		return rs;
 	}
-
+	
+	//--------------------------------------------------------------	
+	/* Description: 
+	 * Pre-conditions: 
+	 * Post-conditions:	
+	 */
 	public int updateAccountBalance(Customer c, double amt, String transaction) throws SQLException, Exception {
 		Connection conn = DBUtil.getInstance().getConnection();
 		
@@ -91,14 +111,29 @@ public class CustomerDAO {
 		return rows;
 	}
 	
+	//--------------------------------------------------------------	
+	/* Description: 
+	 * Pre-conditions: 
+	 * Post-conditions:	
+	 */
 	private void deposit(Customer c, double amt) {
 		c.setBalance(c.getBalance() + amt);
 	}
 	
+	//--------------------------------------------------------------	
+	/* Description: 
+	 * Pre-conditions: 
+	 * Post-conditions:	
+	 */
 	private void withdrawl(Customer c, double amt) {
 		c.setBalance(c.getBalance() - amt);
 	}
-
+	
+	//--------------------------------------------------------------	
+	/* Description: 
+	 * Pre-conditions: 
+	 * Post-conditions:	
+	 */
 	public List<Transaction> getTransactions(Customer c) throws SQLException, Exception {
 		Connection conn = DBUtil.getInstance().getConnection();
 		List<Transaction> transactions = new ArrayList<Transaction>();
@@ -118,6 +153,11 @@ public class CustomerDAO {
 		
 	}
 
+	//--------------------------------------------------------------	
+	/* Description: 
+	 * Pre-conditions: 
+	 * Post-conditions:	
+	 */
 	public int createTransaction(Transaction t) throws SQLException, Exception {
 		Connection conn = DBUtil.getInstance().getConnection();
 

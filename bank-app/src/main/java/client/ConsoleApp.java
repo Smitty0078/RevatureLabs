@@ -10,11 +10,13 @@ import common.pojo.Transaction;
 import common.util.AppConstants;
 import service.BankService;
 
+
 public class ConsoleApp {
 	
 	private BankService service = new BankService();
 	private static boolean exit = false; 
 	private Scanner scanner;
+	
 /* Description:
  * Pre-conditions:
  * Post-conditions:	
@@ -85,7 +87,7 @@ public class ConsoleApp {
 		password = getInput("password");
 		
 		try {
-			Customer customer = service.customerSignIn(username, password, messages);
+			Customer customer = service.getCustomerAccount(username, password, messages);
 			if(messages.isEmpty()){
 				customerMenu(customer, scanner);
 			}else {
@@ -201,6 +203,11 @@ public class ConsoleApp {
 		
 	}
 
+//--------------------------------------------------------------	
+/* Description: 
+ * Pre-conditions: 
+ * Post-conditions:	
+ */
 	private void handleTransaction(Customer customer, Transaction t) {
 		// TODO Auto-generated method stub
 		
@@ -248,8 +255,14 @@ public class ConsoleApp {
 		//deposit to receiving account
 		//withdrawl from sending account
 	}
+	
+//--------------------------------------------------------------	
+/* Description: 
+ * Pre-conditions: 
+ * Post-conditions:	
+ */
 
-private String getTransactionType(String user, Scanner scanner) {
+	private String getTransactionType(String user, Scanner scanner) {
 			System.out.println("\nWhich transaction would you like:\n" 
 					          + "Request Funds From " + user + ": Enter 1\n"
 					          + "Transfer Funds To " + user + ": Enter 2\n");
