@@ -16,7 +16,7 @@ public class User {
 		this.username = username;
 		this.password = password;
 		this.id = idCtr;
-		incrementIdCtr();
+		//incrementIdCtr();
 		//this ensures that each id will be unique
 	}
 	
@@ -72,7 +72,7 @@ public class User {
 
 
 
-	public void incrementIdCtr() {
+	public static void incrementIdCtr() {
 		idCtr++;
 	}
 

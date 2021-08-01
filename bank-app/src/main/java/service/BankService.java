@@ -99,6 +99,11 @@ public class BankService {
 		return custDAO.getCustomerAccount(username);
 	}
 
+	public double getBalance(String userName) throws SQLException, Exception {
+		Customer c = custDAO.getCustomerAccount(userName);
+		return c.getBalance();
+	}
+
 	
 	
 	

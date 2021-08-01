@@ -34,7 +34,7 @@ public class Transaction {
 		this.amount = amount;
 		this.status = status;
 		this.type = type;
-		incrementIdCtr();
+		//incrementIdCtr();
 	}
 
 
@@ -103,7 +103,7 @@ public class Transaction {
 	}
 
 
-	private void incrementIdCtr() {
+	public static void incrementIdCtr() {
 		idCtr++;
 	}
 	

@@ -44,8 +44,10 @@ public class ConsoleApp {
  */
 private void setIdCounters(String accounts, String transactions) {
 		try {
-			User.setIdCtr(service.setIdCtr(accounts));
-			Transaction.setIdCtr(service.setIdCtr(transactions));
+			User.setIdCtr(service.setIdCtr(accounts) + 1);
+			System.out.println("user.idCtr = "+User.getIdCtr());
+			Transaction.setIdCtr(service.setIdCtr(transactions) + 1);
+			System.out.println("tran.idCtr = "+Transaction.getIdCtr());
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -284,6 +286,7 @@ private void setIdCounters(String accounts, String transactions) {
 		
 		try {
 			int rows = service.createTransaction(transaction);
+			Transaction.incrementIdCtr();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -299,13 +302,13 @@ private void setIdCounters(String accounts, String transactions) {
 
 	private String getTransactionType(String user, Scanner scanner) {
 			System.out.println("\nWhich transaction would you like:\n" 
-					          + "Request Funds From " + user + ": Enter 1\n" //take $ from reciver
-					          + "Transfer Funds To " + user + ": Enter 2\n"); //give $ to reciever
+					          + "Transfer Funds To " + user + ": Enter 1\n"
+					          + "Request Funds From " + user + ": Enter 2\n");
 			String input = scanner.next();
 			if(input.equals("1")) {
-				return String.valueOf(AppConstants.ACCOUNT_DEPOSIT); //take $ from reciever
+				return String.valueOf(AppConstants.ACCOUNT_DEPOSIT);
 			}else if(input.equals("2")) {;
-				return String.valueOf(AppConstants.ACCOUNT_WITHDRAW); //give $ to reciever
+				return String.valueOf(AppConstants.ACCOUNT_WITHDRAW);
 			}
 			return null;
 	}
@@ -370,8 +373,14 @@ private void setIdCounters(String accounts, String transactions) {
  * Post-conditions:	Customer balance is printed to the console
  */
 	private void viewBalance(Customer customer) {
-			System.out.println("The current account balance is: $"+customer.getBalance());
-			//TODO: ADD QUERY LINK WITH SERVICE / DAO
+			try {
+				Double balance = service.getBalance(customer.getUserName());
+				System.out.println("The current account balance is: $" + balance);
+				customer.setBalance(balance);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 	}
 
 //--------------------------------------------------------------	
@@ -483,6 +492,7 @@ private void setIdCounters(String accounts, String transactions) {
 			//TODO: CALL EMPLOYEE METHOD TO APPOROVE OR DENY BASED ON BANKING HISTORy
 			result = service.createCustomerAccount(customer);
 			System.out.println("num of rows affected: "+result);
+			User.incrementIdCtr();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
