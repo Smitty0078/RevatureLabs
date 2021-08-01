@@ -435,6 +435,7 @@ private void setIdCounters(String accounts, String transactions) {
  * Post-conditions:	
  */
 	public void registerNewCustomerAccount(Scanner scanner){
+		Customer tmp = null;
 		Customer customer = getNewCustomer();
 		Employee admin = new Employee();
 		System.out.println("Please enter your banking history:\n"
@@ -446,9 +447,28 @@ private void setIdCounters(String accounts, String transactions) {
 		}else if(history.equals("2")) {
 			customer.setBankingHistory(AppConstants.BANK_HISTORY_BAD);
 		}
+		
 		System.out.println(customer.toString());
 		
-		//TODO: ADD APPROVE OR DENY EMPLOYEE METHOD HERE
+		if(admin.approveOrDeny(customer.getBankingHistory())) {
+			System.out.println("approved");
+			try {
+				 tmp = service.checkForExistingUser(customer.getUserName());
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			//System.out.println(tmp.toString());
+			if(tmp == null) {
+				System.out.println("Creating new customer account");
+				createCustomerAccount(customer);
+			}else {
+				System.out.println("The username "+customer.getUserName()+" already exists...\n");
+			}
+				
+		}else {
+			System.out.println("Denied...\n");
+		}
 	}
 	
 	//--------------------------------------------------------------	

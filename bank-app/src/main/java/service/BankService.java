@@ -95,5 +95,11 @@ public class BankService {
 
 	
 	
+	public Customer checkForExistingUser(String username) throws SQLException, Exception {
+		return custDAO.getCustomerAccount(username);
+	}
+
+	
+	
 	
 }

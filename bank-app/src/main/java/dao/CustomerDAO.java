@@ -107,7 +107,7 @@ public class CustomerDAO {
  */
 	public Customer getCustomerAccount(String username) throws SQLException, Exception {
 		Connection conn = DBUtil.getInstance().getConnection();
-		Customer c = new Customer(username, 0);
+		Customer c = null; //new Customer(username, 0);
 		PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM bank.accounts WHERE username=?;");
 		pstmt.setString(1, username);
 		ResultSet rs = pstmt.executeQuery();
@@ -225,11 +225,7 @@ public class CustomerDAO {
 		
 	}
 
-//--------------------------------------------------------------	
-/* Description: 
- * Pre-conditions: 
- * Post-conditions:	
- */
+
 	public int createTransaction(Transaction t) throws SQLException, Exception {
 		Connection conn = DBUtil.getInstance().getConnection();
 
