@@ -14,6 +14,11 @@ import common.util.DBUtil;
 
 public class CustomerDAO {
 	
+//--------------------------------------------------------------	
+/* Description: Helper method used for getAccount method
+ * Pre-conditions: none
+ * Post-conditions:	returns boolean value that determines if it is null
+ */
 	private boolean notNull(String value) {
 		return value != null && !value.isEmpty();
 	}
@@ -40,14 +45,12 @@ public class CustomerDAO {
 		
 	}
 	
-	//--------------------------------------------------------------	
-	/* Description: Creates new customer account in the accounts table
-	 * Pre-conditions: customer not null and account doesnt already exist
-	 * Post-conditions:	account created in database
-	 */
+//--------------------------------------------------------------	
+/* Description: Creates new customer account in the accounts table
+ * Pre-conditions: customer not null and account doesnt already exist
+ * Post-conditions:	account created in database
+ */
 	public int createCustomerAccount(Customer c) throws SQLException, Exception {
-		
-		System.out.println("create customer DAO layer");
 		Connection conn = DBUtil.getInstance().getConnection();
 		
 		PreparedStatement pstmt = conn.prepareStatement("insert into bank.accounts (id, name, username, password, amount) values (?, ?, ?, ?, ?)");
@@ -61,11 +64,11 @@ public class CustomerDAO {
 		return inserted;
 	}
 	
-	//--------------------------------------------------------------	
-	/* Description: Gets account based on username and password
-	 * Pre-conditions: account with matching username and password must exist
-	 * Post-conditions:	account is returned
-	 */
+//--------------------------------------------------------------	
+/* Description: Gets account based on username and password
+ * Pre-conditions: account with matching username and password must exist
+ * Post-conditions:	account is returned
+ */
 	public Customer getCustomerAccount(String username, String password, List<String> messages) throws SQLException, Exception {
 		Connection conn = DBUtil.getInstance().getConnection();
 		int id = 0;
@@ -105,7 +108,7 @@ public class CustomerDAO {
  */
 	public Customer getCustomerAccount(String username) throws SQLException, Exception {
 		Connection conn = DBUtil.getInstance().getConnection();
-		Customer c = null; //new Customer(username, 0);
+		Customer c = null;
 		PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM bank.accounts WHERE username=?;");
 		pstmt.setString(1, username);
 		ResultSet rs = pstmt.executeQuery();
@@ -144,11 +147,11 @@ public class CustomerDAO {
 		return c;
 	}
 	
-	//--------------------------------------------------------------	
-	/* Description: Helper method used by getCustomerAccount method
-	 * Pre-conditions: none
-	 * Post-conditions:	returns result set
-	 */
+//--------------------------------------------------------------	
+/* Description: Helper method used by getCustomerAccount method
+ * Pre-conditions: none
+ * Post-conditions:	returns result set
+ */
 	private ResultSet getAccount(String username, String password, Connection conn) throws SQLException {
 		PreparedStatement pstmt = conn.prepareStatement("SELECT * from bank.accounts WHERE username=? and password=?");
 		pstmt.setString(1, username);
@@ -158,11 +161,12 @@ public class CustomerDAO {
 		return rs;
 	}
 	
-	//--------------------------------------------------------------	
-	/* Description: Deposits or withdraws the amount from the customer account
-	 * Pre-conditions: Number passed in can't be negative
-	 * Post-conditions:	Deposit or withdraw is successful
-	 */
+
+//--------------------------------------------------------------	
+/* Description: Deposits or withdraws the amount from the customer account
+ * Pre-conditions: Number passed in can't be negative
+ * Post-conditions:	Deposit or withdraw is successful
+ */
 	public int updateAccountBalance(Customer c, double amt, String transaction) throws SQLException, Exception {
 		Connection conn = DBUtil.getInstance().getConnection();
 		
@@ -181,29 +185,29 @@ public class CustomerDAO {
 		return rows;
 	}
 	
-	//--------------------------------------------------------------	
-	/* Description: Helper method for updateAccountBalance method
-	 * Pre-conditions: Amount is not negative, customer is not null.
-	 * Post-conditions:	Sets the balance of the customer to balance + amount
-	 */
+//--------------------------------------------------------------	
+/* Description: Helper method for updateAccountBalance method
+ * Pre-conditions: Amount is not negative, customer is not null.
+ * Post-conditions:	Sets the balance of the customer to balance + amount
+ */
 	private void deposit(Customer c, double amt) {
 		c.setBalance(c.getBalance() + amt);
 	}
 	
-	//--------------------------------------------------------------	
-	/* Description: Helper method for updateAccountBalance method
-	 * Pre-conditions: Amount is not negative, customer is not null
-	 * Post-conditions:	Sets the balance of the customer to balance - amount
-	 */
+//--------------------------------------------------------------	
+/* Description: Helper method for updateAccountBalance method
+ * Pre-conditions: Amount is not negative, customer is not null
+ * Post-conditions:	Sets the balance of the customer to balance - amount
+ */
 	private void withdrawl(Customer c, double amt) {
 		c.setBalance(c.getBalance() - amt);
 	}
 	
-	//--------------------------------------------------------------	
-	/* Description: Retrieves transactions for a customer
-	 * Pre-conditions: customer must have existing account 
-	 * Post-conditions:	list of transactions returned 
-	 */
+//--------------------------------------------------------------	
+/* Description: Retrieves transactions for a customer
+ * Pre-conditions: customer must have existing account 
+ * Post-conditions:	list of transactions returned 
+ */
 	public List<Transaction> getTransactions(Customer c) throws SQLException, Exception {
 		Connection conn = DBUtil.getInstance().getConnection();
 		List<Transaction> transactions = new ArrayList<Transaction>();
@@ -245,9 +249,10 @@ public class CustomerDAO {
 
 	
 //--------------------------------------------------------------	
-/* Description: 
- * Pre-conditions: 
- * Post-conditions:	
+/* Description: Carries out transaction, either deposits money to reciever from sender or
+ * 				withdraws money from reciever and transfers to sender.
+ * Pre-conditions: Transacation was accepted by customer
+ * Post-conditions:	appropriate updates are made to sender and reciever account balances
  */
 	public void acceptTransaction(Customer reciever, Transaction t) throws SQLException, Exception {
 		Connection conn = DBUtil.getInstance().getConnection();
@@ -281,9 +286,9 @@ public class CustomerDAO {
 	}
 	
 //--------------------------------------------------------------	
-/* Description: 
- * Pre-conditions: 
- * Post-conditions:	
+/* Description: Gets the transaction sender account based on username
+ * Pre-conditions: none
+ * Post-conditions:	customer account is returned
  */
 	public Customer getSenderAccount(Connection conn, String sender) throws SQLException {
 		PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM bank.accounts WHERE username=?");
