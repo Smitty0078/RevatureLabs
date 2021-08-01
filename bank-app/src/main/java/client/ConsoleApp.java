@@ -398,20 +398,22 @@ private void setIdCounters(String accounts, String transactions) {
  */
 	private void employeeMenu(Scanner scanner) {
 		boolean signout = false;
-		System.out.println("\nWhat would you like to do?\n"
-				 + "View Customer Balance:          ENTER 1\n"
-				 + "Review New Account Requests:    ENTER 2\n"
-				 + "Sign out:                       ENTER 3\n");
-		String input = scanner.next();
-		if(input.equals("1")) {
-			System.out.println("viewing balance...");
-		}else if(input.equals("2")) {
-			System.out.println("reviewing requests...");
-		}else if(input.equals("3")) {
-			signout = true;
-		}else {
-			System.out.println("Invalid input...");
-		}
+		do {
+			System.out.println("\nWhat would you like to do?\n" 
+								+ "View Customer Balance:          ENTER 1\n"
+								+ "Review New Account Requests:    ENTER 2\n" 
+								+ "Sign out:                       ENTER 3\n");
+			String input = scanner.next();
+			if (input.equals("1")) {
+				System.out.println("viewing balance...");
+			} else if (input.equals("2")) {
+				System.out.println("reviewing requests...");
+			} else if (input.equals("3")) {
+				signout = true;
+			} else {
+				System.out.println("Invalid input...");
+			} 
+		} while (!signout);
 	}
 
 	//--------------------------------------------------------------	
