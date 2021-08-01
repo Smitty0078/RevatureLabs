@@ -19,13 +19,13 @@ public class ConsoleApp {
 	private static boolean exit = false; 
 	private Scanner scanner;
 	
-/* Description:
- * Pre-conditions:
- * Post-conditions:	
+/* Description: Method that runs the app
+ * Pre-conditions: none
+ * Post-conditions:	scanner object is closed
  */
 	public void start() {
 		String input;
-		scanner = new Scanner(System.in);
+		scanner = initializeScanner();
 		setIdCounters("accounts", "transactions");
 		while(!exit) {
 			appGreeting();
@@ -37,12 +37,16 @@ public class ConsoleApp {
 		scanner.close();
 	}
 	
+	public Scanner initializeScanner() {
+		return new Scanner(System.in);
+	}
+	
 //--------------------------------------------------------------	
-/* Description:
- * Pre-conditions:
- * Post-conditions:	
+/* Description: Retrieves the max id of the accounts table and transactions table
+ * Pre-conditions: none
+ * Post-conditions:	Set the idCtrs to max+1
  */
-private void setIdCounters(String accounts, String transactions) {
+public void setIdCounters(String accounts, String transactions) {
 		try {
 			User.setIdCtr(service.setIdCtr(accounts) + 1);
 			System.out.println("user.idCtr = "+User.getIdCtr());
@@ -58,9 +62,9 @@ private void setIdCounters(String accounts, String transactions) {
 	}
 
 	//--------------------------------------------------------------	
-/* Description:
- * Pre-conditions:
- * Post-conditions:	
+/* Description: Prints greeting and asks user what they would like to do
+ * Pre-conditions: none
+ * Post-conditions:	none
  */
 	public void appGreeting(){
 		System.out.println("\nWelcome To Our Banking App!\n"
@@ -106,8 +110,8 @@ private void setIdCounters(String accounts, String transactions) {
 		String password;
 		List<String> messages = new ArrayList<String>();
 		
-		username = getInput("username");
-		password = getInput("password");
+		username = getInput("username", scanner);
+		password = getInput("password", scanner);
 		
 		try {
 			Customer customer = service.getCustomerAccount(username, password, messages);
@@ -265,8 +269,8 @@ private void setIdCounters(String accounts, String transactions) {
 		String status = AppConstants.TRANSACTION_PENDING;
 		Transaction transaction = null;
 		do {
-			String reciever = getInput("transfer reciever username");
-			double amount = getDoubleInput("transfer amount");
+			String reciever = getInput("transfer reciever username", scanner);
+			double amount = getDoubleInput("transfer amount", scanner);
 			String type = getTransactionType(reciever, scanner);
 			transaction = new Transaction(reciever, sender, amount, status, type);
 			System.out.println("Please review the following transaction:\n" + transaction.toString() + "\nIs this correct?\n"
@@ -318,12 +322,12 @@ private void setIdCounters(String accounts, String transactions) {
  * Pre-conditions: 
  * Post-conditions:	
  */
-	private void withdraw(Customer customer, Scanner scanner2) {
+	private void withdraw(Customer customer, Scanner scanner) {
 		double amt = 0;
 		int rowsAffected;
 		//this handles negative values
 		do {
-			amt = getDoubleInput("amount to withdrawl");
+			amt = getDoubleInput("amount to withdrawl", scanner);
 			if(amt <= 0)
 				System.out.println("Invalid input: cannot withdrawl a negative amount.");
 		}while(amt <= 0.0);
@@ -351,7 +355,7 @@ private void setIdCounters(String accounts, String transactions) {
 		int rowsAffected;
 		//this handles negative values
 		do {
-			amt = getDoubleInput("amount to deposit");
+			amt = getDoubleInput("amount to deposit", scanner);
 			if(amt <= 0)
 				System.out.println("Invalid input: cannot deposit a negative amount.");
 		}while(amt <= 0.0);
@@ -390,8 +394,8 @@ private void setIdCounters(String accounts, String transactions) {
  */
 	public void employeeSignIn(Scanner scanner) {
 		System.out.println("employee sign in");
-		String username = getInput("username");
-		String password = getInput("password");
+		String username = getInput("username", scanner);
+		String password = getInput("password", scanner);
 		
 		if(username.equals(AppConstants.EMPLOYEE_ADMIN_USERNAME) && password.equals(AppConstants.EMPLOYEE_ADMIN_PASSWORD)) {
 			employeeMenu(scanner);
@@ -416,7 +420,7 @@ private void setIdCounters(String accounts, String transactions) {
 			String input = scanner.next();
 			if (input.equals("1")) {
 				System.out.println("viewing balance...");
-				String username = getInput("customer username");
+				String username = getInput("customer username", scanner);
 				Customer c = null;
 				try {
 					c = service.getCustomerAccount(username);
@@ -445,7 +449,7 @@ private void setIdCounters(String accounts, String transactions) {
  */
 	public void registerNewCustomerAccount(Scanner scanner){
 		Customer tmp = null;
-		Customer customer = getNewCustomer();
+		Customer customer = getNewCustomer(scanner);
 		Employee admin = new Employee();
 		System.out.println("Please enter your banking history:\n"
 						 + "Good History: ENTER 1\n"
@@ -490,6 +494,7 @@ private void setIdCounters(String accounts, String transactions) {
 		int result;
 		try {
 			//TODO: CALL EMPLOYEE METHOD TO APPOROVE OR DENY BASED ON BANKING HISTORy
+			customer.setId(User.getIdCtr());
 			result = service.createCustomerAccount(customer);
 			System.out.println("num of rows affected: "+result);
 			User.incrementIdCtr();
@@ -526,19 +531,19 @@ private void setIdCounters(String accounts, String transactions) {
  * Pre-conditions:
  * Post-conditions:	
  */
-	public Customer getNewCustomer() {
+	public Customer getNewCustomer(Scanner scanner) {
 		String name;
 		String username;
 		String password;
 		double startingBalance = 0;
 		
-		name = getInput("first name");
+		name = getInput("first name", scanner);
 		//TODO: USE STRINGBUILDER HERE
-		name += " "+getInput("last name");
+		name += " "+getInput("last name", scanner);
 		//TOD0: CHECK FOR EXISTING USERNAME
-		username = getInput("username");
-		password = getInput("password");
-		startingBalance = getDoubleInput("starting account balance");
+		username = getInput("username", scanner);
+		password = getInput("password", scanner);
+		startingBalance = getDoubleInput("starting account balance", scanner);
 		
 		Customer c = new Customer(name, username, password, startingBalance);
 		return c;
@@ -549,7 +554,7 @@ private void setIdCounters(String accounts, String transactions) {
  * Pre-conditions:
  * Post-conditions:	
  */
-	public String getInput(String custAttribute) {
+	public String getInput(String custAttribute, Scanner scanner) {
 		String input;
 		System.out.println("Please enter your "+custAttribute+" :");
 		input = scanner.next();
@@ -561,13 +566,13 @@ private void setIdCounters(String accounts, String transactions) {
  * Pre-conditions:
  * Post-conditions:	
  */
-	public double getDoubleInput(String message) {
+	public double getDoubleInput(String message, Scanner scanner) {
 		boolean validated = false;
 		String amount;
 		double startingBalance = 0;
 		do {
 			try {
-				amount = getInput(message);
+				amount = getInput(message, scanner);
 				startingBalance = Double.valueOf(amount);
 				validated = true;
 			} catch(NumberFormatException e) {
