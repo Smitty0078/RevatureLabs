@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import common.pojo.Customer;
+import common.pojo.Employee;
 import common.pojo.Transaction;
 import common.pojo.User;
 import common.util.AppConstants;
@@ -62,10 +63,10 @@ private void setIdCounters(String accounts, String transactions) {
 	public void appGreeting(){
 		System.out.println("\nWelcome To Our Banking App!\n"
 							+ "\nWhat would you like to do?\n"
-							+ "Customer Sign In:   ENTER 1\n"
-							+ "Employee Sign In:   ENTER 2\n"
-							+ "Create New Account: ENTER 3\n"
-							+ "Exit:               ENTER 4");
+							+ "Customer Sign In:      ENTER 1\n"
+							+ "Employee Sign In:      ENTER 2\n"
+							+ "Register New Account:  ENTER 3\n"
+							+ "Exit:                  ENTER 4");
 	}
 	
 //--------------------------------------------------------------	
@@ -83,7 +84,7 @@ private void setIdCounters(String accounts, String transactions) {
 				employeeSignIn(scanner);
 				break;
 			case "3":
-				createCustomerAccount();
+				registerNewCustomerAccount(scanner);
 				break;
 			case "4":
 				exit();
@@ -406,6 +407,18 @@ private void setIdCounters(String accounts, String transactions) {
 			String input = scanner.next();
 			if (input.equals("1")) {
 				System.out.println("viewing balance...");
+				String username = getInput("customer username");
+				Customer c = null;
+				try {
+					c = service.getCustomerAccount(username);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				viewBalance(c);
 			} else if (input.equals("2")) {
 				System.out.println("reviewing requests...");
 			} else if (input.equals("3")) {
@@ -416,18 +429,35 @@ private void setIdCounters(String accounts, String transactions) {
 		} while (!signout);
 	}
 
+//--------------------------------------------------------------	
+/* Description:
+ * Pre-conditions: 
+ * Post-conditions:	
+ */
+	public void registerNewCustomerAccount(Scanner scanner){
+		Customer customer = getNewCustomer();
+		Employee admin = new Employee();
+		System.out.println("Please enter your banking history:\n"
+						 + "Good History: ENTER 1\n"
+						 + "Bad History:  ENTER 2\n");
+		String history = scanner.next();
+		if(history.equals("1")) {
+			customer.setBankingHistory(AppConstants.BANK_HISTORY_GOOD);
+		}else if(history.equals("2")) {
+			customer.setBankingHistory(AppConstants.BANK_HISTORY_BAD);
+		}
+		System.out.println(customer.toString());
+		
+		//TODO: ADD APPROVE OR DENY EMPLOYEE METHOD HERE
+	}
+	
 	//--------------------------------------------------------------	
 /* Description: Called when user has selected to create a new account
  * Pre-conditions: input = 3
  * Post-conditions:	TODO: update if needed
  */
-	public void createCustomerAccount() {
+	public void createCustomerAccount(Customer customer) {
 		
-		Customer customer = getNewCustomer();
-		//check for username already exists
-		System.out.println(customer.toString());
-		
-		//TODO: ADD APPROVE OR DENY EMPLOYEE METHOD HERE
 		int result;
 		try {
 			//TODO: CALL EMPLOYEE METHOD TO APPOROVE OR DENY BASED ON BANKING HISTORy

@@ -100,6 +100,52 @@ public class CustomerDAO {
 		return null;
 	}
 	
+//--------------------------------------------------------------	
+/* Description: 
+ * Pre-conditions: 
+ * Post-conditions:	
+ */
+	public Customer getCustomerAccount(String username) throws SQLException, Exception {
+		Connection conn = DBUtil.getInstance().getConnection();
+		Customer c = new Customer(username, 0);
+		PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM bank.accounts WHERE username=?;");
+		pstmt.setString(1, username);
+		ResultSet rs = pstmt.executeQuery();
+		c = setCustomerFields(c, rs);
+		
+		return c;
+	}
+
+//--------------------------------------------------------------	
+/* Description: 
+ * Pre-conditions: 
+ * Post-conditions:	
+ */
+	private Customer setCustomerFields(Customer c, ResultSet rs) throws SQLException {
+		int id = 0;
+		String name = null;
+		String uname = null;
+		String password = null;
+		double amt = 0;
+		
+		while(rs.next()) {
+			id = rs.getInt(1);
+			name = rs.getString(2);
+			uname = rs.getString(3);
+			password = rs.getString(4);
+			amt = rs.getDouble(5);
+		}
+		
+		if(notNull(uname) && notNull(password))
+		{
+			c = new Customer(name, uname, password, amt);
+			c.setId(id);
+			return c;
+		}
+		System.out.println("Account not found");
+		return c;
+	}
+	
 	//--------------------------------------------------------------	
 	/* Description: 
 	 * Pre-conditions: 
@@ -260,5 +306,7 @@ public class CustomerDAO {
 			c.setId(id);
 			return c;
 	}
+
+	
 
 }

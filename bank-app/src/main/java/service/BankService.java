@@ -36,6 +36,16 @@ public class BankService {
 	 * Pre-conditions: 
 	 * Post-conditions:	
 	 */
+	public Customer getCustomerAccount(String username) throws SQLException, Exception {
+		return custDAO.getCustomerAccount(username);
+		
+	}
+	
+	//--------------------------------------------------------------	
+	/* Description: 
+	 * Pre-conditions: 
+	 * Post-conditions:	
+	 */
 	public int updateAccountBalance(Customer customer, double amt, String transaction) throws SQLException, Exception {
 		System.out.println("DEPOSIT SERVICE LAYER");
 		return custDAO.updateAccountBalance(customer, amt, transaction);
@@ -82,6 +92,8 @@ public class BankService {
 		return custDAO.setIdCtr(tablename);
 		
 	}
+
+	
 	
 	
 }
