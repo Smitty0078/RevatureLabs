@@ -16,9 +16,19 @@ public class User {
 		this.username = username;
 		this.password = password;
 		this.id = idCtr;
+		incrementIdCtr();
 		//this ensures that each id will be unique
 	}
 	
+	
+	
+	public User(String username) {
+		super();
+		this.username = username;
+	}
+
+
+
 	public int getId() {
 		return id;
 	}
@@ -50,6 +60,18 @@ public class User {
 		this.password = password;
 	}
 	
+	
+	public static int getIdCtr() {
+		return idCtr;
+	}
+
+
+	public static void setIdCtr(int idCtr) {
+		User.idCtr = idCtr;
+	}
+
+
+
 	public void incrementIdCtr() {
 		idCtr++;
 	}

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import common.util.AppConstants;
@@ -17,6 +18,30 @@ public class CustomerDAO {
 		return value != null && !value.isEmpty();
 	}
 
+//--------------------------------------------------------------	
+/* Description: 
+ * Pre-conditions: 
+ * Post-conditions:	
+ */
+	public int setIdCtr(String tablename) throws SQLException, Exception {
+		Connection conn = DBUtil.getInstance().getConnection();
+		
+		Statement stmt = conn.createStatement();
+		String sql = "SELECT MAX(id) from bank."+tablename;
+		ResultSet rs = stmt.executeQuery(sql);
+		//PreparedStatement pstmt = conn.prepareStatement("SELECT MAX(id) from bank.? ");
+		//pstmt.setString(1, tablename);
+		//ResultSet rs = pstmt.executeQuery();
+		int idCtr = 0;
+		
+		while(rs.next()) {
+			idCtr = rs.getInt(1);
+		}
+		
+		return idCtr;
+		
+	}
+	
 	//--------------------------------------------------------------	
 	/* Description: 
 	 * Pre-conditions: 
@@ -183,16 +208,57 @@ public class CustomerDAO {
 	public void acceptTransaction(Customer reciever, Transaction t) throws SQLException, Exception {
 		Connection conn = DBUtil.getInstance().getConnection();
 		//get the sending customer
-		Customer sender = getSenderAccount();
+		Customer sender = getSenderAccount(conn, t.getSender());
+		
+		System.out.println(reciever.toString());
+		System.out.println(sender.toString());
+		
 		//deposit / withdraw for the receiving customer
+		if(t.getType().equals(AppConstants.ACCOUNT_DEPOSIT)) {
+			updateAccountBalance(reciever, t.getAmount(), AppConstants.ACCOUNT_DEPOSIT);
+			reciever.setBalance(reciever.getBalance() + t.getAmount());
+			updateAccountBalance(sender, t.getAmount(), AppConstants.ACCOUNT_WITHDRAW);
 		//withdraw / deposit for the sending customer
+		}else if(t.getType().equals(AppConstants.ACCOUNT_WITHDRAW)) {
+			updateAccountBalance(reciever, t.getAmount(), AppConstants.ACCOUNT_WITHDRAW);
+			reciever.setBalance(reciever.getBalance() - t.getAmount());
+			updateAccountBalance(sender, t.getAmount(), AppConstants.ACCOUNT_DEPOSIT);
+		}
+		
+		
 		//update status to successful.
+		PreparedStatement pstmt = conn.prepareStatement("UPDATE bank.transactions SET status=? WHERE id=?");
+		pstmt.setString(1, AppConstants.TRANSACTION_SUCCESSFUL);
+		pstmt.setInt(2, t.getId());
+		pstmt.executeUpdate();
+		t.setType(AppConstants.TRANSACTION_SUCCESSFUL);
+		
 		
 	}
 	
-	public Customer getSenderAccount() {
+//--------------------------------------------------------------	
+/* Description: 
+ * Pre-conditions: 
+ * Post-conditions:	
+ */
+	public Customer getSenderAccount(Connection conn, String sender) throws SQLException {
+		PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM bank.accounts WHERE username=?");
+		pstmt.setString(1, sender);
 		
-		return null;
+		ResultSet rs = pstmt.executeQuery();
+		int id = 0;
+		String name = null;
+		String uname = null;
+		String pwd = null;
+		double amt = 0;
+		
+		while(rs.next()) {
+			uname = rs.getString(3);
+			amt = rs.getDouble(5);
+		}
+			Customer c = new Customer(uname, amt);
+			c.setId(id);
+			return c;
 	}
 
 }

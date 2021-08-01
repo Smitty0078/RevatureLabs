@@ -18,4 +18,7 @@ public interface AppConstants {
 	public static final String TRANSACTION_PENDING = "PENDING";
 	public static final String TRANSACTION_SUCCESSFUL = "SUCCESSFUL";
 	
+	public static final String EMPLOYEE_ADMIN_USERNAME = "EMPLOYEE";
+	public static final String EMPLOYEE_ADMIN_PASSWORD = "PASSWORD";
+	
 }

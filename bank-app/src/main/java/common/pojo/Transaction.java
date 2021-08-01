@@ -4,7 +4,7 @@ import common.util.AppConstants;
 
 public class Transaction {
 
-	private static int idCtr = 1;
+	private static int idCtr = 3;
 	private int id;
 	private String reciever;
 	private String sender;
@@ -91,6 +91,18 @@ public class Transaction {
 		this.type = type;
 	}
 	
+	
+	
+	public static int getIdCtr() {
+		return idCtr;
+	}
+
+
+	public static void setIdCtr(int idCtr) {
+		Transaction.idCtr = idCtr;
+	}
+
+
 	private void incrementIdCtr() {
 		idCtr++;
 	}

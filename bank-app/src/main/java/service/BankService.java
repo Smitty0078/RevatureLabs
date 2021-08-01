@@ -9,6 +9,7 @@ import dao.CustomerDAO;
 
 public class BankService {
 	
+	//TODO: BankDAO     bankDAO = new BankDAO();
 	private CustomerDAO custDAO = new CustomerDAO();
 	
 	//--------------------------------------------------------------	
@@ -70,6 +71,16 @@ public class BankService {
 	public void acceptTransaction(Customer customer, Transaction t) throws SQLException, Exception {
 		System.out.println("ACCEPTING TRANSACTION SERVICE LAYER");
 		custDAO.acceptTransaction(customer, t);
+	}
+
+	//--------------------------------------------------------------	
+	/* Description: 
+	 * Pre-conditions: 
+	 * Post-conditions:	
+	 */
+	public int setIdCtr(String tablename) throws SQLException, Exception{
+		return custDAO.setIdCtr(tablename);
+		
 	}
 	
 	

@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import common.pojo.Customer;
 import common.pojo.Transaction;
+import common.pojo.User;
 import common.util.AppConstants;
 import service.BankService;
 
@@ -24,6 +25,7 @@ public class ConsoleApp {
 	public void start() {
 		String input;
 		scanner = new Scanner(System.in);
+		setIdCounters("accounts", "transactions");
 		while(!exit) {
 			appGreeting();
 			input = scanner.next();
@@ -35,6 +37,24 @@ public class ConsoleApp {
 	}
 	
 //--------------------------------------------------------------	
+/* Description:
+ * Pre-conditions:
+ * Post-conditions:	
+ */
+private void setIdCounters(String accounts, String transactions) {
+		try {
+			User.setIdCtr(service.setIdCtr(accounts));
+			Transaction.setIdCtr(service.setIdCtr(transactions));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	//--------------------------------------------------------------	
 /* Description:
  * Pre-conditions:
  * Post-conditions:	
@@ -60,7 +80,7 @@ public class ConsoleApp {
 				customerSignIn(scanner);
 				break;
 			case "2":
-				employeeSignIn();
+				employeeSignIn(scanner);
 				break;
 			case "3":
 				createCustomerAccount();
@@ -267,10 +287,7 @@ public class ConsoleApp {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		//deposit to receiving account
-		//withdrawl from sending account
+
 	}
 	
 //--------------------------------------------------------------	
@@ -361,12 +378,43 @@ public class ConsoleApp {
  * Pre-conditions: input = 2
  * Post-conditions:	TODO: update if needed
  */
-	public void employeeSignIn() {
+	public void employeeSignIn(Scanner scanner) {
 		System.out.println("employee sign in");
-		//TODO: wire service object here...
+		String username = getInput("username");
+		String password = getInput("password");
+		
+		if(username.equals(AppConstants.EMPLOYEE_ADMIN_USERNAME) && password.equals(AppConstants.EMPLOYEE_ADMIN_PASSWORD)) {
+			employeeMenu(scanner);
+		}else {
+			System.out.println("Invalid username or password");
+		}
+		
 	}
 	
 //--------------------------------------------------------------	
+/* Description:
+ * Pre-conditions: 
+ * Post-conditions:	
+ */
+	private void employeeMenu(Scanner scanner) {
+		boolean signout = false;
+		System.out.println("\nWhat would you like to do?\n"
+				 + "View Customer Balance:          ENTER 1\n"
+				 + "Review New Account Requests:    ENTER 2\n"
+				 + "Sign out:                       ENTER 3\n");
+		String input = scanner.next();
+		if(input.equals("1")) {
+			System.out.println("viewing balance...");
+		}else if(input.equals("2")) {
+			System.out.println("reviewing requests...");
+		}else if(input.equals("3")) {
+			signout = true;
+		}else {
+			System.out.println("Invalid input...");
+		}
+	}
+
+	//--------------------------------------------------------------	
 /* Description: Called when user has selected to create a new account
  * Pre-conditions: input = 3
  * Post-conditions:	TODO: update if needed

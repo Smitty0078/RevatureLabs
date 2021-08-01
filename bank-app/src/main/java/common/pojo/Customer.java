@@ -9,6 +9,15 @@ public class Customer extends User{
 		super(name, username, password);
 		this.balance = startingBalance;
 	}
+	
+	
+
+	public Customer(String username, double balance) {
+		super(username);
+		this.balance = balance;
+	}
+
+
 
 	public String getBankingHistory() {
 		return bankingHistory;
