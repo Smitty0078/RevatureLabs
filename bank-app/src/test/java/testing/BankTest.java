@@ -24,7 +24,7 @@ public class BankTest {
 		Assert.assertEquals("3", String.valueOf(accountId));
 		
 		int tranId = c.setIdCtr("transactions");
-		Assert.assertEquals("6", String.valueOf(tranId));
+		Assert.assertEquals("8", String.valueOf(tranId));
 		
 	}
 	

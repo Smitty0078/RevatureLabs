@@ -526,9 +526,9 @@ public void setIdCounters(String accounts, String transactions) {
 	}
 
 //--------------------------------------------------------------	
-/* Description:
- * Pre-conditions:
- * Post-conditions:	
+/* Description: Gets user input
+ * Pre-conditions: scanner initialized
+ * Post-conditions:	string input returned
  */
 	public String getInput(String custAttribute, Scanner scanner) {
 		String input;
