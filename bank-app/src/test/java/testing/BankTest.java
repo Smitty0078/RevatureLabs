@@ -1,14 +1,10 @@
 package testing;
 
-import static org.junit.Assert.assertEquals;
 
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Scanner;
 
-import org.junit.After;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 import client.ConsoleApp;
@@ -28,7 +24,7 @@ public class BankTest {
 		Assert.assertEquals("3", String.valueOf(accountId));
 		
 		int tranId = c.setIdCtr("transactions");
-		Assert.assertEquals("4", String.valueOf(tranId));
+		Assert.assertEquals("6", String.valueOf(tranId));
 		
 	}
 	
@@ -55,7 +51,7 @@ public class BankTest {
 		
 		//trys to get existing account
 		try {
-			Customer c = dao.getCustomerAccount("tst", "tst", messages);
+			dao.getCustomerAccount("tst", "tst", messages);
 			Assert.assertTrue(true);
 		} catch (SQLException e) {
 			Assert.assertTrue(false);
@@ -65,7 +61,7 @@ public class BankTest {
 		
 		//trys to get non-existing account
 		try {
-			Customer c = dao.getCustomerAccount("noaccount", "noaccount", messages);
+			dao.getCustomerAccount("noaccount", "noaccount", messages);
 			Assert.assertTrue(false);
 		} catch (SQLException e) {
 			Assert.assertTrue(true);
@@ -75,7 +71,7 @@ public class BankTest {
 		
 		//tests overloaded method
 		try {
-			Customer c = dao.getCustomerAccount("tst");
+			dao.getCustomerAccount("tst");
 			Assert.assertTrue(true);
 		} catch (SQLException e) {
 			Assert.assertTrue(false);
@@ -162,17 +158,22 @@ public class BankTest {
 	@Test
 	public void evaluateCreateTransaction() {
 		CustomerDAO dao = new CustomerDAO();
-		Transaction t = new Transaction();
 		
+		Transaction t1 = new Transaction(5, "123brendi", "tst", 50, "PENDING", "DEPOSIT");
+		
+		try {
+			dao.createTransaction(t1);
+		} catch (Exception e) {
+			Assert.assertTrue(true); //already exists
+		}
+		
+		Transaction t2 = new Transaction(6, "tst", "123brendi", 50, "PENDING", "DEPOSIT");
+		
+		try {
+			dao.createTransaction(t2);
+		} catch (Exception e) {
+			Assert.assertTrue(true); //already exists
+		}	
 	}
 	
-	@Test
-	public void evaluateAcceptTransaction() {
-		//do this
-	}
-	
-	@Test
-	public void evaluateGetSenderAccount() {
-		//do this
-	}
 }
