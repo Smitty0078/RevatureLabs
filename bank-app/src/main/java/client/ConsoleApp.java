@@ -202,7 +202,6 @@ public void setIdCounters(String accounts, String transactions) {
  * Post-conditions:	Any pending transactions are handled accordingly
  */
 	public void viewTransactions(Customer customer, Scanner scanner) {
-		System.out.println("VIEW TRANSACTIONS CLIENT LAYER");
 		List<Transaction> transactions = null;
 		try {
 			transactions = service.getTransactions(customer);

@@ -57,7 +57,6 @@ public class BankService {
  * Post-conditions:	Any transactions are returned for the customer
  */
 	public List<Transaction> getTransactions(Customer c) throws SQLException, Exception {
-		System.out.println("VIEW TRANSACTIONS SERVICE LAYER");
 		return custDAO.getTransactions(c);
 	}
 
