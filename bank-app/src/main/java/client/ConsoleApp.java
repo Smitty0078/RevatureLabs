@@ -37,6 +37,12 @@ public class ConsoleApp {
 		scanner.close();
 	}
 	
+	
+//--------------------------------------------------------------	
+/* Description: Used to initialize the scanner
+ * Pre-conditions: none
+ * Post-conditions:	Scanner initialized
+ */
 	public Scanner initializeScanner() {
 		return new Scanner(System.in);
 	}
@@ -49,15 +55,11 @@ public class ConsoleApp {
 public void setIdCounters(String accounts, String transactions) {
 		try {
 			User.setIdCtr(service.setIdCtr(accounts) + 1);
-			System.out.println("user.idCtr = "+User.getIdCtr());
 			Transaction.setIdCtr(service.setIdCtr(transactions) + 1);
-			System.out.println("tran.idCtr = "+Transaction.getIdCtr());
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Id counters not set correctly");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Id counters not set correctly");
 		}
 	}
 
@@ -103,7 +105,7 @@ public void setIdCounters(String accounts, String transactions) {
 //--------------------------------------------------------------	
 /* Description: Called when user has selected to sign in as a customer
  * Pre-conditions: Input = 1
- * Post-conditions:	TODO: update if needed
+ * Post-conditions:	Customer sign in is successful
  */
 	public void customerSignIn(Scanner scanner) {
 		String username;
@@ -124,18 +126,16 @@ public void setIdCounters(String accounts, String transactions) {
 			}
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Account not found");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Account not found");
 		}
 	}
 	
 //--------------------------------------------------------------	
-/* Description:
- * Pre-conditions:
- * Post-conditions:
+/* Description: Used to print messages with the problem at sign in
+ * Pre-conditions: account not found
+ * Post-conditions: messages printed to the console
  */	
 	public void printSignInMessages(List<String> messages) {
 		System.out.println("Account not found: ");
@@ -145,9 +145,9 @@ public void setIdCounters(String accounts, String transactions) {
 	}
 	
 //--------------------------------------------------------------	
-/* Description: 
- * Pre-conditions: 
- * Post-conditions:	
+/* Description: Prints options for the customer to chose from
+ * Pre-conditions: Customer sign in was successful
+ * Post-conditions:	none
  */	
 	private void customerMenu(Customer customer, Scanner scanner) {
 		boolean signout = false;
@@ -166,9 +166,9 @@ public void setIdCounters(String accounts, String transactions) {
 	}
 
 //--------------------------------------------------------------	
-/* Description: 
- * Pre-conditions: 
- * Post-conditions:	
+/* Description: Parses customer option to execute the correct method
+ * Pre-conditions: Customer sign in was successful
+ * Post-conditions:	Correct method is executed
  */
 	private boolean parseCustomerOption(String input, Customer customer) {
 			switch(input) {
@@ -197,9 +197,9 @@ public void setIdCounters(String accounts, String transactions) {
 	}
 	
 	//--------------------------------------------------------------	
-/* Description: 
- * Pre-conditions: 
- * Post-conditions:	
+/* Description: This method retrieves any pending transactions that the customer can approve or deny
+ * Pre-conditions: Customer sign in is successful
+ * Post-conditions:	Any pending transactions are handled accordingly
  */
 	public void viewTransactions(Customer customer, Scanner scanner) {
 		System.out.println("VIEW TRANSACTIONS CLIENT LAYER");
@@ -207,11 +207,9 @@ public void setIdCounters(String accounts, String transactions) {
 		try {
 			transactions = service.getTransactions(customer);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Transactions not found");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Transactions not found");
 		}
 		
 		if(!transactions.isEmpty()) {
@@ -228,9 +226,9 @@ public void setIdCounters(String accounts, String transactions) {
 	}
 
 //--------------------------------------------------------------	
-/* Description: 
- * Pre-conditions: 
- * Post-conditions:	
+/* Description: Allows customer to accept or deny any pending transfer transactions
+ * Pre-conditions: There is a pending transaction that needs approval
+ * Post-conditions:	Transaction is handled accordingly
  */
 	private void handleTransaction(Customer customer, Transaction t, Scanner scanner) {
 		boolean validated = false;
@@ -240,16 +238,15 @@ public void setIdCounters(String accounts, String transactions) {
 					+ "Deny:   ENTER 2\n");
 			String input = scanner.next();
 			if (input.equals("1")) {
-				System.out.println("ACCEPTING REQUEST");
 				try {
 					service.acceptTransaction(customer, t);
+					System.out.println("Transaction accepted.");
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					System.out.println("Transaction unseccessful.");
 				}
 				validated = true;
 			} else if (input.equals("2")) {
-				System.out.println("DENYING REQUEST");
+				System.out.println("Transaction denied.");
 				validated = true;
 			} 
 		} while (!validated);
@@ -258,9 +255,9 @@ public void setIdCounters(String accounts, String transactions) {
 	}
 
 	//--------------------------------------------------------------	
-/* Description: 
- * Pre-conditions: 
- * Post-conditions:	
+/* Description: Allows customer to request funds or request to send funds to another customer
+ * Pre-conditions: Customer is signed in
+ * Post-conditions:	none.
  */
 	private void transfer(Customer customer, Scanner scanner) {
 		System.out.println("transfer");
@@ -289,19 +286,18 @@ public void setIdCounters(String accounts, String transactions) {
 		} while (!validated);
 		
 		try {
-			int rows = service.createTransaction(transaction);
+			service.createTransaction(transaction);
 			Transaction.incrementIdCtr();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Transaction unseccessful");
 		}
 
 	}
 	
 //--------------------------------------------------------------	
-/* Description: 
- * Pre-conditions: 
- * Post-conditions:	
+/* Description: Helper method for creating transactions
+ * Pre-conditions: Transaction is being created
+ * Post-conditions:	Transaction type is returned
  */
 
 	private String getTransactionType(String user, Scanner scanner) {
@@ -318,9 +314,9 @@ public void setIdCounters(String accounts, String transactions) {
 	}
 
 	//--------------------------------------------------------------	
-/* Description: 
- * Pre-conditions: 
- * Post-conditions:	
+/* Description: Allows customer to take funds out of their account balance
+ * Pre-conditions: Customer is signed in
+ * Post-conditions:	Withdraw is successful
  */
 	private void withdraw(Customer customer, Scanner scanner) {
 		double amt = 0;
@@ -335,22 +331,19 @@ public void setIdCounters(String accounts, String transactions) {
 			rowsAffected = service.updateAccountBalance(customer, amt, AppConstants.ACCOUNT_WITHDRAW);
 			System.out.println("rows affected: "+rowsAffected);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Withdraw unseccessful");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Withdraw unseccessful");
 		}
 		
 	}
 
 	//--------------------------------------------------------------	
-/* Description:
- * Pre-conditions: 
- * Post-conditions:	
+/* Description: Allows customer to add funds to their account balance
+ * Pre-conditions: Customer is signed in
+ * Post-conditions:	Deposit is successful
  */
 	private void deposit(Customer customer, Scanner scanner) {
-		// TODO Auto-generated method stub
 		double amt = 0;
 		int rowsAffected;
 		//this handles negative values
@@ -363,11 +356,10 @@ public void setIdCounters(String accounts, String transactions) {
 			rowsAffected = service.updateAccountBalance(customer, amt, AppConstants.ACCOUNT_DEPOSIT);
 			System.out.println("rows affected: "+rowsAffected);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println("Deposit Unseccessful");
 			e.printStackTrace();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Deposit unseccessful");
 		}
 	}
 
@@ -382,15 +374,14 @@ public void setIdCounters(String accounts, String transactions) {
 				System.out.println("The current account balance is: $" + balance);
 				customer.setBalance(balance);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				System.out.println("View balance unseccessful");
 			}
 	}
 
 //--------------------------------------------------------------	
 /* Description: Called when user has selected to sign in as an employee
- * Pre-conditions: input = 2
- * Post-conditions:	TODO: update if needed
+ * Pre-conditions: User selected employee sign in
+ * Post-conditions:	Employee sign in is successful
  */
 	public void employeeSignIn(Scanner scanner) {
 		System.out.println("employee sign in");
@@ -406,17 +397,16 @@ public void setIdCounters(String accounts, String transactions) {
 	}
 	
 //--------------------------------------------------------------	
-/* Description:
- * Pre-conditions: 
- * Post-conditions:	
+/* Description: Prints options for the employee to select
+ * Pre-conditions: Employee signed in
+ * Post-conditions:	Correct option executed
  */
 	private void employeeMenu(Scanner scanner) {
 		boolean signout = false;
 		do {
 			System.out.println("\nWhat would you like to do?\n" 
 								+ "View Customer Balance:          ENTER 1\n"
-								+ "Review New Account Requests:    ENTER 2\n" 
-								+ "Sign out:                       ENTER 3\n");
+								+ "Sign out:                       ENTER 2\n");
 			String input = scanner.next();
 			if (input.equals("1")) {
 				System.out.println("viewing balance...");
@@ -425,16 +415,12 @@ public void setIdCounters(String accounts, String transactions) {
 				try {
 					c = service.getCustomerAccount(username);
 				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					System.out.println("Account not found");
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
+					System.out.println("Account not found");
 				}
 				viewBalance(c);
 			} else if (input.equals("2")) {
-				System.out.println("reviewing requests...");
-			} else if (input.equals("3")) {
 				signout = true;
 			} else {
 				System.out.println("Invalid input...");
@@ -443,9 +429,9 @@ public void setIdCounters(String accounts, String transactions) {
 	}
 
 //--------------------------------------------------------------	
-/* Description:
- * Pre-conditions: 
- * Post-conditions:	
+/* Description: Allows user to register to create a new account
+ * Pre-conditions: User selected register for new account
+ * Post-conditions:	New account is approved and created or denied
  */
 	public void registerNewCustomerAccount(Scanner scanner){
 		Customer tmp = null;
@@ -464,17 +450,15 @@ public void setIdCounters(String accounts, String transactions) {
 		System.out.println(customer.toString());
 		
 		if(admin.approveOrDeny(customer.getBankingHistory())) {
-			System.out.println("approved");
 			try {
 				 tmp = service.checkForExistingUser(customer.getUserName());
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
+				System.out.println("Account locator unseccessful");
 			}
-			//System.out.println(tmp.toString());
 			if(tmp == null) {
 				System.out.println("Creating new customer account");
 				createCustomerAccount(customer);
+				System.out.println("Account creation approved and successful.");
 			}else {
 				System.out.println("The username "+customer.getUserName()+" already exists...\n");
 			}
@@ -485,31 +469,26 @@ public void setIdCounters(String accounts, String transactions) {
 	}
 	
 	//--------------------------------------------------------------	
-/* Description: Called when user has selected to create a new account
- * Pre-conditions: input = 3
- * Post-conditions:	TODO: update if needed
+/* Description: Called when user has requested to create a new account and has been approved
+ * Pre-conditions: Account creation request has been approved
+ * Post-conditions:	Account created, User idCtr incremented
  */
 	public void createCustomerAccount(Customer customer) {
 		
-		int result;
 		try {
-			//TODO: CALL EMPLOYEE METHOD TO APPOROVE OR DENY BASED ON BANKING HISTORy
 			customer.setId(User.getIdCtr());
-			result = service.createCustomerAccount(customer);
-			System.out.println("num of rows affected: "+result);
+			service.createCustomerAccount(customer);
 			User.incrementIdCtr();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Account creation unseccessful");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("Account creation unseccessful");
 		}
 	}
 	
 //--------------------------------------------------------------	
 /* Description: Called when user has selected to exit the app
- * Pre-conditions: User input = 4
+ * Pre-conditions: User selected to exit the app
  * Post-conditions:	exit loop control variable set to true
  */
 	public void exit() {
@@ -518,18 +497,18 @@ public void setIdCounters(String accounts, String transactions) {
 	}
 	
 //--------------------------------------------------------------	
-/* Description:
- * Pre-conditions:
- * Post-conditions:	
+/* Description: Prints when user enters invalid input
+ * Pre-conditions: User entered invalid input
+ * Post-conditions:	Message printed to console
  */
 	public void invalidInput() {
 		System.out.println("Invalid input.");
 	}
 	
 //--------------------------------------------------------------	
-/* Description:
- * Pre-conditions:
- * Post-conditions:	
+/* Description: Helper method to get information on a customer
+ * Pre-conditions: none
+ * Post-conditions:	Customer returned
  */
 	public Customer getNewCustomer(Scanner scanner) {
 		String name;
@@ -538,9 +517,7 @@ public void setIdCounters(String accounts, String transactions) {
 		double startingBalance = 0;
 		
 		name = getInput("first name", scanner);
-		//TODO: USE STRINGBUILDER HERE
 		name += " "+getInput("last name", scanner);
-		//TOD0: CHECK FOR EXISTING USERNAME
 		username = getInput("username", scanner);
 		password = getInput("password", scanner);
 		startingBalance = getDoubleInput("starting account balance", scanner);
@@ -562,9 +539,9 @@ public void setIdCounters(String accounts, String transactions) {
 	}
 	
 //--------------------------------------------------------------	
-/* Description:
- * Pre-conditions:
- * Post-conditions:	
+/* Description: Helper method used to parse a double
+ * Pre-conditions: none
+ * Post-conditions:	Double returned
  */
 	public double getDoubleInput(String message, Scanner scanner) {
 		boolean validated = false;

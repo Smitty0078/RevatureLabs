@@ -161,7 +161,9 @@ public class BankTest {
 	
 	@Test
 	public void evaluateCreateTransaction() {
-		//do this
+		CustomerDAO dao = new CustomerDAO();
+		Transaction t = new Transaction();
+		
 	}
 	
 	@Test
