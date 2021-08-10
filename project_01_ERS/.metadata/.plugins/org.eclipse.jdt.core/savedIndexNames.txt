@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\smitt\OneDrive\Documents\GitHub\RevatureLabs\project_01_ERS\.metadata\.plugins\org.eclipse.jdt.core
+3144463629.index
+817761892.index
