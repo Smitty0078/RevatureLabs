@@ -2,5 +2,5 @@
 body{
     height: 100vh;
     background-repeat: no-repeat;
-    background-image: linear-gradient(red, yellow); 
+    background-image: linear-gradient(black, rgb(134, 0, 0)); 
 }
