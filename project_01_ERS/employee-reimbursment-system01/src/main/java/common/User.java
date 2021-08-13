@@ -1,13 +1,13 @@
 package common;
 
-import java.io.Serializable;
+//import java.io.Serializable;
 import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity(name="employee")
-public class User implements Serializable{
+public class User {//implements Serializable{
 
 	@Column
 	private int id;
