@@ -1,6 +1,7 @@
 package service;
 
 import common.Employee;
+import common.User;
 import dao.EmpDAO;
 import dao.EmpDAOImpl;
 
@@ -13,7 +14,7 @@ public class UserService {
 		dao.create(e);
 	}
 	
-	public Employee signIn(String username, String password) {
+	public User getEmployee(String username, String password) {
 		//add validation here
 		return dao.getEmployee(username, password);
 	}

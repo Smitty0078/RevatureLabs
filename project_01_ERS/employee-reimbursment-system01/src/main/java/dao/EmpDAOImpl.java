@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import common.Employee;
+import common.User;
 import common.util.DBUtil;
 
 public class EmpDAOImpl implements EmpDAO {
@@ -33,17 +34,19 @@ public class EmpDAOImpl implements EmpDAO {
 	}
 
 	@Override
-	public Employee getEmployee(String username, String password) {
+	public User getEmployee(String username, String password) {
 		Session session = DBUtil.getInstance().getSession();
 		
-		Query query = session.createQuery("FROM common.User where username = :username and password = :password");
-		query.setString("username", username);
-		query.setString("password", password);
+		Query query = session.createQuery("FROM common.User where username = :uname and password = :pswd");
+		query.setString("uname", username);
+		query.setString("pswd", password);
 		
-		Employee e = (Employee) query.uniqueResult();
+		User e = (User) query.uniqueResult();
 		
 		session.close();
-		return null;
+		return e;
 	}
+	
+	
 
 }

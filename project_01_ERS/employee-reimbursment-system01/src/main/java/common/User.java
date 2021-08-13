@@ -5,10 +5,12 @@ import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity(name="employee")
 public class User {//implements Serializable{
 
+	@Id
 	@Column
 	private int id;
 	@Column
@@ -17,7 +19,7 @@ public class User {//implements Serializable{
 	private String username;
 	@Column
 	private String password;
-	@Column
+	@Column (name = "is_admin")
 	private boolean isAdmin;
 	
 	public User(int id, String name, String username, String password, boolean isAdmin) {
@@ -28,6 +30,8 @@ public class User {//implements Serializable{
 		this.password = password;
 		this.isAdmin = isAdmin;
 	}
+	
+	public User() {}
 
 	public int getId() {
 		return id;
