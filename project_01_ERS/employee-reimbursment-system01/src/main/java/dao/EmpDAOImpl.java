@@ -33,7 +33,7 @@ public class EmpDAOImpl implements EmpDAO {
 	}
 
 	@Override
-	public Employee signIn(String username, String password) {
+	public Employee getEmployee(String username, String password) {
 		Session session = DBUtil.getInstance().getSession();
 		
 		Query query = session.createQuery("FROM common.User where username = :username and password = :password");

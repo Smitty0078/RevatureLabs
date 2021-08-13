@@ -15,7 +15,7 @@ public class UserService {
 	
 	public Employee signIn(String username, String password) {
 		//add validation here
-		return dao.signIn(username, password);
+		return dao.getEmployee(username, password);
 	}
 	
 }
