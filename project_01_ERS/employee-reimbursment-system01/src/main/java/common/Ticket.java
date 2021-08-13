@@ -17,16 +17,21 @@ public class Ticket implements Serializable{
 	private int id;
 	@Column
 	private int employee_id;
-	@Column
+	@Column(name="ticket_amount")
 	private double amount;
+	@Column
+	private String description;
 	
 
-	public Ticket(int id, int employee_id, double amount) {
+	public Ticket(int id, int employee_id, double amount, String description) {
 		super();
 		this.id = id;
 		this.employee_id = employee_id;
 		this.amount = amount;
+		this.description = description;
 	}
+	
+	public Ticket() {}
 
 	public int getId() {
 		return id;
@@ -36,11 +41,11 @@ public class Ticket implements Serializable{
 		this.id = id;
 	}
 
-	public int getUsername() {
+	public int getEmployee_id() {
 		return employee_id;
 	}
 
-	public void setUsername(int employee_id) {
+	public void setEmployee_id(int employee_id) {
 		this.employee_id = employee_id;
 	}
 
@@ -52,6 +57,13 @@ public class Ticket implements Serializable{
 		this.amount = amount;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
 
 	@Override
 	public boolean equals(Object obj) {
@@ -62,14 +74,20 @@ public class Ticket implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Ticket other = (Ticket) obj;
-		return Double.doubleToLongBits(amount) == Double.doubleToLongBits(other.amount) && id == other.id
-				&& Objects.equals(employee_id, other.employee_id);
+		return Double.doubleToLongBits(amount) == Double.doubleToLongBits(other.amount)
+				&& Objects.equals(description, other.description) && employee_id == other.employee_id && id == other.id;
 	}
 
 	@Override
 	public String toString() {
-		return "Ticket [id=" + id + ", employee_id=" + employee_id + ", amount=" + amount + "]";
+		return "Ticket [id=" + id + ", employee_id=" + employee_id + ", amount=" + amount + ", description="
+				+ description + "]";
 	}
+	
+	
+	
+
+	
 	
 	
 	
