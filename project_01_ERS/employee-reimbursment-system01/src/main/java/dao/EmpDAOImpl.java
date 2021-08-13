@@ -13,7 +13,7 @@ import common.util.DBUtil;
 public class EmpDAOImpl implements EmpDAO {
 
 	@Override
-	public void create(Employee employee) {
+	public void create(User employee) {
 		Session session = DBUtil.getInstance().getSession();
 
 		Transaction tx = null;

@@ -5,7 +5,9 @@ import common.User;
 
 public interface EmpDAO {
 
-	public void create(Employee employee);
+	public void create(User employee);
 	public User getEmployee(String username, String password);
+	
+	
 	
 }

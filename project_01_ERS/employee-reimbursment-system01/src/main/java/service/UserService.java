@@ -9,7 +9,7 @@ public class UserService {
 
 	EmpDAO dao = new EmpDAOImpl();
 	
-	public void create(Employee e) {
+	public void create(User e) {
 		//add validation here
 		dao.create(e);
 	}
