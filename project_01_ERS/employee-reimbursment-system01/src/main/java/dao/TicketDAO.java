@@ -1,5 +1,5 @@
 package dao;
 
-public class TicketDAO {
+public interface TicketDAO {
 
 }

@@ -4,11 +4,11 @@
     </div>
     <div class="row" style="padding: 5px; padding: 200px; justify-content: center;">
         <div class="col-lg-6" style="text-align: center;" id="signin">
-            <form>
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
                 <h3>Employee Login:</h3>
                 <p>username: <input type="text" placeholder="username"> </p>
                 <p>password: <input type="password" placeholder="password"> </p>
-                <button style="align-self: center; width: 200px; margin: 5px;">Sign In</button>
+                <button type="submit" style="align-self: center; width: 200px; margin: 5px;">Sign In</button>
             </form>
         </div>
     </div>

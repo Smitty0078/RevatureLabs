@@ -1,19 +1,28 @@
 package common;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Ticket {
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
+
+
+@Entity(name="ticket")
+public class Ticket implements Serializable{
+
+	@Column
 	private int id;
-	private String username;
+	@Column
+	private int employee_id;
+	@Column
 	private double amount;
 	
-	
 
-	public Ticket(int id, String username, double amount) {
+	public Ticket(int id, int employee_id, double amount) {
 		super();
 		this.id = id;
-		this.username = username;
+		this.employee_id = employee_id;
 		this.amount = amount;
 	}
 
@@ -25,12 +34,12 @@ public class Ticket {
 		this.id = id;
 	}
 
-	public String getUsername() {
-		return username;
+	public int getUsername() {
+		return employee_id;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setUsername(int employee_id) {
+		this.employee_id = employee_id;
 	}
 
 	public double getAmount() {
@@ -52,12 +61,12 @@ public class Ticket {
 			return false;
 		Ticket other = (Ticket) obj;
 		return Double.doubleToLongBits(amount) == Double.doubleToLongBits(other.amount) && id == other.id
-				&& Objects.equals(username, other.username);
+				&& Objects.equals(employee_id, other.employee_id);
 	}
 
 	@Override
 	public String toString() {
-		return "Ticket [id=" + id + ", username=" + username + ", amount=" + amount + "]";
+		return "Ticket [id=" + id + ", employee_id=" + employee_id + ", amount=" + amount + "]";
 	}
 	
 	
