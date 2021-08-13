@@ -1,7 +1,7 @@
 package dao;
 
 import org.hibernate.Session;
-import org.hibernate.query.Query;
+import org.hibernate.Query;
 
 import common.Employee;
 import common.util.DBUtil;
