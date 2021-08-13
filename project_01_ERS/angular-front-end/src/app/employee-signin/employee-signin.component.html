@@ -6,9 +6,9 @@
         <div class="col-lg-6" style="text-align: center;" id="signin">
             <form (ngSubmit)="onSubmit(f)" #f="ngForm">
                 <h3>Employee Login:</h3>
-                <p>username: <input type="text" placeholder="username"> </p>
-                <p>password: <input type="password" placeholder="password"> </p>
-                <button type="submit" style="align-self: center; width: 200px; margin: 5px;">Sign In</button>
+                <p>username: <input type="text" name="username" placeholder="username" ngModel> </p>
+                <p>password: <input type="password" name="password" placeholder="password" ngModel> </p>
+                <button type="submit" style="width: 200px; margin: 5px;">Sign In</button>
             </form>
         </div>
     </div>
@@ -16,3 +16,4 @@
         <p class="col" style="text-align: center;">Create New Account</p>
     </div>
 </div>
+ 

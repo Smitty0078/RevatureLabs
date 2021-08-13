@@ -1,13 +1,23 @@
 package common;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class User {
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
+@Entity(name="employee")
+public class User implements Serializable{
+
+	@Column
 	private int id;
+	@Column
 	private String name;
+	@Column
 	private String username;
+	@Column
 	private String password;
+	@Column
 	private boolean isAdmin;
 	
 	public User(int id, String name, String username, String password, boolean isAdmin) {
