@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import common.User;
@@ -16,7 +17,7 @@ import common.util.AppConstants;
 import common.util.HttpUtil;
 import service.UserService;
 
-@WebServlet("/employee/*")
+@WebServlet("/employee")
 public class EmployeeServlet extends HttpServlet{
 
 	private UserService service = new UserService();
@@ -31,14 +32,22 @@ public class EmployeeServlet extends HttpServlet{
 		
 		if(pathVariables == null || pathVariables.length == 0) {
 			//get data from backend
-			List<User> users = null;
+			List<User> users = null; //service.findAll()
 			//transform java object to JSON string
 			jsonInString = mapper.writeValueAsString(users);
 		} 
-		// GET /menus/:id
-		// fetch individual menu item
+		// GET /employee/:id
+		// fetch individual employee
 		if(pathVariables != null && pathVariables.length == 2) {
 			//get data from backend
+			//get specific employee from id table
+			//id = Integer.parseInt(pathVariables[1]
+			//User u = service.getEmployeeById(id)
+			//if (u != null){
+			//	jsonInString = mapper.writeValueAsString(u);
+			//} else{
+			//	jsonInString = HttpUtil.getErrorMessage("No Record Found");
+			//}
 			
 		}
 		
@@ -50,10 +59,11 @@ public class EmployeeServlet extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+		System.out.println("hi");
 		try {
 			//get JSON data from HTTP body
 			ObjectMapper mapper = new ObjectMapper();
+			mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 			User user = mapper.readValue(HttpUtil.getJSONData(req), User.class);
 			//persist data to backend
 			service.create(user);

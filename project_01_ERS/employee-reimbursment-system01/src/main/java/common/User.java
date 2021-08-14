@@ -19,7 +19,7 @@ public class User {//implements Serializable{
 	private String username;
 	@Column
 	private String password;
-	@Column (name = "is_admin")
+	@Column (name="is_admin")
 	private boolean isAdmin;
 	
 	public User(int id, String name, String username, String password, boolean isAdmin) {
