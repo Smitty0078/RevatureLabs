@@ -7,14 +7,14 @@ import { EmployeeSigninComponent } from './employee-signin/employee-signin.compo
 import { CreateNewAccountComponent } from './create-new-account/create-new-account.component';
 import {FormsModule}   from '@angular/forms';
 import { HomeComponent } from './home/home.component';
-//import { RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes} from '@angular/router';
 //import { AuthGuard } from './site/auth.guard';
 
-//const routes:Routes = [
-// {path: '', component: HomeComponent}
-// {path: 'login', component: EmployeeSignInComponent}
-// {path: 'create', component: CreateNewAccountComponent}
-//]
+const routes:Routes = [
+ {path: '', component: HomeComponent},
+ {path: 'login', component: EmployeeSigninComponent},
+ {path: 'create', component: CreateNewAccountComponent}
+]
 
 @NgModule({
   declarations: [
@@ -26,8 +26,8 @@ import { HomeComponent } from './home/home.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
-    //RouterModule.forRoot(routes)
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

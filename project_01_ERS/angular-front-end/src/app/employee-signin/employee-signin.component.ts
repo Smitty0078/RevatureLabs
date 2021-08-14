@@ -19,9 +19,12 @@ export class EmployeeSigninComponent implements OnInit {
     this.http.post('http://localhost:8020/employee-reimbursment-system01/login', 
                     JSON.stringify({username: form.value.username, password: form.value.password}))
                     .subscribe({
-                      next:(data)=>{
-                        console.log(data
-                        )}, 
+                      next:(data:any)=>{
+                        console.log(data)
+                        if(data.status === 'success'){
+                          localStorage.setItem("username", form.value.username)
+                        }
+                        }, 
                     })
   }
 
