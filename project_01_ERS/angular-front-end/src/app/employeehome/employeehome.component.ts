@@ -14,7 +14,13 @@ export class EmployeehomeComponent implements OnInit {
   }
 
   signOut(){
+    //localStorage.removeItem(key);
+    localStorage.clear() 
     this.router.navigate([''])
+  }
+
+  createNewTicket(){
+    //this.router.navigate([''])
   }
 
 }
