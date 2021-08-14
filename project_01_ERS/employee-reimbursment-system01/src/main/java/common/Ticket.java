@@ -13,7 +13,7 @@ import javax.persistence.Id;
 public class Ticket implements Serializable{
 
 	@Id
-	@Column
+	@Column(name="ticket_id")
 	private int id;
 	@Column
 	private int employee_id;
