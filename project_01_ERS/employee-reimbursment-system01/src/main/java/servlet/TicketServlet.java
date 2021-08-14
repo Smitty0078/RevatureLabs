@@ -59,7 +59,6 @@ public class TicketServlet extends HttpServlet{
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		System.out.println("hi");
 		try {
 			//get JSON data from HTTP body
 			ObjectMapper mapper = new ObjectMapper();
