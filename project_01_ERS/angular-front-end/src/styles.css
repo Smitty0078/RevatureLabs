@@ -5,3 +5,16 @@ body{
     background-image: linear-gradient(black, red);
     color: white;
 }
+
+button{
+    background-color: maroon;
+    border: 1px solid pink;
+    color: white;
+    width: 200px;
+}
+
+button:hover{
+    background-repeat: no-repeat;
+    background-image: linear-gradient(maroon, red);
+    box-shadow: 5px 3px 3px pink;
+}

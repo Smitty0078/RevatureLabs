@@ -25,7 +25,7 @@ export class EmployeeSigninComponent implements OnInit {
                         if(data.status === 'success'){
                           localStorage.setItem("username", form.value.username)
                           //add employee component here
-                          this.router.navigate([''])
+                          this.router.navigate(['employeehome'])
                         }
                         }, 
                     })
