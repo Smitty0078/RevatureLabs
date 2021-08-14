@@ -16,5 +16,5 @@ button{
 button:hover{
     background-repeat: no-repeat;
     background-image: linear-gradient(maroon, red);
-    box-shadow: 5px 3px 3px pink;
+    box-shadow: 5px 4px 3px pink;
 }
