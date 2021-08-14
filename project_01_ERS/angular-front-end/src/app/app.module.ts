@@ -9,6 +9,7 @@ import {FormsModule}   from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes} from '@angular/router';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { EmployeehomeComponent } from './employeehome/employeehome.component';
 //import { AuthGuard } from './site/auth.guard';
 
 const routes:Routes = [
@@ -24,7 +25,8 @@ const routes:Routes = [
     EmployeeSigninComponent,
     CreateNewAccountComponent,
     HomeComponent,
-    AdminloginComponent
+    AdminloginComponent,
+    EmployeehomeComponent
   ],
   imports: [
     BrowserModule,
