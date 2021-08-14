@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import common.Employee;
@@ -26,6 +27,7 @@ public class LoginServlet extends HttpServlet{
 		try {
 			//get JSON data from HTTP body
 			ObjectMapper mapper = new ObjectMapper();
+			mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 			User user = mapper.readValue(HttpUtil.getJSONData(req), User.class);
 			//persist data to backend
 			boolean success = service.login(user.getUsername(), user.getPassword()); //do login here

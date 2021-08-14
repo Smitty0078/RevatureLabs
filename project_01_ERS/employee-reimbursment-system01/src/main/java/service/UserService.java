@@ -20,7 +20,11 @@ public class UserService {
 	}
 
 	public boolean login(String username, String password) {
-		return dao.login(username, password);
+		if(dao.getEmployee(username, password) !=null )
+		{
+			return true;
+		}
+		return false;
 	}
 	
 }

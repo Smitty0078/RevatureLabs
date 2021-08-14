@@ -46,12 +46,6 @@ public class EmpDAOImpl implements EmpDAO {
 		session.close();
 		return e;
 	}
-
-	@Override
-	public boolean login(String username, String password) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 	
 	
 
