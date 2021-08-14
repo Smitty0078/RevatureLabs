@@ -1,0 +1,18 @@
+<div class="container" style="margin-top: 100px; text-align: center;">
+    <div class="row" id="signin-title">
+        <h1 class="col"style="text-align: center;">Employee Reimbursment System</h1>
+    </div>
+    <div class="row" style="padding: 5px; padding: 200px; justify-content: center;">
+        <div class="col-lg-6" style="text-align: center;" id="signin">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <h3>Finance Manager Login:</h3>
+                <p>username: <input type="text" name="username" placeholder="username" ngModel> </p>
+                <p>password: <input type="password" name="password" placeholder="password" ngModel> </p>
+                <button type="submit" style="width: 200px; margin: 5px;">Sign In</button>
+            </form>
+        </div>
+    </div>
+    <div class="row" style="padding: 5px;" id="createnewaccount">
+        <p class="col" style="text-align: center;">Create New Account</p>
+    </div>
+</div>

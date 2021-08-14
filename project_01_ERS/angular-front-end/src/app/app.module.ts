@@ -8,12 +8,14 @@ import { CreateNewAccountComponent } from './create-new-account/create-new-accou
 import {FormsModule}   from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes} from '@angular/router';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
 //import { AuthGuard } from './site/auth.guard';
 
 const routes:Routes = [
  {path: '', component: HomeComponent},
  {path: 'login', component: EmployeeSigninComponent},
- {path: 'create', component: CreateNewAccountComponent}
+ {path: 'create', component: CreateNewAccountComponent},
+ {path: 'adminlogin', component: AdminloginComponent}
 ]
 
 @NgModule({
@@ -21,7 +23,8 @@ const routes:Routes = [
     AppComponent,
     EmployeeSigninComponent,
     CreateNewAccountComponent,
-    HomeComponent
+    HomeComponent,
+    AdminloginComponent
   ],
   imports: [
     BrowserModule,

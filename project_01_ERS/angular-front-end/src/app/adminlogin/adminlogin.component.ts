@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
-  selector: 'app-employee-signin',
-  templateUrl: './employee-signin.component.html',
-  styleUrls: ['./employee-signin.component.css']
+  selector: 'app-adminlogin',
+  templateUrl: './adminlogin.component.html',
+  styleUrls: ['./adminlogin.component.css']
 })
-export class EmployeeSigninComponent implements OnInit {
+export class AdminloginComponent implements OnInit {
 
   constructor(private http:HttpClient) { }
 
@@ -16,7 +16,8 @@ export class EmployeeSigninComponent implements OnInit {
 
   onSubmit(form:NgForm){
     console.log(form)
-    this.http.post('http://localhost:8020/employee-reimbursment-system01/login', 
+    /*  TODO: do this after manager servlet created *******
+    this.http.post('http://localhost:8020/employee-reimbursment-system01/adminlogin', 
                     JSON.stringify({username: form.value.username, password: form.value.password}))
                     .subscribe({
                       next:(data:any)=>{
@@ -27,6 +28,7 @@ export class EmployeeSigninComponent implements OnInit {
                         }
                         }, 
                     })
+                    */
   }
 
 }
