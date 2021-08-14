@@ -1,0 +1,21 @@
+
+.home{
+    font-size: 50px;
+}
+
+.linkbox{
+    border: 1px solid pink;
+    margin: 50px;
+    padding: 50px;
+
+}
+
+.linkbox:hover{
+    background-repeat: no-repeat;
+    background-image: linear-gradient(maroon, red);
+    box-shadow: 10px 5px 5px pink;
+}
+
+a{
+    color: white;
+}
