@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +17,7 @@ import common.util.AppConstants;
 import common.util.HttpUtil;
 import service.TicketService;
 
+@WebServlet("/tickets")
 public class TicketServlet extends HttpServlet{
 
 	private TicketService service = new TicketService();
@@ -30,16 +32,15 @@ public class TicketServlet extends HttpServlet{
 		
 		if(pathVariables == null || pathVariables.length == 0) {
 			//get data from backend
-			//List<User> users = null; //service.findAll()
 			List<Ticket> tickets = null; //service.findAll()
 			//transform java object to JSON string
 			jsonInString = mapper.writeValueAsString(tickets);
 		} 
 		// GET /employee/:id
-		// fetch individual employee
+		// fetch individual ticket
 		if(pathVariables != null && pathVariables.length == 2) {
 			//get data from backend
-			//get specific employee from id table
+			//get specific ticket from id table
 			//id = Integer.parseInt(pathVariables[1]
 			//Ticket t = service.getEmployeeById(id)
 			//if (u != null){
