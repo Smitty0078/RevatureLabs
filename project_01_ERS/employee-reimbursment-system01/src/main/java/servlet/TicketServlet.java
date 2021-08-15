@@ -32,7 +32,7 @@ public class TicketServlet extends HttpServlet{
 		
 		if(pathVariables == null || pathVariables.length == 0) {
 			//get data from backend
-			List<Ticket> tickets = null; //service.findAll()
+			List<Ticket> tickets = service.getAllTickets();
 			//transform java object to JSON string
 			jsonInString = mapper.writeValueAsString(tickets);
 		} 

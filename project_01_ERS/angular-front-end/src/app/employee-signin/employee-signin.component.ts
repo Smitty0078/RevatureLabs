@@ -10,9 +10,12 @@ import { Router } from '@angular/router';
 })
 export class EmployeeSigninComponent implements OnInit {
 
-  constructor(private http:HttpClient, private router:Router) { }
+  constructor(private http:HttpClient, private router:Router) { 
+    console.log("im here!")
+  }
 
   ngOnInit(): void {
+
   }
 
   onSubmit(form:NgForm){

@@ -49,7 +49,7 @@ Session session = DBUtil.getInstance().getSession();
 
 	@Override
 	public List<Ticket> getAllTickets() {
-		// TODO Auto-generated method stub
+		System.out.println("Hello");
 		return null;
 	}
 

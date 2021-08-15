@@ -23,4 +23,8 @@ export class EmployeehomeComponent implements OnInit {
     this.router.navigate(['createticket'])
   }
 
+  refreshTable(){
+    console.log("hello")
+  }
+
 }
