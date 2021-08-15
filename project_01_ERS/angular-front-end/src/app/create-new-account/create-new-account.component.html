@@ -4,12 +4,13 @@
     </div>
     <div class="row" style="padding: 5px; padding: 200px; justify-content: center;">
         <div class="col-lg-6" style="text-align: center;" id="signin">
-            <form>
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
                 <h3>Create Employee Account</h3>
-                <p>name:     <input type="text" placeholder="name"> </p>
-                <p>username: <input type="text" placeholder="username"> </p>
-                <p>password: <input type="password" placeholder="password"> </p>
-                <button style="align-self: center; width: 200px; margin: 5px;">Create Account</button>
+                <p>ID:     <input type="text" name="employeeId" placeholder="ID" ngModel> </p>
+                <p>name:     <input type="text" name="name" placeholder="name" ngModel> </p>
+                <p>username: <input type="text" name="username" placeholder="username" ngModel> </p>
+                <p>password: <input type="password" name="password" placeholder="password" ngModel> </p>
+                <button type="submit" style="align-self: center; width: 200px; margin: 5px;">Create Account</button>
             </form>
         </div>
     </div>

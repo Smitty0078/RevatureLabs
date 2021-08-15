@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-createticket',
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateticketComponent implements OnInit {
 
-  constructor() { }
+  constructor(private http:HttpClient, private router:Router) { }
 
   ngOnInit(): void {
   }
