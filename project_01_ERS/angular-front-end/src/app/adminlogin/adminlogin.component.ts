@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-adminlogin',
@@ -9,7 +10,7 @@ import { NgForm } from '@angular/forms';
 })
 export class AdminloginComponent implements OnInit {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -25,10 +26,12 @@ export class AdminloginComponent implements OnInit {
                         if(data.status === 'success'){
                           localStorage.setItem("username", form.value.username)
                           //add employee component here
+                          //move router here
                         }
                         }, 
                     })
                     */
+    this.router.navigate(['adminhome'])
   }
 
 }

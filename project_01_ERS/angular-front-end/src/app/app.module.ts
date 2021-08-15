@@ -11,6 +11,8 @@ import { RouterModule, Routes} from '@angular/router';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { EmployeehomeComponent } from './employeehome/employeehome.component';
 import { CreateticketComponent } from './createticket/createticket.component';
+import { AdminhomeComponent } from './adminhome/adminhome.component';
+import { TicketapprovalComponent } from './ticketapproval/ticketapproval.component';
 //import { AuthGuard } from './site/auth.guard';
 
 const routes:Routes = [
@@ -19,7 +21,10 @@ const routes:Routes = [
  {path: 'create', component: CreateNewAccountComponent},
  {path: 'adminlogin', component: AdminloginComponent},
  {path: 'employeehome', component: EmployeehomeComponent},
- {path: 'createticket', component: CreateticketComponent}
+ {path: 'createticket', component: CreateticketComponent},
+ {path: 'adminhome', component: AdminhomeComponent},
+ {path: 'ticketapproval', component: TicketapprovalComponent}
+
 ]
 
 @NgModule({
@@ -30,7 +35,9 @@ const routes:Routes = [
     HomeComponent,
     AdminloginComponent,
     EmployeehomeComponent,
-    CreateticketComponent
+    CreateticketComponent,
+    AdminhomeComponent,
+    TicketapprovalComponent
   ],
   imports: [
     BrowserModule,
