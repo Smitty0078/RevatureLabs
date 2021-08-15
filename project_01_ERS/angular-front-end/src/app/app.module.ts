@@ -18,7 +18,8 @@ const routes:Routes = [
  {path: 'login', component: EmployeeSigninComponent},
  {path: 'create', component: CreateNewAccountComponent},
  {path: 'adminlogin', component: AdminloginComponent},
- {path: 'employeehome', component: EmployeehomeComponent}
+ {path: 'employeehome', component: EmployeehomeComponent},
+ {path: 'createticket', component: CreateticketComponent}
 ]
 
 @NgModule({

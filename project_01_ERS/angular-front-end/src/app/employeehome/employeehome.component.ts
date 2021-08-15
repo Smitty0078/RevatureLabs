@@ -20,7 +20,7 @@ export class EmployeehomeComponent implements OnInit {
   }
 
   createNewTicket(){
-    //this.router.navigate([''])
+    this.router.navigate(['createticket'])
   }
 
 }
