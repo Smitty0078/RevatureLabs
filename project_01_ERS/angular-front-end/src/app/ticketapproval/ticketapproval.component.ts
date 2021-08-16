@@ -12,4 +12,20 @@ export class TicketapprovalComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  approve(){
+
+  }
+
+  deny(){
+
+  }
+
+  previous(){
+
+  }
+
+  next(){
+    
+  }
+
 }

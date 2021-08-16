@@ -1,2 +1,29 @@
-<p>adminhome works!</p>
-<button (click)="approveTickets()">Approve Tickets</button>
+
+<div class="container" style="text-align: center;">
+    <div class="row">
+        <h1>Admin Home Page</h1>
+    </div>
+    <div class="row">
+        <!-- <p><button (click)="signOut()" style="float: right; margin-bottom: 50px; margin-top: 10px; margin-right: 10px;">Sign Out</button></p> -->
+    </div>
+
+    <!-- use get to get all the tickets for current employee -->
+    <div class="row ticket_table" >
+        <table>
+            <tr>
+                <th>Ticket Id</th>
+                <th>Employee ID</th>
+                <th>Amount</th>
+                <th>Description</th>
+                <th>Status</th>
+            </tr>
+        </table>
+    </div>
+
+
+    <div>
+        <button (click)="refreshTable()" style="margin: 25px;">Refresh</button><br>
+        <button (click)="approveTickets()" style="margin: 25px;">Approve Tickets</button>
+    </div>
+
+</div>

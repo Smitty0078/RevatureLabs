@@ -17,4 +17,8 @@ export class AdminhomeComponent implements OnInit {
     this.router.navigate(['ticketapproval'])
   }
 
+  refreshTable(){
+    
+  }
+
 }
