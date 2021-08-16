@@ -2,10 +2,13 @@ package common;
 
 //import java.io.Serializable;
 import java.util.Objects;
+//import java.util.Set;
 
+//import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+//import javax.persistence.OneToMany;
 
 @Entity(name="employee")
 public class User {//implements Serializable{
@@ -21,6 +24,14 @@ public class User {//implements Serializable{
 	private String password;
 	@Column (name="is_admin")
 	private boolean isAdmin;
+	
+	//link with annotation here
+	//many to one
+	//add set of tickets here
+	
+	//@OneToMany(mappedBy = "employee", cascade=CascadeType.ALL)
+	//private Set<Ticket> tickets;
+	
 	
 	public User(int id, String name, String username, String password, boolean isAdmin) {
 		super();
@@ -64,9 +75,17 @@ public class User {//implements Serializable{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 	
 
+	/* add this stuff later
+	public Set<Ticket> getTickets() {
+		return tickets;
+	}
+
+	public void setTickets(Set<Ticket> tickets) {
+		this.tickets = tickets;
+	}
+	*/
 
 	@Override
 	public String toString() {

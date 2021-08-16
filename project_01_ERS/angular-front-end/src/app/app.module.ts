@@ -13,7 +13,6 @@ import { EmployeehomeComponent } from './employeehome/employeehome.component';
 import { CreateticketComponent } from './createticket/createticket.component';
 import { AdminhomeComponent } from './adminhome/adminhome.component';
 import { TicketapprovalComponent } from './ticketapproval/ticketapproval.component';
-//import { AuthGuard } from './site/auth.guard';
 
 const routes:Routes = [
  {path: '', component: HomeComponent},

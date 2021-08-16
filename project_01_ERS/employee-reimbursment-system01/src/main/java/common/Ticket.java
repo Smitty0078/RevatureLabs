@@ -6,6 +6,8 @@ import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+//import javax.persistence.JoinColumn;
+//import javax.persistence.ManyToOne;
 
 
 
@@ -15,13 +17,20 @@ public class Ticket implements Serializable{
 	@Id
 	@Column(name="ticket_id")
 	private int id;
+	
+	//remove this later...
 	@Column
 	private int employee_id;
+	
 	@Column(name="ticket_amount")
 	private double amount;
+	
 	@Column
 	private String description;
 	
+	//@ManyToOne
+	//@JoinColumn(name="employee_id", nullable=false)
+	//private User employee;
 
 	public Ticket(int id, int employee_id, double amount, String description) {
 		super();
@@ -40,11 +49,13 @@ public class Ticket implements Serializable{
 	public void setId(int id) {
 		this.id = id;
 	}
-
+	
+	//remove later
 	public int getEmployee_id() {
 		return employee_id;
 	}
 
+	//remove later
 	public void setEmployee_id(int employee_id) {
 		this.employee_id = employee_id;
 	}
@@ -65,7 +76,39 @@ public class Ticket implements Serializable{
 		this.description = description;
 	}
 
+	/* add this stuff
+	public User getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(User employee) {
+		this.employee = employee;
+	}
+	*/
+
+	/*add this stuff
 	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Ticket other = (Ticket) obj;
+		return Double.doubleToLongBits(amount) == Double.doubleToLongBits(other.amount)
+				&& Objects.equals(description, other.description) && id == other.id;
+	}
+
+	@Override
+	public String toString() {
+		return "Ticket [id=" + id + ", amount=" + amount + ", description="
+				+ description + "]";
+	}
+	*/
+	
+
+ 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -83,6 +126,7 @@ public class Ticket implements Serializable{
 		return "Ticket [id=" + id + ", employee_id=" + employee_id + ", amount=" + amount + ", description="
 				+ description + "]";
 	}
+	 
 	
 	
 	
