@@ -55,15 +55,21 @@ public class TicketDAOImpl implements TicketDAO{
 		System.out.println("employee id: "+employeeId);
 		
 	
-		Query query = session.createQuery("select * from common.Ticket where employee_id = :eid");
+		Query query = session.createQuery("FROM common.Ticket where employee_id = :eid");
 		query.setInteger("eid", employeeId);
 		
-		Set<Ticket> t = (Set<Ticket>) query.uniqueResult();
+		//Set<Ticket> t = (Set<Ticket>) query.uniqueResult();
+		Ticket t = null;
+		Set<Ticket> tickets = null;
+		do {
+			t = (Ticket) query.uniqueResult();
+			if(t != null) {
+				tickets.add(t);
+			}
+			System.out.println(t.toString());
+		}while(t != null);
 		
-		for(Ticket t2 : t) {
-			System.out.println(t2.toString());
-		}
-		
+				
 		//Transaction tx = session.beginTransaction();
 		//List<Ticket> t = (List<Ticket>) session.createQuery("FROM ers.ticket").list();
 		
