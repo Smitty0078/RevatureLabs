@@ -8,7 +8,7 @@ public interface TicketDAO {
 
 	public void createTicket(Ticket t);
 	public Ticket getTicket(int employeeId, int ticketNum);
-	public List<Ticket> getAllTickets();
+	public List<Ticket> getAllTickets(int employeeId);
 	
 	
 }

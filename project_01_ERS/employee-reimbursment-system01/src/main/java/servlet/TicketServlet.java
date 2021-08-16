@@ -13,6 +13,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import common.Ticket;
+import common.User;
 import common.util.AppConstants;
 import common.util.HttpUtil;
 import service.TicketService;
@@ -30,6 +31,13 @@ public class TicketServlet extends HttpServlet{
 
 		String[] pathVariables = HttpUtil.getPathVariables(req);
 		
+		try {
+			User user = mapper.readValue(HttpUtil.getJSONData(req), User.class);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		/*
 		if(pathVariables == null || pathVariables.length == 0) {
 			//get data from backend
 			List<Ticket> tickets = service.getAllTickets();
@@ -55,6 +63,7 @@ public class TicketServlet extends HttpServlet{
 		resp.getWriter().print(jsonInString);
 		resp.setContentType(AppConstants.HTTP_JSON_CONTENT);
 		resp.setStatus(AppConstants.HTTP_OK);
+		*/
 	}
 
 	@Override

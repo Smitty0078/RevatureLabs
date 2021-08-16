@@ -18,8 +18,8 @@ public class TicketService {
 		return dao.getTicket(employeeId, ticketNum);
 	}
 	
-	public List<Ticket> getAllTickets(){
-		return dao.getAllTickets();
+	public List<Ticket> getAllTickets(int employeeId){
+		return dao.getAllTickets(employeeId);
 	}
 	
 }

@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class EmployeehomeComponent implements OnInit {
 
+
   constructor(private router:Router) { }
 
   ngOnInit(): void {
@@ -24,7 +25,7 @@ export class EmployeehomeComponent implements OnInit {
   }
 
   refreshTable(){
-    console.log("hello")
+    console.log(localStorage.getItem("id"))
   }
 
 }

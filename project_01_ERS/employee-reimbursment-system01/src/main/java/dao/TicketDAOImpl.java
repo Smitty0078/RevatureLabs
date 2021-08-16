@@ -35,7 +35,7 @@ public class TicketDAOImpl implements TicketDAO{
 
 	@Override
 	public Ticket getTicket(int employeeId, int ticketNum) {
-Session session = DBUtil.getInstance().getSession();
+		Session session = DBUtil.getInstance().getSession();
 		
 		Query query = session.createQuery("FROM common.Ticket where ticket_id = :tid and employee_id = :eid");
 		query.setInteger("tid", ticketNum);
@@ -48,8 +48,11 @@ Session session = DBUtil.getInstance().getSession();
 	}
 
 	@Override
-	public List<Ticket> getAllTickets() {
-		System.out.println("Hello");
+	public List<Ticket> getAllTickets(int employeeId) {
+		Session session = DBUtil.getInstance().getSession();
+		
+		Query query = session.createQuery("FROM common.Ticket where ticket_id = :tid and employee_id = :eid");
+		session.close();
 		return null;
 	}
 

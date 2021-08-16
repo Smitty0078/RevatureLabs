@@ -1103,3 +1103,27 @@ org.eclipse.core.runtime.CoreException: Launch configuration ErsApp references n
 2021-08-15 21:28:19,162 [Worker-126: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2021-08-15 21:28:19,164 [Worker-126: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-08-15 21:28:19,164 [Worker-126: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\smitt\OneDrive\Documents\GitHub\RevatureLabs\project_01_ERS\employee-reimbursment-system01\src\test\resources
+2021-08-15 22:28:24,331 [Worker-133: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-08-15 22:28:24,333 [Worker-133: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-08-15 22:28:24,334 [Worker-133: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-08-15 22:28:24,335 [Worker-133: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\smitt\OneDrive\Documents\GitHub\RevatureLabs\project_01_ERS\employee-reimbursment-system01\src\test\resources
+2021-08-15 22:35:38,429 [Worker-138: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-08-15 22:35:38,430 [Worker-138: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-08-15 22:35:38,432 [Worker-138: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-08-15 22:35:38,432 [Worker-138: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\smitt\OneDrive\Documents\GitHub\RevatureLabs\project_01_ERS\employee-reimbursment-system01\src\test\resources
+2021-08-15 22:36:57,192 [Worker-139: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-08-15 22:36:57,193 [Worker-139: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-08-15 22:36:57,194 [Worker-139: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-08-15 22:36:57,194 [Worker-139: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\smitt\OneDrive\Documents\GitHub\RevatureLabs\project_01_ERS\employee-reimbursment-system01\src\test\resources
+2021-08-15 22:37:08,780 [Worker-138: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-08-15 22:37:08,781 [Worker-138: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-08-15 22:37:08,783 [Worker-138: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-08-15 22:37:08,783 [Worker-138: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\smitt\OneDrive\Documents\GitHub\RevatureLabs\project_01_ERS\employee-reimbursment-system01\src\test\resources
+2021-08-15 22:37:26,030 [Worker-138: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-08-15 22:37:26,030 [Worker-138: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-08-15 22:37:26,032 [Worker-138: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-08-15 22:37:26,032 [Worker-138: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\smitt\OneDrive\Documents\GitHub\RevatureLabs\project_01_ERS\employee-reimbursment-system01\src\test\resources
+2021-08-15 22:38:48,198 [Worker-138: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-08-15 22:38:48,198 [Worker-138: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2021-08-15 22:38:48,200 [Worker-138: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-08-15 22:38:48,200 [Worker-138: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\smitt\OneDrive\Documents\GitHub\RevatureLabs\project_01_ERS\employee-reimbursment-system01\src\test\resources
