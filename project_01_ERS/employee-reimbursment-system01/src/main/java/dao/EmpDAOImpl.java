@@ -34,10 +34,11 @@ public class EmpDAOImpl implements EmpDAO {
 	}
 
 	@Override
-	public User getEmployee(String username, String password) {
+	public User getEmployee(int id, String username, String password) {
 		Session session = DBUtil.getInstance().getSession();
 		
-		Query query = session.createQuery("FROM common.User where username = :uname and password = :pswd");
+		Query query = session.createQuery("FROM common.User where id = :id and username = :uname and password = :pswd");
+		query.setInteger("id", id);
 		query.setString("uname", username);
 		query.setString("pswd", password);
 		

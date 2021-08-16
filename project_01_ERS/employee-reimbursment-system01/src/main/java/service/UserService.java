@@ -14,13 +14,13 @@ public class UserService {
 		dao.create(e);
 	}
 	
-	public User getEmployee(String username, String password) {
+	public User getEmployee(int id, String username, String password) {
 		//add validation here
-		return dao.getEmployee(username, password);
+		return dao.getEmployee(id, username, password);
 	}
 
-	public boolean login(String username, String password) {
-		if(dao.getEmployee(username, password) !=null )
+	public boolean login(int id, String username, String password) {
+		if(dao.getEmployee(id, username, password) !=null )
 		{
 			return true;
 		}

@@ -30,7 +30,11 @@ public class LoginServlet extends HttpServlet{
 			mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 			User user = mapper.readValue(HttpUtil.getJSONData(req), User.class);
 			//persist data to backend
-			boolean success = service.login(user.getUsername(), user.getPassword()); //do login here
+			
+			boolean success = service.login(user.getId(), user.getUsername(), user.getPassword());
+			
+			//original
+			//boolean success = service.login(user.getUsername(), user.getPassword()); //do login here
 			//send success response to client
 			
 			resp.getWriter().print( "{\"status\":"+ (success ? "\"success\"" : "\"failure\"") + "}");

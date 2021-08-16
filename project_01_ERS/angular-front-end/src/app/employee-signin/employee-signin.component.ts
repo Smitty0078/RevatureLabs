@@ -21,12 +21,13 @@ export class EmployeeSigninComponent implements OnInit {
   onSubmit(form:NgForm){
     console.log(form)
     this.http.post('http://localhost:8020/employee-reimbursment-system01/login', 
-                    JSON.stringify({username: form.value.username, password: form.value.password}))
+                    JSON.stringify({id: form.value.employeeId, username: form.value.username, password: form.value.password}))
                     .subscribe({
                       next:(data:any)=>{
                         console.log(data)
                         if(data.status === 'success'){
                           localStorage.setItem("username", form.value.username)
+                          localStorage.setItem("id", form.value.employeeId)
                           this.router.navigate(['employeehome'])
                         }
                         }, 
