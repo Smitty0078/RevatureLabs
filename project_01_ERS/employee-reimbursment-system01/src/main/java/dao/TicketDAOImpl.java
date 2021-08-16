@@ -1,6 +1,7 @@
 package dao;
 
 import java.util.List;
+import java.util.Set;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Query;
@@ -48,11 +49,30 @@ public class TicketDAOImpl implements TicketDAO{
 	}
 
 	@Override
-	public List<Ticket> getAllTickets(int employeeId) {
+	public Set<Ticket> getAllTickets(int employeeId) {
 		Session session = DBUtil.getInstance().getSession();
 		
-		Query query = session.createQuery("FROM common.Ticket where ticket_id = :tid and employee_id = :eid");
-		session.close();
+		System.out.println("employee id: "+employeeId);
+		
+	
+		Query query = session.createQuery("select * from common.Ticket where employee_id = :eid");
+		query.setInteger("eid", employeeId);
+		
+		Set<Ticket> t = (Set<Ticket>) query.uniqueResult();
+		
+		for(Ticket t2 : t) {
+			System.out.println(t2.toString());
+		}
+		
+		//Transaction tx = session.beginTransaction();
+		//List<Ticket> t = (List<Ticket>) session.createQuery("FROM ers.ticket").list();
+		
+//		Query query = session.createQuery("FROM common.Ticket where employee_id = :eid");
+//		query.setInteger("employee_id", employeeId);
+//		
+//		//List<Ticket> 
+		
+		//session.close();
 		return null;
 	}
 

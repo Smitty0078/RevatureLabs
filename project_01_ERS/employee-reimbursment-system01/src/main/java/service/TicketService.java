@@ -1,6 +1,7 @@
 package service;
 
 import java.util.List;
+import java.util.Set;
 
 import common.Ticket;
 import dao.TicketDAO;
@@ -18,7 +19,7 @@ public class TicketService {
 		return dao.getTicket(employeeId, ticketNum);
 	}
 	
-	public List<Ticket> getAllTickets(int employeeId){
+	public Set<Ticket> getAllTickets(int employeeId){
 		return dao.getAllTickets(employeeId);
 	}
 	

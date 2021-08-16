@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Set;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -33,14 +34,15 @@ public class TicketServlet extends HttpServlet{
 		
 		try {
 			User user = mapper.readValue(HttpUtil.getJSONData(req), User.class);
+			Set<Ticket> tickets = service.getAllTickets(user.getId());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		/*
+		
 		if(pathVariables == null || pathVariables.length == 0) {
 			//get data from backend
-			List<Ticket> tickets = service.getAllTickets();
+			List<Ticket> tickets = null; //service.getAllTickets(user.getId());
 			//transform java object to JSON string
 			jsonInString = mapper.writeValueAsString(tickets);
 		} 
@@ -63,7 +65,7 @@ public class TicketServlet extends HttpServlet{
 		resp.getWriter().print(jsonInString);
 		resp.setContentType(AppConstants.HTTP_JSON_CONTENT);
 		resp.setStatus(AppConstants.HTTP_OK);
-		*/
+		
 	}
 
 	@Override
