@@ -1275,3 +1275,4 @@ org.eclipse.core.runtime.CoreException: Launch configuration ErsApp references n
 2021-08-16 14:11:26,824 [Worker-225: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2021-08-16 14:11:26,825 [Worker-225: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-08-16 14:11:26,825 [Worker-225: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\smitt\OneDrive\Documents\GitHub\RevatureLabs\project_01_ERS\employee-reimbursment-system01\src\test\resources
+2021-08-17 16:24:53,539 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
